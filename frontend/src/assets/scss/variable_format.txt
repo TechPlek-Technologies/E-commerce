@@ -1,0 +1,11 @@
+<style>:root {
+  --primary: #D70021;
+  --primary_hover: #f6376b;
+  --secondary: #00c466;
+  --body_gray: #dde8e3;
+  --body_gray_contrast: #333333;
+  --primary_contrast: #ffffff;
+  --primary_hover_contrast: #333333;
+  --secondary_contrast: #ffffff;
+}
+</style>
