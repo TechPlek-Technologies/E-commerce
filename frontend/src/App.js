@@ -13,30 +13,27 @@ import SEO from "./components/Seo";
 
 function App() {
   const dispatch = useDispatch();
-  const { settingsData, loading, error } = useSelector(
-    (state) => state.settings
-  );
+  const color=useSetting("color")
 
   useEffect(() => {
     dispatch(fetchSettings());
   }, [dispatch]);
 
+
   useEffect(() => {
-    if (settingsData) {
-      const cssVariables = generateCssVariables(settingsData.settings.color);
+    if (color) {
+      const cssVariables = generateCssVariables(color);
       const styleElement = document.createElement("style");
       styleElement.innerHTML = cssVariables;
       document.head.appendChild(styleElement);
 
     }
-  }, [settingsData]);
+  }, [color]);
+  const favicon=useSetting("favicon");
 
-  console.log(error, loading, settingsData);
-  console.log(useSetting("favicon"));
-  // const favicon = useSetting("favicon")[0]?.url;
   return (
     <>
-      <SEO favicon={""}>
+      <SEO favicon={favicon[0].url}>
         <Router></Router>
       </SEO>
     </>
