@@ -1,4 +1,10 @@
-body {
-    background-color: var(--primary);
-    color: var(--body_gray_contrast);
-}
+@import "~bootstrap/scss/bootstrap";
+@import "../css/icons.min.css";
+
+@import "variables";
+
+@import "helper";
+@import "common";
+
+@import "preloader";
+@import "header";

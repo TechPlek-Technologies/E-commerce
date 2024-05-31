@@ -1,24 +1,24 @@
 // library imports
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// language library
+import "./i18n";
 
 // custom imports
 import { fetchSettings } from "./redux/slice/settings-slice";
 import { generateCssVariables, useSetting } from "./utils/setting-utils";
-
-// css imports
-import "./assets/scss/styles.scss";
-import SEO from "./components/Seo";
+import ScrollToTop from "./helpers/scroll-to-top";
+import Home from "./page/Home";
 
 function App() {
   const dispatch = useDispatch();
-  const color=useSetting("color")
+  const color = useSetting("color");
 
   useEffect(() => {
     dispatch(fetchSettings());
   }, [dispatch]);
-
 
   useEffect(() => {
     if (color) {
@@ -26,16 +26,30 @@ function App() {
       const styleElement = document.createElement("style");
       styleElement.innerHTML = cssVariables;
       document.head.appendChild(styleElement);
-
     }
   }, [color]);
-  const favicon=useSetting("favicon");
 
   return (
     <>
-      <SEO favicon={favicon[0].url}>
-        <Router></Router>
-      </SEO>
+        <Router>
+          <ScrollToTop>
+            <Suspense
+              fallback={
+                <div className="flone-preloader-wrapper">
+                  <div className="flone-preloader">
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              }
+            >
+              <Routes>
+                <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+                <Route path={process.env.PUBLIC_URL + "/home"} element={<Home />} />
+              </Routes>
+            </Suspense>
+          </ScrollToTop>
+        </Router>
     </>
   );
 }
