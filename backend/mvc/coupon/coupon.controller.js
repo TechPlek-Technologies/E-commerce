@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const CouponService = require("./coupon.service");
-const verifyToken = require("../../_middleware/verifyToken");
+const {verifyToken} = require("../../_middleware/verifyToken");
 
 router.get("/",verifyToken, getCoupon);
 router.post("/", verifyToken, postCoupon);

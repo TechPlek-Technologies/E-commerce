@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const AddressService = require("./address.service");
-const verifyToken = require("../../_middleware/verifyToken");
+const {verifyToken} = require("../../_middleware/verifyToken");
 
 router.get("/",verifyToken, getAttributes);
 router.post("/", verifyToken, postAddress);
