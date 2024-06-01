@@ -66,8 +66,6 @@ async function getHomePageService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
   }
 }
 async function getSettingService(req, res) {
@@ -84,8 +82,6 @@ async function getSettingService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
   }
 }
 async function getCategoryService(req, res) {
@@ -122,8 +118,6 @@ async function getCategoryService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
   }
 }
 async function getPageService(req, res) {
@@ -167,8 +161,6 @@ async function getPageService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
   }
 }
 async function getProductService(req, res) {
@@ -214,9 +206,7 @@ async function getProductService(req, res) {
       } catch (err) {
         console.log(err.message);
         res.status(400).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      }
 }
 async function searchProductService(req, res) {
     try {
@@ -238,9 +228,7 @@ async function searchProductService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(400).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      }
 }
 async function compareProductService(req, res) {
     const productItemField = {
@@ -272,9 +260,7 @@ async function compareProductService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(400).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      }
 }
 async function getOrderService(req, res) {
     try {
@@ -286,9 +272,7 @@ async function getOrderService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(500).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      }
 }
 async function trackOrderService(req, res) {
     try {
@@ -302,7 +286,5 @@ async function trackOrderService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(500).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      }
 }

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Fragment } from "react";
 import ScrollToTop from "../helpers/scroll-to-top";
 import HeaderOne from "../wrappers/HeaderOne";
+import Footer from "../wrappers/Footer";
 
 const LayoutOne = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ const LayoutOne = ({ children }) => {
         headerPaddingClass="header-padding-1"
       />
       {children}
+      <Footer/>
 
       <ScrollToTop />
     </Fragment>
