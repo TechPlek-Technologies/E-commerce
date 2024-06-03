@@ -91,14 +91,14 @@ p:last-child {
 }
 
 a,
-button {
-  line-height: inherit;
+// button {
+//   line-height: inherit;
 
-  cursor: pointer;
-  text-decoration: none;
+//   cursor: pointer;
+//   text-decoration: none;
 
-  color: #000;
-}
+//   color: #000;
+// }
 
 a,
 button,
@@ -1779,65 +1779,65 @@ a.default-btn {
 
 /* slider img bounce */
 
-@-webkit-keyframes bounce-img {
-  0% {
-    transform: translateY(0);
+// @-webkit-keyframes bounce-img {
+//   0% {
+//     transform: translateY(0);
 
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(20px);
+//     opacity: 1;
+//   }
+//   50% {
+//     transform: translateY(20px);
 
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: translateY(0);
 
-    opacity: 1;
-  }
-}
+//     opacity: 1;
+//   }
+// }
 
-@keyframes bounce-img {
-  0% {
-    transform: translateY(0);
+// @keyframes bounce-img {
+//   0% {
+//     transform: translateY(0);
 
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(20px);
+//     opacity: 1;
+//   }
+//   50% {
+//     transform: translateY(20px);
 
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: translateY(0);
 
-    opacity: 1;
-  }
-}
+//     opacity: 1;
+//   }
+// }
 
-@keyframes snow {
-  0% {
-    background-position: 0 0, 0 0, 0 0;
-  }
-  100% {
-    background-position: 500px 1000px, 400px 400px, 300px 300px;
-  }
-}
-.effect-snow {
-  animation: snow 20s linear infinite;
-}
+// @keyframes snow {
+//   0% {
+//     background-position: 0 0, 0 0, 0 0;
+//   }
+//   100% {
+//     background-position: 500px 1000px, 400px 400px, 300px 300px;
+//   }
+// }
+// .effect-snow {
+//   animation: snow 20s linear infinite;
+// }
 
-.body-effect {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
+// .body-effect {
+//   position: absolute;
+//   z-index: 0;
+//   top: 0;
+//   left: 0;
 
-  width: 100%;
-  height: 100%;
+//   width: 100%;
+//   height: 100%;
 
-  background-color: rgba(0, 0, 0, 0);
-}
+//   background-color: rgba(0, 0, 0, 0);
+// }
 
 .padding-10-row-col {
   .row {
@@ -1926,34 +1926,34 @@ a.default-btn {
   }
 }
 
-.bg-black-2 {
-  background-color: #1b1b1b;
-}
+// .bg-black-2 {
+//   background-color: #1b1b1b;
+// }
 
-.bg-black-3 {
-  background-color: #202022;
-}
-.bg-cover {
-  background-size: cover;
-}
-.product-small-image-wrapper.product-small-image-wrapper--side-thumb .swiper-wrap,
-.swiper-pointer-events.swiper-vertical {
-  height: 100%;
-}
+// .bg-black-3 {
+//   background-color: #202022;
+// }
+// .bg-cover {
+//   background-size: cover;
+// }
+// .product-small-image-wrapper.product-small-image-wrapper--side-thumb .swiper-wrap,
+// .swiper-pointer-events.swiper-vertical {
+//   height: 100%;
+// }
 
-@keyframes bounce {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-30px); }
-  100% { transform: translateY(0); }
-} 
+// @keyframes bounce {
+//   0%   { transform: translateY(0); }
+//   50%  { transform: translateY(-30px); }
+//   100% { transform: translateY(0); }
+// } 
 
-.map-marker {
-  animation-name: bounce;
-  animation-timing-function: linear;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
+// .map-marker {
+//   animation-name: bounce;
+//   animation-timing-function: linear;
+//   animation-duration: 2s;
+//   animation-iteration-count: infinite;
+//   animation-direction: alternate;
+// }
 button:disabled {
   cursor: not-allowed;
 }
