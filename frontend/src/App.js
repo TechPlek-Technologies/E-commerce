@@ -12,6 +12,8 @@ import { generateCssVariables, useAllSetting, useSetting } from "./utils/setting
 import ScrollToTop from "./helpers/scroll-to-top";
 import Home from "./page/Home";
 import { useAllHomeData, useCategory, useHome } from "./utils/home-utils";
+import LoginRegister from "./page/LoginRegister";
+import MyAccount from "./page/MyAccount";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,13 +24,7 @@ function App() {
   
   const color = useSetting("color");
 
-  const home=useHome("homePage");
 
-  // const category=useCategory("category");
-
-  // console.log("category",category);
-
-  // console.log(useAllHomeData());
   
   useEffect(() => {
     if (color) {
@@ -55,6 +51,8 @@ function App() {
               <Routes>
                 <Route path={"/"} element={<Home />} />
                 <Route path={"/home"} element={<Home />} />
+                <Route path={"/login-register"} element={<LoginRegister />} />
+                <Route path={"/my-account"} element={<MyAccount />} />
               </Routes>
             </Suspense>
           </ScrollToTop>

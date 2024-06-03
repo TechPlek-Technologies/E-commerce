@@ -35,7 +35,7 @@ const FileUpload = ({
       data.append("file", file);
       const resp = await axios({
         method: "post",
-        url: "http://localhost:5000/uploads",
+        url: `${backendUrl}/uploads`,
         data: data,
         headers: {
           "Content-Type": "multipart/form-data",

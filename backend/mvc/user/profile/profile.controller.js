@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const profileService = require("./profile.service");
+const { verifyToken } = require("../../../_middleware/verifyToken");
 
-router.post("/", manageProfile);
-router.get("/", getProfile);
+router.post("/", verifyToken, manageProfile);
+router.get("/",verifyToken, getProfile);
 
 
 function manageProfile(req, res, next) {
