@@ -9,9 +9,9 @@ export const useSetting = (key) => {
     }
   return settingsData.settings[key];
 };
+
 export const useAllSetting = () => {
     const { settingsData, loaded } = useSelector((state) => state.settings);
-
     if(!loaded){
       return null;
     }

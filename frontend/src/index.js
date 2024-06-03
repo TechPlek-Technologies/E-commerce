@@ -10,6 +10,11 @@ import 'animate.css';
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "./assets/scss/styles.scss";
+import "./assets/sass/styles.sass";
+import "./assets/css/flaticon.min.css";
+import "./assets/css/fontawesome-5.14.0.min.css";
+import "./assets/css/slick.min.css";
+import "./assets/css/style.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

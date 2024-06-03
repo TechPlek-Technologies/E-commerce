@@ -66,8 +66,6 @@ async function getHomePageService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
   }
 }
 async function getSettingService(req, res) {
