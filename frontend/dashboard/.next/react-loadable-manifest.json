@@ -11,6 +11,30 @@
       "static/chunks/components_error_403_js.js"
     ]
   },
+  "..\\components\\Auth\\signin.js -> ~/components/Ui/Button": {
+    "id": "..\\components\\Auth\\signin.js -> ~/components/Ui/Button",
+    "files": [
+      "static/chunks/components_Ui_Button_index_js.js"
+    ]
+  },
+  "..\\components\\Dashboard\\monthlySale.js -> react-apexcharts": {
+    "id": "..\\components\\Dashboard\\monthlySale.js -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_js.js"
+    ]
+  },
+  "..\\components\\Dashboard\\orderStatus.js -> react-apexcharts": {
+    "id": "..\\components\\Dashboard\\orderStatus.js -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_js.js"
+    ]
+  },
+  "..\\components\\Dashboard\\orderSummary.js -> react-apexcharts": {
+    "id": "..\\components\\Dashboard\\orderSummary.js -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_js.js"
+    ]
+  },
   "..\\components\\Layout\\Client\\cartView.js -> ~/components/Image": {
     "id": "..\\components\\Layout\\Client\\cartView.js -> ~/components/Image",
     "files": [
@@ -183,22 +207,10 @@
       "static/chunks/components_cookieContest_index_js.js"
     ]
   },
-  "dashboard\\categories\\[id].js -> ~/components/FileUpload/fileUpload": {
-    "id": "dashboard\\categories\\[id].js -> ~/components/FileUpload/fileUpload",
+  "index.js -> ~/components/Auth/signin": {
+    "id": "index.js -> ~/components/Auth/signin",
     "files": [
-      "static/chunks/components_FileUpload_fileUpload_js.js"
-    ]
-  },
-  "dashboard\\categories\\[id].js -> ~/components/Ui/Button": {
-    "id": "dashboard\\categories\\[id].js -> ~/components/Ui/Button",
-    "files": [
-      "static/chunks/components_Ui_Button_index_js.js"
-    ]
-  },
-  "dashboard\\categories\\[id].js -> ~/components/Ui/Spinner": {
-    "id": "dashboard\\categories\\[id].js -> ~/components/Ui/Spinner",
-    "files": [
-      "static/chunks/components_Ui_Spinner_index_js.js"
+      "static/chunks/components_Auth_signin_js.js"
     ]
   }
 }
