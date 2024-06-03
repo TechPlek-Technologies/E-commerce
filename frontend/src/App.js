@@ -8,10 +8,11 @@ import "./i18n";
 
 // custom imports
 import { fetchSettings } from "./redux/slice/settings-slice";
-import { generateCssVariables, useAllSetting, useSetting } from "./utils/setting-utils";
+import { generateCssVariables, useSetting } from "./utils/setting-utils";
 import ScrollToTop from "./helpers/scroll-to-top";
 import Home from "./page/Home";
-import { useAllHomeData, useCategory, useHome } from "./utils/home-utils";
+import { useAllHomeData, useHome } from "./utils/home-utils";
+import About from "./page/About";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,11 +25,7 @@ function App() {
 
   const home=useHome("homePage");
 
-  // const category=useCategory("category");
-
-  // console.log("category",category);
-
-  // console.log(useAllHomeData());
+  console.log(useAllHomeData());
   
   useEffect(() => {
     if (color) {
@@ -55,6 +52,7 @@ function App() {
               <Routes>
                 <Route path={"/"} element={<Home />} />
                 <Route path={"/home"} element={<Home />} />
+                <Route path={"/about"} element={<About />} />
               </Routes>
             </Suspense>
           </ScrollToTop>

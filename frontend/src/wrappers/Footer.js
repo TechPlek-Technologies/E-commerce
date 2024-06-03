@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import ScrollTopBtn from '../components/footer/ScrollTopBtn'
-import { useAllSetting, useSetting } from '../utils/setting-utils';
+import { useAllSetting} from '../utils/setting-utils';
 
 const Footer = () => {
 
@@ -122,11 +122,11 @@ const Footer = () => {
             <ul>
               <li>
                 <i className="fal fa-map-marker-alt" />
-                {address}
+                {address?address:""}
               </li>
               <li>
               <i className="far fa-phone" />
-                <a href="calto:+012(345)67899">{phoneFooter}</a>
+                <a href="calto:+012(345)67899">{phoneFooter?phoneFooter:""}</a>
               </li>
               <li>
               <i className="far fa-phone" />
@@ -134,7 +134,7 @@ const Footer = () => {
               </li>
               <li>
               <i className="far fa-envelope" />
-                <a href="mailto:support@gmail.com">{email}</a>
+                <a href="mailto:support@gmail.com">{email?email:""}</a>
               </li>
             </ul>
           </div>

@@ -11,12 +11,6 @@
       "static/chunks/components_error_403_js.js"
     ]
   },
-  "..\\components\\Auth\\signin.js -> ~/components/Ui/Button": {
-    "id": "..\\components\\Auth\\signin.js -> ~/components/Ui/Button",
-    "files": [
-      "static/chunks/components_Ui_Button_index_js.js"
-    ]
-  },
   "..\\components\\Dashboard\\monthlySale.js -> react-apexcharts": {
     "id": "..\\components\\Dashboard\\monthlySale.js -> react-apexcharts",
     "files": [
@@ -143,6 +137,12 @@
       "static/chunks/components_Layout_Dashboard_layout_js.js"
     ]
   },
+  "..\\components\\TextEditor\\index.js -> suneditor-react": {
+    "id": "..\\components\\TextEditor\\index.js -> suneditor-react",
+    "files": [
+      "static/chunks/node_modules_suneditor-react_dist_index_js.js"
+    ]
+  },
   "..\\lib\\clientFunctions.js -> axios": {
     "id": "..\\lib\\clientFunctions.js -> axios",
     "files": [
@@ -159,12 +159,6 @@
     "id": "..\\utils\\useLocalStorage.js -> crypto-js/aes",
     "files": [
       "static/chunks/node_modules_crypto-js_aes_js.js"
-    ]
-  },
-  "404.js -> ~/components/error/404": {
-    "id": "404.js -> ~/components/error/404",
-    "files": [
-      "static/chunks/components_error_404_js.js"
     ]
   },
   "_app.js -> ../public/js/bootstrap.bundle.min.js": {
@@ -207,28 +201,40 @@
       "static/chunks/components_cookieContest_index_js.js"
     ]
   },
-  "dashboard\\settings\\graphics.js -> ~/components/FileUpload/fileUpload": {
-    "id": "dashboard\\settings\\graphics.js -> ~/components/FileUpload/fileUpload",
+  "dashboard\\page\\about.js -> ~/components/TextEditor": {
+    "id": "dashboard\\page\\about.js -> ~/components/TextEditor",
     "files": [
-      "static/chunks/components_FileUpload_fileUpload_js.js"
+      "static/chunks/components_TextEditor_index_js.js"
     ]
   },
-  "dashboard\\settings\\graphics.js -> ~/components/Ui/Button": {
-    "id": "dashboard\\settings\\graphics.js -> ~/components/Ui/Button",
+  "dashboard\\page\\about.js -> ~/components/Ui/Button": {
+    "id": "dashboard\\page\\about.js -> ~/components/Ui/Button",
     "files": [
       "static/chunks/components_Ui_Button_index_js.js"
     ]
   },
-  "dashboard\\settings\\graphics.js -> ~/components/Ui/Spinner": {
-    "id": "dashboard\\settings\\graphics.js -> ~/components/Ui/Spinner",
+  "dashboard\\page\\about.js -> ~/components/Ui/Spinner": {
+    "id": "dashboard\\page\\about.js -> ~/components/Ui/Spinner",
     "files": [
       "static/chunks/components_Ui_Spinner_index_js.js"
     ]
   },
-  "index.js -> ~/components/Auth/signin": {
-    "id": "index.js -> ~/components/Auth/signin",
+  "dashboard\\page\\privacy.js -> ~/components/TextEditor": {
+    "id": "dashboard\\page\\privacy.js -> ~/components/TextEditor",
     "files": [
-      "static/chunks/components_Auth_signin_js.js"
+      "static/chunks/components_TextEditor_index_js.js"
+    ]
+  },
+  "dashboard\\page\\privacy.js -> ~/components/Ui/Button": {
+    "id": "dashboard\\page\\privacy.js -> ~/components/Ui/Button",
+    "files": [
+      "static/chunks/components_Ui_Button_index_js.js"
+    ]
+  },
+  "dashboard\\page\\privacy.js -> ~/components/Ui/Spinner": {
+    "id": "dashboard\\page\\privacy.js -> ~/components/Ui/Spinner",
+    "files": [
+      "static/chunks/components_Ui_Spinner_index_js.js"
     ]
   }
 }
