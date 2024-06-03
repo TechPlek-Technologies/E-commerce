@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const ColorService = require("./colors.service");
-const verifyToken = require("../../_middleware/verifyToken");
+const {verifyToken} = require("../../_middleware/verifyToken");
 
 router.get("/", verifyToken,getColors);
 router.post("/",verifyToken, postColors);

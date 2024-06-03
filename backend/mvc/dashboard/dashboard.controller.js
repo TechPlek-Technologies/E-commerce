@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const DashboardService = require("./dashboard.service");
-const verifyToken = require("../../_middleware/verifyToken");
+const {verifyToken} = require("../../_middleware/verifyToken");
 
 router.get("/", verifyToken, getDashboard);
 

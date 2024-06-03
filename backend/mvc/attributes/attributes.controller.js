@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const AttributeService = require("./attributes.service");
-const verifyToken = require("../../_middleware/verifyToken");
+const {verifyToken} = require("../../_middleware/verifyToken");
 
 router.get("/",verifyToken, getAttributes);
 router.get("/id",verifyToken, getAttributesbyId);

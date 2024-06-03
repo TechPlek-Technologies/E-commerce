@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const fileUploadService = require("./fileupload.service");
-const verifyToken = require("../../_middleware/verifyToken");
-
 
 router.get("/:filename", readFile);
-router.post("/",verifyToken, uploadFile);
-router.delete("/", verifyToken,deleteFile);
+router.post("/", uploadFile);
+router.delete("/",deleteFile);
 
 
 function readFile(req, res, next) {

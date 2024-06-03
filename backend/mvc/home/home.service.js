@@ -82,7 +82,7 @@ async function getSettingService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  }
+  } 
 }
 async function getCategoryService(req, res) {
   try {
@@ -118,7 +118,7 @@ async function getCategoryService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  }
+  } 
 }
 async function getPageService(req, res) {
   try {
@@ -161,7 +161,7 @@ async function getPageService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  }
+  } 
 }
 async function getProductService(req, res) {
     const pif = {
@@ -206,7 +206,7 @@ async function getProductService(req, res) {
       } catch (err) {
         console.log(err.message);
         res.status(400).json({ success: false });
-      }
+      } 
 }
 async function searchProductService(req, res) {
     try {
@@ -286,5 +286,5 @@ async function trackOrderService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(500).json({ success: false });
-      }
+      } 
 }
