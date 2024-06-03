@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const categoryService = require("./category.service");
-const verifyToken = require("../../_middleware/verifyToken");
+const {verifyToken} = require("../../_middleware/verifyToken");
 
 router.get("/",verifyToken, getCategory);
 router.post("/",verifyToken, postCategory);
