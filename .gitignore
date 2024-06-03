@@ -5,3 +5,5 @@ node_modules
 uploads
 
 node_modules
+
+frontend/dashboard/.next
