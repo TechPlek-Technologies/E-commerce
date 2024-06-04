@@ -13,6 +13,7 @@ import ScrollToTop from "./helpers/scroll-to-top";
 import Home from "./page/Home";
 import { useAllHomeData, useHome } from "./utils/home-utils";
 import About from "./page/About";
+import { useAllPage} from "./utils/page-utils";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,7 +26,11 @@ function App() {
 
   const home=useHome("homePage");
 
-  console.log(useAllHomeData());
+  // console.log(useAllHomeData());
+  
+  const page =useAllPage();
+
+  console.log("All page" , page);
   
   useEffect(() => {
     if (color) {
