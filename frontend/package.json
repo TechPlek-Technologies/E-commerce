@@ -13,6 +13,7 @@
     "clsx": "^2.1.1",
     "cogo-toast": "https://github.com/hasanm95/cogo-toast",
     "dotenv": "^16.4.5",
+    "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.5.2",
     "prop-types": "^15.8.1",

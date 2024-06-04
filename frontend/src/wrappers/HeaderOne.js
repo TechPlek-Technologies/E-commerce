@@ -54,7 +54,7 @@ const HeaderOne = ({
       >
         <div className={layout === "container-fluid" ? layout : "container"}>
           <div className="row">
-            <div className="col-xl-2 col-lg-2 col-md-6 col-4">
+            <div className="d-flex align-items-center col-xl-2 col-lg-2 col-md-6 col-4">
               {/* header logo */}
               <Logo logoClass="logo" />
             </div>

@@ -25,12 +25,11 @@ function App() {
   }, [dispatch]);
   
   const color = useSetting("color");
-
-
   
   useEffect(() => {
     if (color) {
       const cssVariables = generateCssVariables(color);
+      console.log("vavvvav", cssVariables);
       const styleElement = document.createElement("style");
       styleElement.innerHTML = cssVariables;
       document.head.appendChild(styleElement);
