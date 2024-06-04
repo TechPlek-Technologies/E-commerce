@@ -16,7 +16,11 @@ import LoginRegister from "./page/LoginRegister";
 import MyAccount from "./page/MyAccount";
 import About from "./page/About";
 import { fetchPages } from "./redux/slice/page-slice";
-import { useAllPage, usePage } from "./utils/page-utils";
+import Privacy from "./page/Privacy";
+import TermsAndCondition from "./page/TermsAndCondition";
+import Refund from "./page/Refund";
+import ContactUs from "./page/ContactUs";
+import { useAllHomeData } from "./utils/home-utils";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,11 +33,9 @@ function App() {
   const color = useSetting("color");
 
 
-  // console.log(useAllHomeData());
-  
-  const page =usePage("homePage");
-
-  console.log("All page" , page);
+  console.log(useAllHomeData());
+//  const page = useAllPage();
+//  console.log("page",page);
   
   useEffect(() => {
     if (color) {
@@ -63,6 +65,10 @@ function App() {
                 <Route path={"/login-register"} element={<LoginRegister />} />
                 <Route path={"/my-account"} element={<MyAccount />} />
                 <Route path={"/about"} element={<About />} />
+                <Route path={"/privacy-policy"} element={<Privacy/>} />
+                <Route path={"/terms-and-conditions"} element={<TermsAndCondition/>} />
+                <Route path={"/cancellation-refund-policy"} element={<Refund/>} />
+                <Route path={"/contact-us"} element={<ContactUs/>} />
               </Routes>
             </Suspense>
           </ScrollToTop>

@@ -13,7 +13,7 @@ export default async function apiHandler(req, res) {
       .status(403)
       .json({ success: false, message: "Access Forbidden" });
 
-  
+  await dbConnect();
 
   switch (method) {
     case "POST":
