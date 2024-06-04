@@ -30,7 +30,8 @@ async function updateProfile(req, res) {
   try {
     await dbConnect();
     const { query, body } = req;
-    const bodyData = body;
+    const bodyData = body.data;
+    console.log(bodyData);
     const userData = await userModel.findById(query.id);
     if (!userData) {
       return res.status(400).json({ success: false });

@@ -1,3 +1,4 @@
+
 // library imports
 import { useDispatch } from "react-redux";
 import { Suspense, useEffect } from "react";
@@ -8,10 +9,12 @@ import "./i18n";
 
 // custom imports
 import { fetchSettings } from "./redux/slice/settings-slice";
-import { generateCssVariables, useSetting } from "./utils/setting-utils";
+import { generateCssVariables, useAllSetting, useSetting } from "./utils/setting-utils";
 import ScrollToTop from "./helpers/scroll-to-top";
 import Home from "./page/Home";
-import { useAllHomeData, useHome } from "./utils/home-utils";
+import { useAllHomeData, useCategory, useHome } from "./utils/home-utils";
+import LoginRegister from "./page/LoginRegister";
+import MyAccount from "./page/MyAccount";
 import About from "./page/About";
 import { useAllPage} from "./utils/page-utils";
 
@@ -24,7 +27,6 @@ function App() {
   
   const color = useSetting("color");
 
-  const home=useHome("homePage");
 
   // console.log(useAllHomeData());
   
@@ -57,6 +59,8 @@ function App() {
               <Routes>
                 <Route path={"/"} element={<Home />} />
                 <Route path={"/home"} element={<Home />} />
+                <Route path={"/login-register"} element={<LoginRegister />} />
+                <Route path={"/my-account"} element={<MyAccount />} />
                 <Route path={"/about"} element={<About />} />
               </Routes>
             </Suspense>
