@@ -34,12 +34,6 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
             </Link>
           </li>
 
-          {/* <li>
-            <Link to={process.env.PUBLIC_URL + "/"}>
-              {t("shop_by_concern")}
-            </Link>
-          </li> */}
-
          <li>
             <Link to={process.env.PUBLIC_URL + "/"}>
               {t("shop_by_concern")}
@@ -72,7 +66,7 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
           </li>
          
           <li>
-            <Link to={process.env.PUBLIC_URL + "/"}>
+            <Link to={process.env.PUBLIC_URL + "/contact-us"}>
               {t("contact_us")}
             </Link>
           </li>

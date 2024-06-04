@@ -4,7 +4,7 @@ import dbConnect from "~/utils/dbConnect";
 
 export default async function categoryPageData() {
   try {
-    await dbConnect();
+    
     const category = await categoryModel.find({}).select({
       _id: 0,
       categoryId: 1,

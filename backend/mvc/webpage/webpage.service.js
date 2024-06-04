@@ -16,19 +16,17 @@ module.exports = {
 
 async function getPageService(req, res) {
     try {
-        await dbConnect();
+        
         const pageData = await pageModel.findOne({});
         res.status(200).json({ success: true, page: pageData });
       } catch (err) {
         console.log(err);
         res.status(400).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 async function postPageService(req, res) {
     try {
-        await dbConnect();
+        
         const { query, body } = req;
         let pageData = await pageModel.findOne({});
         if (pageData === null) {
@@ -70,13 +68,11 @@ async function postPageService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(400).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 async function postHomePageService(req, res) {
     try {
-        await dbConnect();
+        
         const { query, body } = req;
         let pageData = await pageModel.findOne({});
         if (pageData === null) {
@@ -161,13 +157,11 @@ async function postHomePageService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(400).json({ success: false, err: err.message });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 async function deleteHomePageCarouselService(req, res) {
     try {
-        await dbConnect();
+        
         const { query } = req;
         const pageData = await pageModel.findOne({});
         //Check Data Scope
@@ -193,13 +187,11 @@ async function deleteHomePageCarouselService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(400).json({ success: false, err: err.message });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 async function updateHomePageCarouselService(req, res) {
     try {
-        await dbConnect();
+        
         const { query } = req;
         //Check Data Scope
         switch (query.scope) {
@@ -219,7 +211,5 @@ async function updateHomePageCarouselService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(400).json({ success: false, err: err.message });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }

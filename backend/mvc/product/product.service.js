@@ -25,19 +25,17 @@ module.exports = {
 
 async function getProductService(req, res) {
   try {
-    await dbConnect();
+    
     const product = await ProductModel.find({}).sort("-date").exec();
     res.status(200).json({ success: true, product });
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function cloneProductService(req, res) {
   try {
-    await dbConnect();
+    
     const originalDocument = await ProductModel.findById(req.body.id);
     if (!originalDocument) {
       throw new Error("Original document not found.");
@@ -57,13 +55,11 @@ async function cloneProductService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false, message: err.message });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function deleteProductService(req, res) {
   try {
-    await dbConnect();
+    
     const { id } = req.query;
     const product = await ProductModel.findById(id);
     const fileList = [
@@ -79,13 +75,11 @@ async function deleteProductService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function getProductHelperService(req, res) {
   try {
-    await dbConnect();
+    
     const category = await categoryModel.find({});
     const attribute = await attributesModel.find({});
     const color = await colorsModel.find({});
@@ -94,13 +88,11 @@ async function getProductHelperService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function createProductService(req, res) {
   try {
-    await dbConnect();
+    
     const data = await parseFormMultiple(req);
     const {
       name,
@@ -186,7 +178,7 @@ async function createProductService(req, res) {
 }
 async function editProductHelperService(req, res) {
   try {
-    await dbConnect();
+    
     const { slug } = req.query;
     const product = await ProductModel.findOne({ slug: slug });
     const category = await categoryModel.find({});
@@ -199,13 +191,11 @@ async function editProductHelperService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function editProductService(req, res) {
   try {
-    await dbConnect();
+    
     const data = await parseFormMultiple(req);
     const {
       name,
@@ -286,13 +276,11 @@ async function editProductService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function getRelatedProductService(req, res) {
   try {
-    await dbConnect();
+    
     const { slug, relatedProduct } = req.query;
     // const settings = await SettingModel.findOne({});
     const product = await ProductModel.findOne({ slug: slug });
@@ -307,13 +295,11 @@ async function getRelatedProductService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function postProductQuestionService(req, res) {
   try {
-    await dbConnect();
+    
     const { pid, question,session } = req.body;
     const _data = {
       userName: session.user.name,
@@ -329,13 +315,11 @@ async function postProductQuestionService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function answerProductQuestionService(req, res) {
   try {
-    await dbConnect();
+    
     const { id, pid, answer,session } = req.body;
     if (!session.user.a)
       return res
@@ -352,8 +336,6 @@ async function answerProductQuestionService(req, res) {
   } catch (e) {
     console.log(e);
     res.status(200).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 

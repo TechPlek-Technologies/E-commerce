@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <Fragment>
       <SEO
-        titleTemplate="Fashion Home"
+        titleTemplate="Home"
       />
       <LayoutOne>
 

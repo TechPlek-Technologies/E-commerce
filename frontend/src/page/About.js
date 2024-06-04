@@ -8,7 +8,7 @@ const About = () => {
   return (
     <Fragment>
     <SEO
-      titleTemplate="Fashion Home"
+      titleTemplate="About Us"
     />
 
     <LayoutOne>

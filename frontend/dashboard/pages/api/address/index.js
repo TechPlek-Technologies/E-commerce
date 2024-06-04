@@ -7,6 +7,7 @@ export default async function apiHandler(req, res) {
   const { method } = req;
   const secret = process.env.AUTH_SECRET;
   const session = await getToken({ req, secret });
+
   if (!session)
     return res
       .status(403)

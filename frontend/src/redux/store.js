@@ -13,6 +13,7 @@ import storage from "redux-persist/lib/storage";
 import { settingsReducer } from './slice/settings-slice';
 import { authReducer } from './slice/auth-slice';
 import { profileReducer } from './slice/profileData-slice';
+import { pagesReducer } from './slice/page-slice';
 // import productReducer from './slices/productSlice'; // Uncomment if you have a product slice
 
 const persistConfig = {
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
     settings: settingsReducer,
     auth: authReducer,
     profile: profileReducer,
+    pages:pagesReducer
     // product: productReducer, // Uncomment if you have a product slice
 });
 

@@ -2,7 +2,6 @@ import sessionChecker from "~/lib/sessionPermission";
 import attrModel from "../../../models/attributes";
 import dbConnect from "../../../utils/dbConnect";
 import { parseForm } from "../../../utils/parseForm";
-import { getToken } from "next-auth/jwt";
 
 export const config = {
   api: {
@@ -17,11 +16,8 @@ export default async function apiHandler(req, res) {
       .status(403)
       .json({ success: false, message: "Access Forbidden" });
 
-     
-
   await dbConnect();
 
-  
   switch (method) {
     case "GET":
       try {

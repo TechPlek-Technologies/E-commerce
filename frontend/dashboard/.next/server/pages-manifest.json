@@ -5,10 +5,19 @@
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
   "/api/home/wishlist": "pages/api/home/wishlist.js",
   "/api/notification": "pages/api/notification.js",
+<<<<<<< HEAD
   "/dashboard/settings/graphics": "pages/dashboard/settings/graphics.js",
   "/api/settings": "pages/api/settings.js",
   "/dashboard/colors": "pages/dashboard/colors.js",
   "/dashboard/settings": "pages/dashboard/settings.js",
   "/dashboard": "pages/dashboard.js",
   "/api/dashboard": "pages/api/dashboard.js"
+=======
+  "/api/settings": "pages/api/settings.js",
+  "/dashboard/settings/graphics": "pages/dashboard/settings/graphics.js",
+  "/dashboard/settings": "pages/dashboard/settings.js",
+  "/dashboard/page/home": "pages/dashboard/page/home.js",
+  "/api/page": "pages/api/page.js",
+  "/api/page/home": "pages/api/page/home.js"
+>>>>>>> a5cf0630a00c523cb505b802245698ea08e12819
 }

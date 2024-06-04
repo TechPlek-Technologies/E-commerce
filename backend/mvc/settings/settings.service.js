@@ -10,7 +10,7 @@ module.exports = {
 
 async function getSettingService(req, res) {
   try {
-    await dbConnect();
+    
     const settings = await settingModel.findOne({});
     res.status(200).json({ success: true, settings });
   } catch (err) {
@@ -20,7 +20,7 @@ async function getSettingService(req, res) {
 }
 async function postSettingService(req, res) {
     try {
-        await dbConnect();
+        
         const { query } = req;
         const bodyData = await parseForm(req);
         let settingData = await settingModel.findOne({});

@@ -28,7 +28,7 @@ const removedItem = [
 async function updateProfile(req, res) {
  
   try {
-    await dbConnect();
+    
     const { query, body } = req;
     const bodyData = body.data;
     console.log(bodyData);
@@ -67,14 +67,12 @@ async function updateProfile(req, res) {
       return res.status(400).json({ success: false, duplicate: true });
     }
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function getProfileData(req, res) {
  
   try {
-    await dbConnect();
+    
     const scope = req.query.scope;
     let userData = {};
     switch (scope) {
@@ -138,7 +136,5 @@ async function getProfileData(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }

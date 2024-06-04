@@ -10,21 +10,19 @@ module.exports = {
 
 async function getShippingService(req, res) {
   try {
-    await dbConnect();
+    
     const shipping = await shippingModel.findOne({});
     console.log(shipping);
     res.status(200).json({ success: true, shippingCharge: shipping });
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 
 async function postShippingService(req, res) {
   try {
-    await dbConnect();
+    
     const { query, body } = req;
     let shippingData = await shippingModel.findOne({});
     if (shippingData === null) {
@@ -55,13 +53,11 @@ async function postShippingService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function updateShippingService(req, res) {
   try {
-    await dbConnect();
+    
     const bodyData = req.body;
     const result = await shippingModel.findOneAndUpdate(
       { "area._id": bodyData.id },
@@ -84,13 +80,11 @@ async function updateShippingService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function deleteShippingService(req, res) {
   try {
-    await dbConnect();
+    
     await shippingModel.updateOne(
       {},
       { $pull: { area: { _id: req.body.id } } },
@@ -100,7 +94,5 @@ async function deleteShippingService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
