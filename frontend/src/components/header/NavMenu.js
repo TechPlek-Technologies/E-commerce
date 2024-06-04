@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 
+
 const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
   const { t } = useTranslation();
-  
+
+
   return (
     <div
       className={clsx(sidebarMenu
@@ -31,12 +33,6 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
               {t("shop")}
             </Link>
           </li>
-
-          {/* <li>
-            <Link to={process.env.PUBLIC_URL + "/"}>
-              {t("shop_by_concern")}
-            </Link>
-          </li> */}
 
          <li>
             <Link to={process.env.PUBLIC_URL + "/"}>
@@ -70,7 +66,7 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
           </li>
          
           <li>
-            <Link to={process.env.PUBLIC_URL + "/"}>
+            <Link to={process.env.PUBLIC_URL + "/contact-us"}>
               {t("contact_us")}
             </Link>
           </li>

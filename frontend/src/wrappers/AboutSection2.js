@@ -9,13 +9,7 @@ const AboutSection2 = () => {
           <div className="col-lg-6">
             <div className="about-images wow fadeInLeft delay-0-2s">
               <div className="row align-items-center">
-                <div className="col-6">
-                  <img src="assets/images/about/about1.jpg" alt="About" />
-                </div>
-                <div className="col-6">
-                  <img src="assets/images/about/about2.jpg" alt="About" />
-                  <img src="assets/images/about/about3.jpg" alt="About" />
-                </div>
+                  <img src="/assets/img/about/Alohya-mission.png" alt="About" />
               </div>
             </div>
           </div>

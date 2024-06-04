@@ -10,7 +10,46 @@
   ],
   "rootMainFiles": [],
   "pages": {
+<<<<<<< HEAD
     "/_app": []
+=======
+    "/_app": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_app.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_error.js"
+    ],
+<<<<<<< HEAD
+    "/dashboard": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/dashboard.js"
+    ],
+    "/dashboard/settings": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+=======
+    "/dashboard/page/home": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/dashboard/page/home.js"
+    ],
+    "/dashboard/settings": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+>>>>>>> a5cf0630a00c523cb505b802245698ea08e12819
+      "static/chunks/pages/dashboard/settings.js"
+    ],
+    "/dashboard/settings/graphics": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/dashboard/settings/graphics.js"
+    ]
+>>>>>>> 33186ce43409feb80bc356ed274534e20c495fba
   },
   "ampFirstPages": []
 }

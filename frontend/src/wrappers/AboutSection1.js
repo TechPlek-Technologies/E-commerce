@@ -31,7 +31,7 @@ const AboutSection1 = () => {
           </div>
           <div className="col-lg-6 text-lg-right">
             <div className="who-we-are-image wow fadeInRight delay-0-2s">
-              <img src="assets/images/about/who-we-are.png" alt="Who We Are" />
+              <img src="/assets/img/about/700-by-650.webp" alt="Who We Are" />
             </div>
           </div>
         </div>

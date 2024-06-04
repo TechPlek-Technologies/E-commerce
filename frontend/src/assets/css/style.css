@@ -4428,7 +4428,7 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
 
 /* Who We Are */
 .who-we-are-content {
-  max-width: 510px; }
+  max-width: 100%; }
 
 .who-we-are-shapes img {
   z-index: -1;
