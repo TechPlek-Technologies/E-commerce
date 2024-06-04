@@ -19,7 +19,7 @@ export default async function apiHandler(req, res) {
 
      
 
-  await dbConnect();
+  
 
   
   switch (method) {

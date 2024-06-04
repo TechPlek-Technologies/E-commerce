@@ -11,19 +11,17 @@ module.exports = {
 
 async function getCouponService(req, res) {
     try {
-        await dbConnect();
+        
         const coupon = await couponModel.find({});
         res.status(200).json({ success: true, coupon });
       } catch (err) {
         console.log(err);
         res.status(500).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 async function postCouponService(req, res) {
     try {
-        await dbConnect();
+        
         const formData = req.body;
 
         console.log(formData);
@@ -44,13 +42,11 @@ async function postCouponService(req, res) {
           });
         }
         res.status(500).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 async function updateCouponService(req, res) {
     try {
-        await dbConnect();
+        
         const data =req.body;
         const couponData = {
           code: data.code.trim(),
@@ -69,26 +65,22 @@ async function updateCouponService(req, res) {
           });
         }
         res.status(400).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 async function deleteCouponService(req, res) {
     try {
-        await dbConnect();
+        
         const id = req.query.id;
         await couponModel.findByIdAndDelete(id);
         res.status(200).json({ success: true });
       } catch (err) {
         console.log(err);
         res.status(500).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 async function applyCouponService(req, res) {
   try {
-    await dbConnect();
+    
     const coupon = await couponModel.findOne({ code: req.body.code });
     if (coupon) {
       const active = dateFormat(coupon.active);
@@ -112,8 +104,6 @@ async function applyCouponService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  }finally {
-    await dbDisconnect();
   }
 }
 

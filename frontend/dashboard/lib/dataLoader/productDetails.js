@@ -4,7 +4,7 @@ import dbConnect from "~/utils/dbConnect";
 
 export default async function productDetailsData(slug) {
   try {
-    await dbConnect();
+    
     const settings = await settingsModel.findOne({});
     const product = await ProductModel.findOne({ slug: slug });
     const related = product

@@ -12,7 +12,7 @@ module.exports = {
 
 async function postRefundService(req, res) {
   try {
-    await dbConnect();
+    
     const data = req.body;
     id = data.id;
     data.id = id;
@@ -36,13 +36,11 @@ async function postRefundService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(200).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function getRefundService(req, res) {
   try {
-    await dbConnect();
+    
     const data = await refundModel
       .find({})
       .sort({ _id: -1 })
@@ -58,13 +56,11 @@ async function getRefundService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function updateRefundService(req, res) {
   try {
-    await dbConnect();
+    
     const { id, status, note } = req.body;
     const refundData = await refundModel.findById(id);
     if (!refundData || refundData.status === "Approved") {
@@ -77,13 +73,11 @@ async function updateRefundService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(200).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function deleteRefundService(req, res) {
   try {
-    await dbConnect();
+    
     const data = await refundModel.findById(req.query.id);
     const icon = [{ Key: data.image[0]?.name }];
     await deleteFiles(icon);
@@ -92,7 +86,5 @@ async function deleteRefundService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }

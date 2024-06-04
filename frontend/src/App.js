@@ -9,24 +9,31 @@ import "./i18n";
 
 // custom imports
 import { fetchSettings } from "./redux/slice/settings-slice";
-import { generateCssVariables, useAllSetting, useSetting } from "./utils/setting-utils";
+import { generateCssVariables, useSetting } from "./utils/setting-utils";
 import ScrollToTop from "./helpers/scroll-to-top";
 import Home from "./page/Home";
-import { useAllHomeData, useCategory, useHome } from "./utils/home-utils";
 import LoginRegister from "./page/LoginRegister";
 import MyAccount from "./page/MyAccount";
 import About from "./page/About";
+import { fetchPages } from "./redux/slice/page-slice";
+import { useAllPage, usePage } from "./utils/page-utils";
 
 function App() {
   const dispatch = useDispatch();
   
   useEffect(() => {
     dispatch(fetchSettings());
+    dispatch(fetchPages())
   }, [dispatch]);
   
   const color = useSetting("color");
 
 
+  // console.log(useAllHomeData());
+  
+  const page =usePage("homePage");
+
+  console.log("All page" , page);
   
   useEffect(() => {
     if (color) {

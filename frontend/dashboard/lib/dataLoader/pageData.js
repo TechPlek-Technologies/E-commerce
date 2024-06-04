@@ -4,7 +4,7 @@ import dbConnect from "~/utils/dbConnect";
 
 export default async function pageData(type) {
   try {
-    await dbConnect();
+    
     const pageData = await pageModel.findOne({});
     const settings = await settingsModel.findOne({});
     let page = {};

@@ -19,7 +19,7 @@ const pif = {
 export default async function apiHandler(req, res) {
   const { method } = req;
 
-  await dbConnect();
+  
 
   switch (method) {
     case "GET":

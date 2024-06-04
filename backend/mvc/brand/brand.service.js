@@ -13,19 +13,17 @@ module.exports = {
 
 async function getBrandService(req, res) {
   try {
-    await dbConnect();
+    
     const data = await brandModel.find({});
     res.status(200).json({ success: true, brand: data });
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function postBrandService(req, res) {
   try {
-    await dbConnect();
+    
     const data = req.body;
     const image = data.categoryImage;
     const random = customIdNew({ randomLength: 2, lowerCase: true });
@@ -41,13 +39,11 @@ async function postBrandService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function updateBrandService(req, res) {
   try {
-    await dbConnect();
+    
     const data = req.body;
     const brandData = {
       name: data.name.trim(),
@@ -58,13 +54,11 @@ async function updateBrandService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function deleteBrandService(req, res) {
   try {
-    await dbConnect();
+    
     const id=req.query.id;
     const data = await brandModel.findById(id);
     const icon = [{ Key: data.image[0]?.name }];
@@ -74,13 +68,11 @@ async function deleteBrandService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function changeTopBrandService(req, res) {
   try {
-    await dbConnect();
+    
     const { id } = req.body;
     const brand = await brandModel.findById(id);
     console.log(brand);
@@ -90,7 +82,5 @@ async function changeTopBrandService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }

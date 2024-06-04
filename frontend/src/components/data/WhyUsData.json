@@ -1,0 +1,34 @@
+[
+    {
+      "id": "1",
+      "image": "/assets/img/WhyUs/ayurveda.webp",
+      "h4":"Pure Natural Ingredients",
+      "p": [
+        "Prudently Chosen and Expertly Sourced"
+      ]
+    },
+    {
+      "id": "2",
+      "image": "/assets/img/WhyUs/exprt.webp",
+      "h4":"Genuine Expert Guidance",
+      "p": [
+        "Support from Seasoned Health Practitioners"
+      ]
+    },
+    {
+      "id": "3",
+      "image": "/assets/img/WhyUs/diet-plan.webp",
+      "h4":"Custom Ayurveda Experience",
+      "p": [
+        "Tailored Offerings by Ayurveda Specialists"
+      ]
+    },
+    {
+      "id": "4",
+      "image": "/assets/img/WhyUs/lifestyle.webp",
+      "h4":"Holistic Wellness Pioneers",
+      "p": [
+        "Thoughtfully Curated Ayurvedic Health Solutions"
+      ]
+    }
+  ]

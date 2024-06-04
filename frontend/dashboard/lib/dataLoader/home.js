@@ -22,7 +22,7 @@ const productItemField = {
 
 export default async function homePageData(type, query) {
   try {
-    await dbConnect();
+    
     const category = await categoryModel.find({ topCategory: true }).select({
       name: 1,
       slug: 1,

@@ -13,7 +13,7 @@ module.exports = {
 const authSecret=process.env.AUTH_SECRET;
 
 async function authenticateUser({ username, password }) {
-  await dbConnect();
+  
   const userData = await userModel.findOne({ email: username });
 
   if (!userData || !(await bcrypt.compare(password, userData.hash))) {
@@ -36,7 +36,7 @@ async function authenticateUser({ username, password }) {
 }
 
 async function registerUser(req) {
-  await dbConnect();
+  
   // const data = await parseForm(req);
   const { name, email, password,isAdmin,secretKey } = req;
  

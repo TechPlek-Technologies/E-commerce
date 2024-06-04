@@ -2,15 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/dashboard": "pages/dashboard.js",
-  "/": "pages/index.js",
-  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/api/home/settings": "pages/api/home/settings.js",
-  "/api/home/wishlist": "pages/api/home/wishlist.js",
-  "/api/notification": "pages/api/notification.js",
-  "/api/dashboard": "pages/api/dashboard.js",
-  "/dashboard/page/home": "pages/dashboard/page/home.js",
-  "/api/page": "pages/api/page.js",
   "/404": "pages/404.js",
-  "/api/page/home": "pages/api/page/home.js"
+  "/": "pages/index.js"
 }

@@ -20,7 +20,7 @@ module.exports = {
 
 async function getHomePageService(req, res) {
   try {
-    await dbConnect();
+    
     const category = await categoryModel.find({ topCategory: true }).select({
       name: 1,
       slug: 1,
@@ -70,7 +70,7 @@ async function getHomePageService(req, res) {
 }
 async function getSettingService(req, res) {
   try {
-    await dbConnect();
+    
     const settings = await settingsModel.findOne({}).select({
       _id: 0,
       __v: 0,
@@ -86,7 +86,7 @@ async function getSettingService(req, res) {
 }
 async function getCategoryService(req, res) {
   try {
-    await dbConnect();
+    
     let category = [];
     res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate");
     if (req.query.only_category === "true") {
@@ -122,7 +122,7 @@ async function getCategoryService(req, res) {
 }
 async function getPageService(req, res) {
   try {
-    await dbConnect();
+    
     const { query } = req;
     const pageData = await PageModel.findOne({});
     const settings = await settingsModel.findOne({});
@@ -180,7 +180,7 @@ async function getProductService(req, res) {
       };
       
     try {
-        await dbConnect();
+        
         const { type } = req.query;
         const arg =
           type === "trending"
@@ -264,7 +264,7 @@ async function compareProductService(req, res) {
 }
 async function getOrderService(req, res) {
     try {
-        await dbConnect();
+        
         const id = req.query.id;
         const order = await orderModel.findById(id);
         res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate");
