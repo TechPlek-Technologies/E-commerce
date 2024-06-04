@@ -5,7 +5,7 @@ import dbConnect from "~/utils/dbConnect";
 export default async function apiHandler(req, res) {
   const { method } = req;
 
-  
+  await dbConnect();
 
   if (!(await sessionChecker(req, "shippingCharges")))
     return res

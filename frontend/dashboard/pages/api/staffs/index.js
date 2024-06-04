@@ -17,12 +17,13 @@ export default async function apiHandler(req, res) {
   const { method } = req;
   const secret = process.env.AUTH_SECRET;
   const session = await getToken({ req, secret });
+  console.log("session12",session);
   if (!session || !session.user.a)
     return res
       .status(403)
       .json({ success: false, message: "Access Forbidden" });
 
-  
+  await dbConnect();
 
   switch (method) {
     case "GET":

@@ -19,7 +19,7 @@ export default async function apiHandler(req, res) {
   const secret = process.env.AUTH_SECRET;
   const session = await getToken({ req, secret });
 
-  
+  await dbConnect();
 
   const decrementQty = async (products) => {
     eachSeries(
