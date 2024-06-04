@@ -10,7 +10,7 @@ module.exports = {
 
 async function getAddressService(req, res) {
     try {
-        await dbConnect();
+        
         const {id} =req.query;
         const user = await userModel.findById(id)
           .populate(
@@ -28,9 +28,7 @@ async function getAddressService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(500).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 async function postAddressService(req, res) {
     try {
@@ -51,7 +49,5 @@ async function postAddressService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(400).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }

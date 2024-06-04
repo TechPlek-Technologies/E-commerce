@@ -9,18 +9,16 @@ module.exports = {
 
 async function getSubscriberService(req, res) {
   try {
-    await dbConnect();
+    
     const subscribers = await subscriberModel.findOne({});
     res.status(200).json({ success: true, subscribers: subscribers || [] });
   } catch (err) {
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function createSubscriberService(req, res) {
   try {
-    await dbConnect();
+    
     const email = req.body.email;
     let newsletter = await subscriberModel.findOne({});
     if (!newsletter) {
@@ -36,13 +34,11 @@ async function createSubscriberService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function deleteSubscriberService(req, res) {
   try {
-    await dbConnect();
+    
     await subscriberModel.updateOne(
       {},
       {
@@ -53,7 +49,5 @@ async function deleteSubscriberService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }

@@ -6,7 +6,7 @@ import dbConnect from "~/utils/dbConnect";
 
 export default async function galleryPageData(type, query) {
   try {
-    await dbConnect();
+    
     const category = await categoryModel.find({});
     const brand = await brandModel.find({});
     const settings = await settingsModel.findOne({});

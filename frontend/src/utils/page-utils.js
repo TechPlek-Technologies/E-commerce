@@ -7,7 +7,7 @@ export const usePage = (key) => {
     if(!loaded){
       return null;
     }
-  return pageData.pages[key];
+  return pageData[key];
 };
 
 export const useAllPage = () => {
@@ -15,6 +15,6 @@ export const useAllPage = () => {
     if(!loaded){
       return null;
     }
-  return pageData.pages;
+  return pageData;
 };
 

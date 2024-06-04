@@ -10,10 +10,14 @@ const initialState = {
 
 export const fetchPages = createAsyncThunk(
   "pages/fetchPages",
-  async () => {
-    const domain = process.env.REACT_APP_URL;
-    const response = await axios.get(`${domain}/home/page`); // Replace with your API endpoint
-    return response.data;
+  async (_,{ rejectWithValue }) => {
+    try {
+      const domain = process.env.REACT_APP_URL;
+      const response = await axios.get(`${domain}/page`); // Replace with your API endpoint
+      return response.data.page;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
   }
 );
 

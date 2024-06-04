@@ -4,6 +4,7 @@ const express = require("express");
 const errorHandler = require("_middleware/error-handler");
 const cors=require("cors")
 const cookieParser = require('cookie-parser');
+const connection = require("./utils/connection");
 
 const app = express();
 app.use(express.json());
@@ -14,7 +15,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(cookieParser());
-
+connection();
 app.use("/auth", require("./mvc/user/auth/auth.controller"));
 app.use("/profile", require("./mvc/user/profile/profile.controller"));
 app.use("/dashboard", require("./mvc/dashboard/dashboard.controller"));

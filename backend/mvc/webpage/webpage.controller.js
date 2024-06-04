@@ -6,10 +6,10 @@ router.get("/", getPage);
 router.post("/", postPage);
 router.post("/home", postHomePage);
 router.delete("/home", deleteHomePage);
-router.put("/home", updateHomePage);
+router.put("/home", updateHomePage); 
 
-function getPage(req, res, next) {
-    WebpageService.getPageService(req, res, next);
+async function getPage(req, res, next) {
+   await WebpageService.getPageService(req, res, next);
 }
 function postPage(req, res, next) {
     WebpageService.postPageService(req, res, next);

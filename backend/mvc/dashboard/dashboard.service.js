@@ -12,7 +12,7 @@ module.exports = {
 
 async function getDashboardService(req, res) {
     try {
-        await dbConnect();
+        
         const year = new Date().getFullYear();
         const date = new Date(`${year}-01-01`);
         const order = await orderModel.aggregate([
@@ -133,9 +133,7 @@ async function getDashboardService(req, res) {
       } catch (err) {
         console.log(err);
         res.status(500).json({ success: false });
-      } finally {
-    await dbDisconnect();
-  }
+      } 
 }
 
 

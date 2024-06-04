@@ -17,7 +17,7 @@ module.exports = {
 
 async function getPaginatedOrdersService(req, res) {
   try {
-    await dbConnect();
+    
     const { pageNumber = 1, pageSize = 10, queryText } = req.query;
     let order = [];
     let total = 0;
@@ -39,14 +39,12 @@ async function getPaginatedOrdersService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 
 async function createNewOrderService(req, res) {
   try {
-    await dbConnect();
+    
     const data = req.body;
     const { checkoutData } = data;
     const {
@@ -99,27 +97,23 @@ async function createNewOrderService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 
 async function deleteOrderService(req, res) {
   try {
-    await dbConnect();
+    
     const id = req.query.id;
     await orderModel.findByIdAndDelete(id);
     res.status(200).json({ success: true });
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function editOrderHelperService(req, res) {
   try {
-    await dbConnect();
+    
     const id = req.query.id;
     const order = await orderModel.findById(id);
     if (order.new) {
@@ -130,13 +124,11 @@ async function editOrderHelperService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 async function editOrderService(req, res) {
   try {
-    await dbConnect();
+    
     const id = req.query.id;
     const _or = await orderModel.findByIdAndUpdate(id, {
       status: req.query.order_status,
@@ -151,9 +143,7 @@ async function editOrderService(req, res) {
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false });
-  } finally {
-    await dbDisconnect();
-  }
+  } 
 }
 
 

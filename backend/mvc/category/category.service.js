@@ -23,7 +23,7 @@ module.exports = {
 
 async function getCategoryService(req, res) {
     try {
-        await dbConnect();
+        
         const data = await categoryModel.find({});
         res.status(200).json({ success: true, category: data });
       } catch (err) {
@@ -35,7 +35,7 @@ async function getCategoryService(req, res) {
 }
 async function createCategoryService(req, res) {
     try {
-        await dbConnect();
+        
         const data = req.body;
         const image = data.categoryImage;
         const random = customId({ randomLength: 2, lowerCase: true });
@@ -57,7 +57,7 @@ async function createCategoryService(req, res) {
 }
 async function updateCategoryService(req, res) {
     try {
-        await dbConnect();
+        
         const data = req.body;
         const categoryData = {
           name: data.name.trim(),
@@ -75,7 +75,7 @@ async function updateCategoryService(req, res) {
 }
 async function changeTopCategoryService(req, res) {
     try {
-        await dbConnect();
+        
         const { id } = req.body;
         const category = await categoryModel.findById(id);
         category.topCategory = !category.topCategory;
@@ -91,7 +91,7 @@ async function changeTopCategoryService(req, res) {
 }
 async function deleteCategoryService(req, res) {
     try {
-       await dbConnect();
+       
         const data = await categoryModel.findById(req.query.id);
         const icon = [{ Key: data.icon[0]?.name }];
         await deleteFiles(icon);
@@ -107,7 +107,7 @@ async function deleteCategoryService(req, res) {
 }
 async function createSubCategoryService(req, res) {
     try {
-      await dbConnect();
+      
         const data = req.body;
         const objectData = {
           name: data.name.trim(),
@@ -127,7 +127,7 @@ async function createSubCategoryService(req, res) {
 }
 async function updateSubCategoryService(req, res) {
   try {
-    await dbConnect();
+    
     const body =req.body;
     await categoryModel.findOneAndUpdate(
       { _id: body.id, "subCategories.name": body.name },
@@ -146,7 +146,7 @@ async function updateSubCategoryService(req, res) {
 }
 async function deleteSubCategoryService(req, res) {
     try {
-      await dbConnect();
+      
         const id = req.query.id;
         const slug = req.query.slug;
         await categoryModel.findByIdAndUpdate(id, {
@@ -163,7 +163,7 @@ async function deleteSubCategoryService(req, res) {
 }
 async function createChildCategoryService(req, res) {
     try {
-      await dbConnect();
+      
         // const data = await parseForm(req);
         const data = req.body;
         const objectData = {
@@ -190,7 +190,7 @@ async function createChildCategoryService(req, res) {
 }
 async function updateChildCategoryService(req, res) {
   try {
-    await dbConnect();
+    
    
     const body = req.body;
     const categoryId = body.categoryId;
@@ -226,7 +226,7 @@ async function updateChildCategoryService(req, res) {
 }
 async function deleteChildCategoryService(req, res) {
     try {
-      await dbConnect();
+      
         const categoryId = req.query.categoryId;
         const subcategoryId = req.query.subcategoryId;
         const slug = req.query.slug;
