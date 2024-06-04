@@ -14,6 +14,11 @@ import { settingsReducer } from './slice/settings-slice';
 import { authReducer } from './slice/auth-slice';
 import { profileReducer } from './slice/profileData-slice';
 import { pagesReducer } from './slice/page-slice';
+import { cartReducer } from './slice/cart-slice';
+import { compareReducer } from './slice/compare-slice';
+import { wishlistReducer } from './slice/wishlist-slice';
+import { productsReducer } from './slice/product-silce';
+
 // import productReducer from './slices/productSlice'; // Uncomment if you have a product slice
 
 const persistConfig = {
@@ -27,7 +32,12 @@ const rootReducer = combineReducers({
     settings: settingsReducer,
     auth: authReducer,
     profile: profileReducer,
-    pages:pagesReducer
+    pages:pagesReducer,
+    cart: cartReducer,
+    compare: compareReducer,
+    wishlist: wishlistReducer,
+    products:productsReducer
+   
     // product: productReducer, // Uncomment if you have a product slice
 });
 

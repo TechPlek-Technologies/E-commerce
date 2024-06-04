@@ -1,5 +1,5 @@
 import cogoToast from 'cogo-toast';
-const { createSlice } = require('@reduxjs/toolkit');
+import { createSlice } from "@reduxjs/toolkit";
 
 const compareSlice = createSlice({
     name: "compare",
@@ -19,4 +19,5 @@ const compareSlice = createSlice({
 });
 
 export const { addToCompare, deleteFromCompare } = compareSlice.actions;
-export default compareSlice.reducer;
+
+export const compareReducer = compareSlice.reducer;

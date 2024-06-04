@@ -1,4 +1,3 @@
-
 // library imports
 import { useDispatch } from "react-redux";
 import { Suspense, useEffect } from "react";
@@ -16,25 +15,24 @@ import LoginRegister from "./page/LoginRegister";
 import MyAccount from "./page/MyAccount";
 import About from "./page/About";
 import { fetchPages } from "./redux/slice/page-slice";
-import { useAllPage, usePage } from "./utils/page-utils";
+import { usePage } from "./utils/page-utils";
+import Cart from "./page/Cart";
+import Compare from "./page/Compare";
+import Wishlist from "./page/Wishlist";
+import Shop from "./page/Shop";
+import { fetchProducts } from "./redux/slice/product-silce";
 
 function App() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(fetchSettings());
-    dispatch(fetchPages())
+    dispatch(fetchPages());
+    dispatch(fetchProducts());
   }, [dispatch]);
-  
+
   const color = useSetting("color");
 
-
-  // console.log(useAllHomeData());
-  
-  const page =usePage("homePage");
-
-  console.log("All page" , page);
-  
   useEffect(() => {
     if (color) {
       const cssVariables = generateCssVariables(color);
@@ -45,28 +43,32 @@ function App() {
   }, [color]);
   return (
     <>
-        <Router>
-          <ScrollToTop>
-            <Suspense
-              fallback={
-                <div className="flone-preloader-wrapper">
-                  <div className="flone-preloader">
-                    <span></span>
-                    <span></span>
-                  </div>
+      <Router>
+        <ScrollToTop>
+          <Suspense
+            fallback={
+              <div className="flone-preloader-wrapper">
+                <div className="flone-preloader">
+                  <span></span>
+                  <span></span>
                 </div>
-              }
-            >
-              <Routes>
-                <Route path={"/"} element={<Home />} />
-                <Route path={"/home"} element={<Home />} />
-                <Route path={"/login-register"} element={<LoginRegister />} />
-                <Route path={"/my-account"} element={<MyAccount />} />
-                <Route path={"/about"} element={<About />} />
-              </Routes>
-            </Suspense>
-          </ScrollToTop>
-        </Router>
+              </div>
+            }
+          >
+            <Routes>
+              <Route path={"/"} element={<Home />} />
+              <Route path={"/home"} element={<Home />} />
+              <Route path={"/login-register"} element={<LoginRegister />} />
+              <Route path={"/my-account"} element={<MyAccount />} />
+              <Route path={"/about"} element={<About />} />
+              <Route path={"/cart"} element={<Cart />} />
+              <Route path={"/compare"} element={<Compare />} />
+              <Route path={"/wishlist"} element={<Wishlist />} />
+              <Route path={"/shop"} element={<Shop />} />
+            </Routes>
+          </Suspense>
+        </ScrollToTop>
+      </Router>
     </>
   );
 }

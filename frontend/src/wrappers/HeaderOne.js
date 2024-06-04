@@ -5,6 +5,7 @@ import Logo from "../components/header/Logo";
 import NavMenu from "../components/header/NavMenu";
 import IconGroup from "../components/header/IconGroup";
 import HeaderTop from "../components/header/header-top";
+import MobileMenu from "../components/header/Mobile/MobileMenu";
 
 const HeaderOne = ({
   layout,
@@ -69,7 +70,7 @@ const HeaderOne = ({
           </div>
         </div>
         {/* mobile menu */}
-        {/* <MobileMenu /> */}
+        <MobileMenu />
       </div>
     </header>
   );

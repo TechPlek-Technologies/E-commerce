@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import cogoToast from 'cogo-toast';
-const { createSlice } = require('@reduxjs/toolkit');
+import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
     name: "cart",
@@ -97,4 +97,6 @@ const cartSlice = createSlice({
 });
 
 export const { addToCart, deleteFromCart, decreaseQuantity, deleteAllFromCart } = cartSlice.actions;
-export default cartSlice.reducer;
+
+
+export const cartReducer = cartSlice.reducer;

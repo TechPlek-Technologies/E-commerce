@@ -1,5 +1,5 @@
 import cogoToast from 'cogo-toast';
-const { createSlice } = require('@reduxjs/toolkit');
+import { createSlice } from "@reduxjs/toolkit";
 
 const wishlistSlice = createSlice({
     name: "wishlist",
@@ -29,3 +29,4 @@ const wishlistSlice = createSlice({
 
 export const { addToWishlist, deleteFromWishlist, deleteAllFromWishlist } = wishlistSlice.actions;
 export default wishlistSlice.reducer;
+export const wishlistReducer = wishlistSlice.reducer;
