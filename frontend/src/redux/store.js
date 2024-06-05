@@ -18,6 +18,7 @@ import { cartReducer } from './slice/cart-slice';
 import { compareReducer } from './slice/compare-slice';
 import { wishlistReducer } from './slice/wishlist-slice';
 import { productsReducer } from './slice/product-silce';
+import { loadingReducer } from './slice/loading-slice';
 
 // import productReducer from './slices/productSlice'; // Uncomment if you have a product slice
 
@@ -36,7 +37,8 @@ const rootReducer = combineReducers({
     cart: cartReducer,
     compare: compareReducer,
     wishlist: wishlistReducer,
-    products:productsReducer
+    products:productsReducer,
+    loading: loadingReducer
    
     // product: productReducer, // Uncomment if you have a product slice
 });
