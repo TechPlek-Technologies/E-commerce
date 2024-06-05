@@ -44,7 +44,7 @@ function App() {
     };
 
     fetchData();
-  }, [dispatch]);
+  }, [dispatch,loading]);
 
   const color = useSetting("color");
 
