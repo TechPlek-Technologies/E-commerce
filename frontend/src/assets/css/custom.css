@@ -1,0 +1,6 @@
+/* Example CSS */
+.service-sidebar.no-animation .widget-menu {
+    animation: none;
+    position: fixed !important;
+    padding:30px;
+  }

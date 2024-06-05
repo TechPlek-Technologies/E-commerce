@@ -6,12 +6,12 @@ const FeedbackSlider = () => {
 
     const [slideIndex, setSlideIndex] = useState(0);
     const props = {
-      slidesToShow: 2,
+      slidesToShow: 3,
       slidesToScroll: 1,
       speed: 400,
       arrows: false,
-      dots: true,
-      autoplay: true,
+      dots: false,
+      autoplay: false,
       autoplaySpeed: 2000,
       beforeChange: (current, next) => setSlideIndex((next / 2) * 100),
     };
@@ -21,7 +21,6 @@ const FeedbackSlider = () => {
          {FeedbackData && (
       <div className="feedback-content-area rmb-65 wow fadeInLeft delay-0-2s">
         <div className="section-title mb-50">
-          <span className="sub-title mb-20">Customer Reviews</span>
           <h2>WHAT PEOPLE SAY</h2>
         </div>
         <div
@@ -42,7 +41,7 @@ const FeedbackSlider = () => {
               {single.para}
             </p>
             <div className="feedback-author">
-              <img src="assets/images/reviews/fb-author1.png" alt="Authro" />
+              <img src={single.image} alt="Authro" />
               <div className="title">
                 <h4>{single.name}</h4>
               </div>
