@@ -27,6 +27,7 @@ import Shop from "./page/Shop";
 import { fetchProducts } from "./redux/slice/product-silce";
 import { setLoading } from "./redux/slice/loading-slice";
 import DiabetesCare from "./page/DiabetesCare";
+import HairProblems from "./page/HairProblems";
 
 function App() {
   const dispatch = useDispatch();
@@ -99,6 +100,7 @@ function App() {
               <Route path={"/wishlist"} element={<Wishlist />} />
               <Route path={"/shop"} element={<Shop />} />
               <Route path={"/diabetes-care"} element={<DiabetesCare/>} />
+              <Route path={"/hair-problems"} element={<HairProblems/>} />
             </Routes>
           </Suspense>
         </ScrollToTop>

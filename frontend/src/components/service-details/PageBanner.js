@@ -1,28 +1,11 @@
-import { Link } from "react-router-dom";
-
-const PageBanner = ({ pageName, pageTitle }) => {
+const PageBanner = () => {
   return (
-    <section
-    className="page-banner text-white py-165 rpy-130"
-    style={{ backgroundImage: "url(assets/images/banner/banner.jpg)" }}
-  >
-    <div className="container">
-      <div className="banner-inner">
-        <h1 className="page-title wow fadeInUp delay-0-2s">
-          {pageTitle ? pageTitle : pageName}
-        </h1>
-        <nav aria-label="breadcrumb">
-          <ol className="breadcrumb justify-content-center wow fadeInUp delay-0-4s">
-            <li className="breadcrumb-item">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="breadcrumb-item active">{pageName}</li>
-          </ol>
-        </nav>
+    <div className="slider-area">
+      <div className="single-slide bg-img">
+        <img alt="Diabetic" src="/assets/img/service-details/Diabetic.webp" />
       </div>
     </div>
-  </section>
-  )
-}
+  );
+};
 
 export default PageBanner;

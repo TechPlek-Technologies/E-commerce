@@ -17,20 +17,20 @@ const MobileNavMenu = () => {
           </Link>
         </li>
         <li>
-          <Link to={process.env.PUBLIC_URL + "/"}>
+          <Link to={process.env.PUBLIC_URL + "/shop"}>
           {t("shop")}
           </Link>
         </li>
         <li className="menu-item-has-children">
-          <Link to={process.env.PUBLIC_URL + "/"}> {t("shop_by_concern")}</Link>
+          <Link to={process.env.PUBLIC_URL + "#"}> {t("shop_by_concern")}</Link>
           <ul className="sub-menu">
             <li>
-              <Link to={process.env.PUBLIC_URL + "/"}>
+              <Link to={process.env.PUBLIC_URL + "/diabetes-care"}>
               {t("diabetes_care")}
               </Link>
             </li>
             <li>
-              <Link to={process.env.PUBLIC_URL + "/"}>
+              <Link to={process.env.PUBLIC_URL + "/hair-problems"}>
               {t("hair_problems")}
               </Link>
             </li>
