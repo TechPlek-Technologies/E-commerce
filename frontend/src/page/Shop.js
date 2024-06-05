@@ -19,7 +19,7 @@ const Shop = () => {
   const [currentData, setCurrentData] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const { products } = useSelector((state) => state.products);
-console.log(products.product);
+console.log(products);
 
   const pageLimit = 15;
   let { pathname } = useLocation();
@@ -45,6 +45,16 @@ console.log(products.product);
     setCurrentData(sortedProducts.slice(offset, offset + pageLimit));
   }, [offset, products, sortType, sortValue, filterSortType, filterSortValue]);
 
+  if (products===null) {
+    return (
+      <div className="flone-preloader-wrapper">
+        <div className="flone-preloader">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    );
+  }
   return (
     <Fragment>
       <SEO

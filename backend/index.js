@@ -9,7 +9,7 @@ const connection = require("./utils/connection");
 const app = express();
 app.use(express.json());
 const corsOptions = {
-  origin: ['http://localhost:8081',"http://localhost:3000"], // Replace with your client URL
+  origin: ['http://localhost:8080',"http://localhost:3000"], // Replace with your client URL
   credentials: true, // This allows the server to accept cookies and other credentials
 };
 
