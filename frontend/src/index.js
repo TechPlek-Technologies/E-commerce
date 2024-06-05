@@ -16,6 +16,21 @@ import "./assets/css/fontawesome-5.14.0.min.css";
 import "./assets/css/slick.min.css";
 import "./assets/css/style.css";
 
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success, error);
+} else {
+  console.log("Geolocation not supported");
+}
+function success(position) {
+  console.log(position);
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+}
+
+function error() {
+  console.log("Unable to retrieve your location");
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

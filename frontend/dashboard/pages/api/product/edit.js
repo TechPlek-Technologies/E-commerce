@@ -73,12 +73,13 @@ export default async function apiHandler(req, res) {
           tax,
         } = data.field;
         const categories = JSON.parse(category);
-        const subcategories = JSON.parse(subcategory);
+        const subcategories = JSON.parse(subcategory); 
         const childCategories = JSON.parse(childCategory);
         const image = JSON.parse(displayImage);
         const gallery = JSON.parse(galleryImages);
         const colors = JSON.parse(color);
         const attributes = JSON.parse(attribute);
+        const discountPercentage = JSON.parse(sale_price);
         const variants = JSON.parse(variant);
         const seoData = JSON.parse(seo);
         const discount = (main_price - (sale_price / 100) * main_price).toFixed(
@@ -98,6 +99,7 @@ export default async function apiHandler(req, res) {
           categories,
           subcategories,
           childCategories,
+          discountPercentage:discountPercentage,
           brand: brand.trim(),
           trending: trending ? true : false,
           new: new_product ? true : false,

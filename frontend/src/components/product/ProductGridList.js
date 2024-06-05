@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 import ProductGridListSingle from "./ProductGridListSingle";
+import { currency } from "../../helpers/currency";
 
 const ProductGridList = ({
   products,
@@ -10,10 +11,7 @@ const ProductGridList = ({
   const { cartItems } = useSelector((state) => state.cart);
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
-  console.log("products",products);
-  const currency={"currencySymbol": "€",
-  "currencyName": "EUR",
-  "currencyRate": 1}
+
   return (
     <Fragment>
       {products?.map(product => {

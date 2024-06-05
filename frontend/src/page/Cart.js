@@ -5,6 +5,7 @@ import SEO from "../components/Seo";
 import LayoutOne from "../layouts/LayoutOne";
 import { cartItemStock, getDiscountPrice } from "../helpers/product";
 import { addToCart, decreaseQuantity, deleteAllFromCart, deleteFromCart } from "../redux/slice/cart-slice";
+import { currency } from "../helpers/currency";
 
 const Cart = () => {
   let cartTotalPrice = 0;
@@ -12,7 +13,6 @@ const Cart = () => {
   const [quantityCount] = useState(1);
   const dispatch = useDispatch();
   
-  const currency = useSelector((state) => state.currency);
   const { cartItems } = useSelector((state) => state.cart);
 
   return (

@@ -1,17 +1,16 @@
 import { Fragment } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import SEO from "../components/Seo";
 import LayoutOne from "../layouts/LayoutOne";
 import { deleteFromCompare } from "../redux/slice/compare-slice";
 import { addToCart } from "../redux/slice/cart-slice";
 import { getDiscountPrice } from "../helpers/product";
+import { currency } from "../helpers/currency";
 
 const Compare = () => {
   const dispatch = useDispatch();
-  let { pathname } = useLocation();
 
-  const currency = useSelector((state) => state.currency);
   const { compareItems } = useSelector((state) => state.compare);
   const { cartItems } = useSelector((state) => state.cart);
 

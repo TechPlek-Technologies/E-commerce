@@ -3,7 +3,6 @@ import { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import { getDiscountPrice } from "../../helpers/product";
 import { addToWishlist } from "../../redux/slice/wishlist-slice";
 import { addToCart } from "../../redux/slice/cart-slice";
 import ProductRating from "./ProductRating";
@@ -20,37 +19,36 @@ const ProductGridListSingle = ({
   spaceBottomClass
 }) => {
   const [modalShow, setModalShow] = useState(false);
-  const discountedPrice = getDiscountPrice(product.price, product.discount);
+  const discountedPrice = product.descount;
   const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
   const finalDiscountedPrice = +(
     discountedPrice * currency.currencyRate
   ).toFixed(2);
   const dispatch = useDispatch();
-
   return (
     <Fragment>
         <div className={clsx("product-wrap", spaceBottomClass)}>
           <div className="product-img">
-            <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
+            <Link to={process.env.PUBLIC_URL + "/product/" + product.slug}>
               <img
                 className="default-img"
-                src={process.env.PUBLIC_URL + product.image[0]}
-                alt=""
+                src={process.env.PUBLIC_URL + product.image[0].url}
+                alt={product.image[0].name}
               />
-              {product.image.length > 1 ? (
+              {product.gallery.length > 0 ? (
                 <img
                   className="hover-img"
-                  src={process.env.PUBLIC_URL + product.image[1]}
-                  alt=""
+                  src={process.env.PUBLIC_URL + product.gallery[0].url}
+                  alt={product.gallery[0].name}
                 />
               ) : (
                 ""
               )}
             </Link>
-            {product.discount || product.new ? (
+            {product.discountPercentage || product.new ? (
               <div className="product-img-badges">
-                {product.discount ? (
-                  <span className="pink">-{product.discount}%</span>
+                {product.discountPercentage ? (
+                  <span className="pink">-{product.discountPercentage}%</span>
                 ) : (
                   ""
                 )}
@@ -86,10 +84,10 @@ const ProductGridListSingle = ({
                     Buy now{" "}
                   </a>
                 ) : product.variation && product.variation.length >= 1 ? (
-                  <Link to={`${process.env.PUBLIC_URL}/product/${product.id}`}>
+                  <Link to={`${process.env.PUBLIC_URL}/product/${product.slug}`}>
                     Select Option
                   </Link>
-                ) : product.stock && product.stock > 0 ? (
+                ) : product.quantity && product.quantity > 0 ? (
                   <button
                     onClick={() => dispatch(addToCart(product))}
                     className={
@@ -123,7 +121,7 @@ const ProductGridListSingle = ({
           </div>
           <div className="product-content text-center">
             <h3>
-              <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
+              <Link to={process.env.PUBLIC_URL + "/product/" + product.slug}>
                 {product.name}
               </Link>
             </h3>
@@ -135,15 +133,15 @@ const ProductGridListSingle = ({
               ""
             )}
             <div className="product-price">
-              {discountedPrice !== null ? (
+              {product.discount  ? (
                 <Fragment>
-                  <span>{currency.currencySymbol + finalDiscountedPrice}</span>{" "}
+                  <span>{currency.currencySymbol + product.discount}</span>{" "}
                   <span className="old">
-                    {currency.currencySymbol + finalProductPrice}
+                    {currency.currencySymbol + product.price}
                   </span>
                 </Fragment>
               ) : (
-                <span>{currency.currencySymbol + finalProductPrice} </span>
+                <span>{currency.currencySymbol + product.price} </span>
               )}
             </div>
           </div>
@@ -169,10 +167,10 @@ const ProductGridListSingle = ({
                       ""
                     )}
                   </Link>
-                  {product.discount || product.new ? (
+                  {product.discountPercentage || product.new ? (
                     <div className="product-img-badges">
                       {product.discount ? (
-                        <span className="pink">-{product.discount}%</span>
+                        <span className="pink">-{product.discountPercentage}%</span>
                       ) : (
                         ""
                       )}
@@ -192,17 +190,17 @@ const ProductGridListSingle = ({
                   </Link>
                 </h3>
                 <div className="product-list-price">
-                  {discountedPrice !== null ? (
+                  { product.discount ? (
                     <Fragment>
                       <span>
-                        {currency.currencySymbol + finalDiscountedPrice}
+                        {currency.currencySymbol + product.discount}
                       </span>{" "}
                       <span className="old">
-                        {currency.currencySymbol + finalProductPrice}
+                        {currency.currencySymbol + product.price}
                       </span>
                     </Fragment>
                   ) : (
-                    <span>{currency.currencySymbol + finalProductPrice} </span>
+                    <span>{currency.currencySymbol + product.price} </span>
                   )}
                 </div>
                 {product.rating && product.rating > 0 ? (
