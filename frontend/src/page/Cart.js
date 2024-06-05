@@ -14,7 +14,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   
   const { cartItems } = useSelector((state) => state.cart);
-
+console.log(cartItems);
   return (
     <Fragment>
       <SEO
@@ -46,10 +46,8 @@ const Cart = () => {
                         </thead>
                         <tbody>
                           {cartItems.map((cartItem, key) => {
-                            const discountedPrice = getDiscountPrice(
-                              cartItem.price,
-                              cartItem.discount
-                            );
+                            const discountedPrice =cartItem.discount
+                            ;
                             const finalProductPrice = (
                               cartItem.price * currency.currencyRate
                             ).toFixed(2);
@@ -74,11 +72,8 @@ const Cart = () => {
                                   >
                                     <img
                                       className="img-fluid"
-                                      src={
-                                        process.env.PUBLIC_URL +
-                                        cartItem.image[0]
-                                      }
-                                      alt=""
+                                      src={cartItem.image[0].url}
+                                      alt={cartItem.image[0].name}
                                     />
                                   </Link>
                                 </td>

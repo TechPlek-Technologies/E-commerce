@@ -58,12 +58,14 @@ export const getProducts = (products, category, type, limit) => {
   };
   
   export const cartItemStock = (item, color, size) => {
-    if (item.stock) {
-      return item.stock;
+    if (item.quantity) {
+      return item.quantity;
     } else {
-      return item.variation
-        .filter(single => single.color === color)[0]
-        .size.filter(single => single.name === size)[0].stock;
+      return 0;
+
+      // item.variants
+      //   .filter(single => single.color === color)[0]
+      //   .size.filter(single => single.name === size)[0].stock;
     }
   };
   
