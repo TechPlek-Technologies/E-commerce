@@ -25,6 +25,7 @@ import Compare from "./page/Compare";
 import Wishlist from "./page/Wishlist";
 import Shop from "./page/Shop";
 import { fetchProducts } from "./redux/slice/product-silce";
+import DiabetesCare from "./page/DiabetesCare";
 
 function App() {
   const dispatch = useDispatch();
@@ -79,6 +80,7 @@ function App() {
               <Route path={"/compare"} element={<Compare />} />
               <Route path={"/wishlist"} element={<Wishlist />} />
               <Route path={"/shop"} element={<Shop />} />
+              <Route path={"/diabetes-care"} element={<DiabetesCare/>} />
             </Routes>
           </Suspense>
         </ScrollToTop>
