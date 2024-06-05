@@ -1,5 +1,5 @@
 // library imports
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -25,33 +25,51 @@ import Compare from "./page/Compare";
 import Wishlist from "./page/Wishlist";
 import Shop from "./page/Shop";
 import { fetchProducts } from "./redux/slice/product-silce";
+import { setLoading } from "./redux/slice/loading-slice";
 import DiabetesCare from "./page/DiabetesCare";
 
 function App() {
   const dispatch = useDispatch();
 
+  const loading = useSelector((state) => state.loading.loading);
+
   useEffect(() => {
-    dispatch(fetchSettings());
-    dispatch(fetchPages());
-    dispatch(fetchProducts());
+    const fetchData = async () => {
+      await Promise.all([
+        dispatch(fetchSettings()),
+        dispatch(fetchPages()),
+        dispatch(fetchProducts()),
+      ]);
+      dispatch(setLoading(false));
+    };
+
+    fetchData();
   }, [dispatch]);
 
   const color = useSetting("color");
 
 
-  console.log(useAllHomeData());
-//  const page = useAllPage();
-//  console.log("page",page);
-  
+  console.log("useAllHomeData",useAllHomeData());
+
   useEffect(() => {
     if (color) {
       const cssVariables = generateCssVariables(color);
-      console.log("vavvvav", cssVariables);
       const styleElement = document.createElement("style");
       styleElement.innerHTML = cssVariables;
       document.head.appendChild(styleElement);
     }
   }, [color]);
+
+  if (loading) {
+    return (
+      <div className="flone-preloader-wrapper">
+        <div className="flone-preloader">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    );
+  }
   return (
     <>
       <Router>
