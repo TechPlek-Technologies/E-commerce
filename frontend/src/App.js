@@ -19,7 +19,6 @@ import Privacy from "./page/Privacy";
 import TermsAndCondition from "./page/TermsAndCondition";
 import Refund from "./page/Refund";
 import ContactUs from "./page/ContactUs";
-import { useAllHomeData } from "./utils/home-utils";
 import Cart from "./page/Cart";
 import Compare from "./page/Compare";
 import Wishlist from "./page/Wishlist";
@@ -46,9 +45,6 @@ function App() {
   }, [dispatch]);
 
   const color = useSetting("color");
-
-
-  console.log("useAllHomeData",useAllHomeData());
 
   useEffect(() => {
     if (color) {
