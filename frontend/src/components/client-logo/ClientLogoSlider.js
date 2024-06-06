@@ -8,10 +8,11 @@ const ClientLogoSlider = () => {
  const clientLogo = {
         dots: false,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         arrows: false,
         speed: 1000,
+        pauseOnHover:false,
         slidesToShow: 5,
         slidesToScroll: 1,
         responsive: [

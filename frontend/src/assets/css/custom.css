@@ -2,5 +2,6 @@
 .service-sidebar.no-animation .widget-menu {
     animation: none;
     position: fixed !important;
-    padding:30px;
+    padding: 30px;
+    z-index: 10000000;
   }
