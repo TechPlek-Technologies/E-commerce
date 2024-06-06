@@ -6,7 +6,7 @@ const FeedbackSlider = () => {
 
     const [slideIndex, setSlideIndex] = useState(0);
     const props = {
-      slidesToShow: 3,
+      slidesToShow: 2,
       slidesToScroll: 1,
       speed: 400,
       arrows: false,
@@ -20,40 +20,34 @@ const FeedbackSlider = () => {
     <Fragment>
          {FeedbackData && (
       <div className="feedback-content-area rmb-65 wow fadeInLeft delay-0-2s">
-        <div className="section-title mb-50">
+        <div className="section-title mb-10">
           <h2>WHAT PEOPLE SAY</h2>
-        </div>
-        <div
-          className="progress"
-          role="progressbar"
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-valuenow={50}
-          style={{ backgroundSize: `${slideIndex}% 100%` }}
-        >
-          <span className="slider__label sr-only">50% completed</span>
         </div>
 
         <Slider {...props} className="feedback-active mt-20">
         {FeedbackData.map((single, key) => (
-          <div className="feedback-item" key={key}>
+          <div className="feedback-item style-two delay-0-2s">
+          <div className="content-image">
             <p>
-              {single.para}
+            {single.para}
             </p>
-            <div className="feedback-author">
-              <img src={single.image} alt="Authro" />
-              <div className="title">
-                <h4>{single.name}</h4>
-              </div>
-              <div className="ratting">
-                <i className="fas fa-star" />
-                <i className="fas fa-star" />
-                <i className="fas fa-star" />
-                <i className="fas fa-star" />
-                <i className="fas fa-star" />
-              </div>
+          </div>
+          <div className="feedback-author">
+            <div className="icon">
+              <i className="flaticon-quote" />
+            </div>
+            <div className="title">
+              <h4>{single.name}</h4>
+            </div>
+            <div className="ratting">
+              <i className="fas fa-star" />
+              <i className="fas fa-star" />
+              <i className="fas fa-star" />
+              <i className="fas fa-star" />
+              <i className="fas fa-star" />
             </div>
           </div>
+        </div>
            ))}
         </Slider>
       </div>)}

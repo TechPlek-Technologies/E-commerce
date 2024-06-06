@@ -12,16 +12,16 @@ const BlogSection = () => {
         <div className="col-xl-4 col-md-6">
           <div className="news-item wow fadeInUp delay-0-2s">
             <div className="image">
-              <img src="assets/images/news/news1.jpg" alt="News" />
+              <img src="/assets/img/blog/Vedarma-blog.jpg" alt="News" />
               <span className="date">
                 <b>25</b> July
               </span>
             </div>
             <div className="content">
-              <span className="sub-title">Vegetable</span>
+              <span className="sub-title">NEEM OIL</span>
               <h4>
                 <Link href="/">
-                  Unicode UTF8 Character Sets They Sltimate Guide Systems
+                BENEFITS OF NEEM OIL FOR HAIR PROBLEMS
                 </Link>
               </h4>
               <Link href="/">
@@ -35,16 +35,16 @@ const BlogSection = () => {
         <div className="col-xl-4 col-md-6">
           <div className="news-item wow fadeInUp delay-0-4s">
             <div className="image">
-              <img src="assets/images/news/news2.jpg" alt="News" />
+              <img src="/assets/img/blog/Vedarma-blog2.jpg" alt="News" />
               <span className="date">
                 <b>25</b> July
               </span>
             </div>
             <div className="content">
-              <span className="sub-title">Farming</span>
+              <span className="sub-title">Ayurvedic Medicines</span>
               <h4>
                 <Link href="/">
-                  Quality Foods Requirments For Every Human Body’s
+                Your Ultimate Guide To Buy Ayurvedic Medicines Online In India.
                 </Link>
               </h4>
               <Link href="/">
@@ -58,16 +58,16 @@ const BlogSection = () => {
         <div className="col-xl-4 col-md-6">
           <div className="news-item wow fadeInUp delay-0-6s">
             <div className="image">
-              <img src="assets/images/news/news3.jpg" alt="News" />
+              <img src="/assets/img/blog/Vedarma-blog3.jpg" alt="News" />
               <span className="date">
                 <b>25</b> July
               </span>
             </div>
             <div className="content">
-              <span className="sub-title">Organic Fruits</span>
+              <span className="sub-title"> History</span>
               <h4>
                 <Link href="/">
-                  Choose Awesome Vegetables For Your Daily Life Routine
+                History Of Ayurveda: A Brief Overview (In Hindi)
                 </Link>
               </h4>
               <Link href="/">
@@ -84,4 +84,4 @@ const BlogSection = () => {
   )
 }
 
-export default BlogSection
+export default BlogSection;
