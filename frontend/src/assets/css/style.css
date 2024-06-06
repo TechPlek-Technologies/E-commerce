@@ -7354,7 +7354,8 @@ blockquote {
 .footer-logo a {
   background: white;
   border-radius: 7px;
-  padding: 20px 35px;
+  /* padding: 20px 35px; */
+  padding: 20px 35px 20px 0;
   display: inline-block; }
 
 .contact-widget {

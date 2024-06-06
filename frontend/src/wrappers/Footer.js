@@ -18,9 +18,9 @@ const Footer = () => {
   return (
     <footer className="main-footer bg-green text-white">
       <div className="container-fluid px-5">
-        <div className="footer-top-newsletter py-20 mb-75">
+        <div className="footer-top-newsletter py-45 mb-75">
           <div className="section-title">
-            <h2>Newsletter Subscribe</h2>
+            <h2 style={{fontSize:"42px",fontWeight:"500"}}>Newsletter Subscribe</h2>
           </div>
           <form onSubmit={(e) => e.preventDefault()} action="#">
             <input type="email" placeholder="Email Address" required="" />
@@ -31,18 +31,17 @@ const Footer = () => {
         </div>
         <div className="row justify-content-center">
           <div className="col-lg-4 col-md-6 order-md-1">
-            <div className="footer-widget about-widget text-center">
+            <div className="footer-widget about-widget text-left">
               <div className="footer-logo mb-30">
-                <Link href="/">
-                  <a>
+                <Link href="/" style={{background:"#204d00"}}> 
                     <img
+                    style={{width:"250px"}}
                       alt={logo ? logo[0].name : "Logo"}
                       src={logo ? logo[0].url : ""}
                     />
-                  </a>
                 </Link>
               </div>
-              <p>{description ? description : ""}</p>
+              <p className="mb-70">{description ? description : ""}</p>
               <div className="social-style-two pt-10">
                 <Link>
                   <a href={social ? social.facebook : ""}>
