@@ -717,7 +717,9 @@ a.theme-btn {
 
 /* Color + Background */
 .bg-green {
-  background-color: #227200; }
+  /* background-color: #227200;  */
+  background-color: #204d00;
+}
 
 .bg-light-green {
   background-color: #76a713; }
@@ -4067,10 +4069,13 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
 .category-item-two {
   text-align: center;
   margin-bottom: 30px;
-  padding: 25px 20px 30px;
-  border: 1px solid rgba(118, 167, 19, 0.15); }
+  /* padding: 25px 20px 30px; */
+  padding: 15px 35px 17px;
+  /* border: 1px solid rgba(118, 167, 19, 0.15); */
+ }
   .category-item-two .image {
-    height: 100px;
+    /* height: 100px; */
+    height: 150px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

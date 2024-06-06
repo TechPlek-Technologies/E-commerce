@@ -17,8 +17,8 @@ const Footer = () => {
 
   return (
     <footer className="main-footer bg-green text-white">
-      <div className="container">
-        <div className="footer-top-newsletter py-80 mb-75">
+      <div className="container-fluid px-5">
+        <div className="footer-top-newsletter py-20 mb-75">
           <div className="section-title">
             <h2>Newsletter Subscribe</h2>
           </div>
