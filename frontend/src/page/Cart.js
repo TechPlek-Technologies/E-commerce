@@ -1,16 +1,14 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import SEO from "../components/Seo";
 import LayoutOne from "../layouts/LayoutOne";
-import { cartItemStock, getDiscountPrice } from "../helpers/product";
-import { addToCart, decreaseQuantity, deleteAllFromCart, deleteFromCart } from "../redux/slice/cart-slice";
+import {  decreaseQuantity, deleteAllFromCart, deleteFromCart, increaseQuantity } from "../redux/slice/cart-slice";
 import { currency } from "../helpers/currency";
 
 const Cart = () => {
   let cartTotalPrice = 0;
 
-  const [quantityCount] = useState(1);
   const dispatch = useDispatch();
   
   const { cartItems } = useSelector((state) => state.cart);
@@ -57,9 +55,9 @@ console.log(cartItems);
 
                             discountedPrice != null
                               ? (cartTotalPrice +=
-                                  finalDiscountedPrice * cartItem.quantity)
+                                  finalDiscountedPrice * cartItem.cartQuantity)
                               : (cartTotalPrice +=
-                                  finalProductPrice * cartItem.quantity);
+                                  finalProductPrice * cartItem.cartQuantity);
                             return (
                               <tr key={key}>
                                 <td className="product-thumbnail">
@@ -67,7 +65,7 @@ console.log(cartItems);
                                     to={
                                       process.env.PUBLIC_URL +
                                       "/product/" +
-                                      cartItem.id
+                                      cartItem.slug
                                     }
                                   >
                                     <img
@@ -83,7 +81,7 @@ console.log(cartItems);
                                     to={
                                       process.env.PUBLIC_URL +
                                       "/product/" +
-                                      cartItem.id
+                                      cartItem.slug
                                     }
                                   >
                                     {cartItem.name}
@@ -136,26 +134,13 @@ console.log(cartItems);
                                     <input
                                       className="cart-plus-minus-box"
                                       type="text"
-                                      value={cartItem.quantity}
+                                      value={cartItem.cartQuantity}
                                       readOnly
                                     />
                                     <button
                                       className="inc qtybutton"
                                       onClick={() =>
-                                        dispatch(addToCart({
-                                          ...cartItem,
-                                          quantity: quantityCount
-                                        }))
-                                      }
-                                      disabled={
-                                        cartItem !== undefined &&
-                                        cartItem.quantity &&
-                                        cartItem.quantity >=
-                                          cartItemStock(
-                                            cartItem,
-                                            cartItem.selectedProductColor,
-                                            cartItem.selectedProductSize
-                                          )
+                                        dispatch(increaseQuantity(cartItem))
                                       }
                                     >
                                       +
@@ -166,11 +151,11 @@ console.log(cartItems);
                                   {discountedPrice !== null
                                     ? currency.currencySymbol +
                                       (
-                                        finalDiscountedPrice * cartItem.quantity
+                                        finalDiscountedPrice * cartItem.cartQuantity
                                       ).toFixed(2)
                                     : currency.currencySymbol +
                                       (
-                                        finalProductPrice * cartItem.quantity
+                                        finalProductPrice * cartItem.cartQuantity
                                       ).toFixed(2)}
                                 </td>
 
@@ -196,7 +181,7 @@ console.log(cartItems);
                     <div className="cart-shiping-update-wrapper">
                       <div className="cart-shiping-update">
                         <Link
-                          to={process.env.PUBLIC_URL + "/shop-grid-standard"}
+                          to={process.env.PUBLIC_URL + "/shop"}
                         >
                           Continue Shopping
                         </Link>

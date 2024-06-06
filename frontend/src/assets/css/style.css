@@ -5620,7 +5620,10 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
   position: relative;
   margin-bottom: 30px;
   padding: 40px 50px 25px;
-  background: #f3f3f3; }
+  background: #f3f3f3;
+  border: solid 8px #fff;
+  border-radius: 20px;
+ }
   @media only screen and (max-width: 991px) {
     .feedback-item.style-two {
       max-width: 630px; } }

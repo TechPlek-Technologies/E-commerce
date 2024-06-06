@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import SEO from "../components/Seo";
 import LayoutOne from "../layouts/LayoutOne";
-import { getDiscountPrice } from "../helpers/product";
 import { addToCart } from "../redux/slice/cart-slice";
 import { deleteAllFromWishlist, deleteFromWishlist } from "../redux/slice/wishlist-slice";
 import { currency } from "../helpers/currency";
@@ -13,7 +12,7 @@ const Wishlist = () => {
   
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { cartItems } = useSelector((state) => state.cart);
-  
+
 
   return (
     <Fragment>
@@ -44,10 +43,7 @@ const Wishlist = () => {
                         </thead>
                         <tbody>
                           {wishlistItems.map((wishlistItem, key) => {
-                            const discountedPrice = getDiscountPrice(
-                              wishlistItem.price,
-                              wishlistItem.discount
-                            );
+                            const discountedPrice =wishlistItem.discount;
                             const finalProductPrice = (
                               wishlistItem.price * currency.currencyRate
                             ).toFixed(2);
@@ -55,7 +51,7 @@ const Wishlist = () => {
                               discountedPrice * currency.currencyRate
                             ).toFixed(2);
                             const cartItem = cartItems.find(
-                              item => item.id === wishlistItem.id
+                              item => item._id === wishlistItem._id
                             );
                             return (
                               <tr key={key}>
@@ -64,16 +60,16 @@ const Wishlist = () => {
                                     to={
                                       process.env.PUBLIC_URL +
                                       "/product/" +
-                                      wishlistItem.id
+                                      wishlistItem.slug
                                     }
                                   >
                                     <img
                                       className="img-fluid"
                                       src={
                                         process.env.PUBLIC_URL +
-                                        wishlistItem.image[0]
+                                        wishlistItem.image[0].url
                                       }
-                                      alt=""
+                                      alt={wishlistItem.image[0].name}
                                     />
                                   </Link>
                                 </td>
@@ -83,7 +79,7 @@ const Wishlist = () => {
                                     to={
                                       process.env.PUBLIC_URL +
                                       "/product/" +
-                                      wishlistItem.id
+                                      wishlistItem.slug
                                     }
                                   >
                                     {wishlistItem.name}
@@ -123,34 +119,32 @@ const Wishlist = () => {
                                   ) : wishlistItem.variation &&
                                     wishlistItem.variation.length >= 1 ? (
                                     <Link
-                                      to={`${process.env.PUBLIC_URL}/product/${wishlistItem.id}`}
+                                      to={`${process.env.PUBLIC_URL}/product/${wishlistItem.slug}`}
                                     >
                                       Select option
                                     </Link>
-                                  ) : wishlistItem.stock &&
-                                    wishlistItem.stock > 0 ? (
+                                  ) :wishlistItem !== undefined && wishlistItem.quantity > 0  ?  (
                                     <button
                                       onClick={() =>
                                         dispatch(addToCart(wishlistItem))
                                       }
                                       className={
-                                        cartItem !== undefined &&
-                                        cartItem.quantity > 0
+                                        cartItem !== undefined && cartItem.cartQuantity > 0
                                           ? "active"
                                           : ""
                                       }
                                       disabled={
                                         cartItem !== undefined &&
-                                        cartItem.quantity > 0
+                                        cartItem.cartQuantity > 0
                                       }
                                       title={
-                                        wishlistItem !== undefined
+                                        cartItem !== undefined
                                           ? "Added to cart"
                                           : "Add to cart"
                                       }
                                     >
                                       {cartItem !== undefined &&
-                                      cartItem.quantity > 0
+                                      cartItem.cartQuantity > 0
                                         ? "Added"
                                         : "Add to cart"}
                                     </button>
@@ -164,7 +158,7 @@ const Wishlist = () => {
                                 <td className="product-remove">
                                   <button
                                     onClick={() =>
-                                      dispatch(deleteFromWishlist(wishlistItem.id))
+                                      dispatch(deleteFromWishlist(wishlistItem._id))
                                     }
                                   >
                                     <i className="fa fa-times"></i>
