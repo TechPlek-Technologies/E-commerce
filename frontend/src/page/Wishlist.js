@@ -1,17 +1,16 @@
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SEO from "../components/Seo";
 import LayoutOne from "../layouts/LayoutOne";
 import { getDiscountPrice } from "../helpers/product";
 import { addToCart } from "../redux/slice/cart-slice";
 import { deleteAllFromWishlist, deleteFromWishlist } from "../redux/slice/wishlist-slice";
+import { currency } from "../helpers/currency";
 
 const Wishlist = () => {
   const dispatch = useDispatch();
-  let { pathname } = useLocation();
   
-  const currency = useSelector((state) => state.currency);
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { cartItems } = useSelector((state) => state.cart);
   

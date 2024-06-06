@@ -104,12 +104,12 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link href="/shop">
                     <a>Shop</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link to={process.env.PUBLIC_URL + "/hair-problems"}>
                     <a>Shop By Concern</a>
                   </Link>
                 </li>

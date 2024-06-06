@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getDiscountPrice } from "../../helpers/product";
 import { deleteFromCart } from "../../redux/slice/cart-slice";
+import { currency } from "../../helpers/currency";
 
 const MenuCart = () => {
   const dispatch = useDispatch();
-  const currency = useSelector((state) => state.currency);
   const { cartItems } = useSelector((state) => state.cart);
   let cartTotalPrice = 0;
-
+ 
   return (
     <div className="shopping-cart-content">
       {cartItems && cartItems.length > 0 ? (

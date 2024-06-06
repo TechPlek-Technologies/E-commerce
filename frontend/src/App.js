@@ -19,7 +19,6 @@ import Privacy from "./page/Privacy";
 import TermsAndCondition from "./page/TermsAndCondition";
 import Refund from "./page/Refund";
 import ContactUs from "./page/ContactUs";
-import { useAllHomeData } from "./utils/home-utils";
 import Cart from "./page/Cart";
 import Compare from "./page/Compare";
 import Wishlist from "./page/Wishlist";
@@ -27,6 +26,9 @@ import Shop from "./page/Shop";
 import { fetchProducts } from "./redux/slice/product-silce";
 import { setLoading } from "./redux/slice/loading-slice";
 import DiabetesCare from "./page/DiabetesCare";
+import HairProblems from "./page/HairProblems";
+import ProductDetails from "./page/ProductDetails";
+import Checkout from "./page/Checkout";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,12 +46,9 @@ function App() {
     };
 
     fetchData();
-  }, [dispatch,loading]);
+  }, [dispatch, loading]);
 
   const color = useSetting("color");
-
-
-  console.log("useAllHomeData",useAllHomeData());
 
   useEffect(() => {
     if (color) {
@@ -85,20 +84,29 @@ function App() {
             }
           >
             <Routes>
+              <Route path={"/product/:slug"} element={<ProductDetails />} />
+              <Route path={"/checkout"} element={<Checkout />} />
               <Route path={"/"} element={<Home />} />
               <Route path={"/home"} element={<Home />} />
               <Route path={"/login-register"} element={<LoginRegister />} />
               <Route path={"/my-account"} element={<MyAccount />} />
               <Route path={"/about"} element={<About />} />
-                <Route path={"/privacy-policy"} element={<Privacy/>} />
-                <Route path={"/terms-and-conditions"} element={<TermsAndCondition/>} />
-                <Route path={"/cancellation-refund-policy"} element={<Refund/>} />
-                <Route path={"/contact-us"} element={<ContactUs/>} />
+              <Route path={"/privacy-policy"} element={<Privacy />} />
+              <Route
+                path={"/terms-and-conditions"}
+                element={<TermsAndCondition />}
+              />
+              <Route
+                path={"/cancellation-refund-policy"}
+                element={<Refund />}
+              />
+              <Route path={"/contact-us"} element={<ContactUs />} />
               <Route path={"/cart"} element={<Cart />} />
               <Route path={"/compare"} element={<Compare />} />
               <Route path={"/wishlist"} element={<Wishlist />} />
               <Route path={"/shop"} element={<Shop />} />
-              <Route path={"/diabetes-care"} element={<DiabetesCare/>} />
+              <Route path={"/diabetes-care"} element={<DiabetesCare />} />
+              <Route path={"/hair-problems"} element={<HairProblems/>} />
             </Routes>
           </Suspense>
         </ScrollToTop>

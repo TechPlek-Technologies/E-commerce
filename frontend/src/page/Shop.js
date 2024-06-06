@@ -7,6 +7,7 @@ import { getSortedProducts } from "../helpers/product";
 import SEO from "../components/Seo";
 import LayoutOne from "../layouts/LayoutOne";
 import ShopProducts from "../components/product/ShopProucts";
+import ShopTopbar from "../components/product/ShopTopbar";
 
 const Shop = () => {
   const [layout, setLayout] = useState("grid three-column");
@@ -19,9 +20,8 @@ const Shop = () => {
   const [currentData, setCurrentData] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const { products } = useSelector((state) => state.products);
-console.log(products);
 
-  const pageLimit = 15;
+  const pageLimit = 9;
   let { pathname } = useLocation();
 
   const getLayout = layout => {
@@ -70,12 +70,12 @@ console.log(products);
             <div className="row">
               <div className="col-lg-12">
                 {/* shop topbar default */}
-                {/* <ShopTopbar
+                <ShopTopbar
                   getLayout={getLayout}
                   getFilterSortParams={getFilterSortParams}
                   productCount={products.length}
                   sortedProductCount={currentData.length}
-                /> */}
+                />
 
                 {/* shop page content default */}
                 <ShopProducts layout={layout} products={currentData} />

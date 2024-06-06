@@ -4,21 +4,24 @@
       "para": [
         "Sit amet consectetur adipiscing elit eiusmod tempor incididunt"
       ],
-      "name":"Michael D. Foreman"
+      "name":"Michael D. Foreman",
+      "image": "/assets/img/brand-logo/haccp.webp"
     },
     {
       "id": "2",
       "para": [
         "Sit amet consectetur adipiscing elit eiusmod tempor incididunt"
       ],
-      "name":"Michael D. Foreman"
+      "name":"Michael D. Foreman",
+      "image": "/assets/img/brand-logo/haccp.webp"
     },
     {
       "id": "3",
       "para": [
         "Sit amet consectetur adipiscing elit eiusmod tempor incididunt"
       ],
-      "name":"Michael D. Foreman"
+      "name":"Michael D. Foreman",
+      "image": "/assets/img/brand-logo/haccp.webp"
     }
   ]
   

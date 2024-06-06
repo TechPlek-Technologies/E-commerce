@@ -80,6 +80,7 @@ export default async function apiHandler(req, res) {
         const attributes = JSON.parse(attribute);
         const variants = JSON.parse(variant);
         const seoData = JSON.parse(seo);
+        const discountPercentage = JSON.parse(sale_price);
         const discount = (main_price - (sale_price / 100) * main_price).toFixed(
           1
         );
@@ -92,6 +93,7 @@ export default async function apiHandler(req, res) {
           unitValue: unit_val.trim(),
           price: main_price,
           discount,
+          discountPercentage:discountPercentage,
           shortDescription: short_description.trim(),
           description,
           type,

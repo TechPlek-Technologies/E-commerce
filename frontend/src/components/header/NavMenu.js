@@ -35,7 +35,7 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
           </li>
 
          <li>
-            <Link to={process.env.PUBLIC_URL + "/"}>
+            <Link to={process.env.PUBLIC_URL + "#"}>
               {t("shop_by_concern")}
               {sidebarMenu ? (
                 <span>
@@ -52,7 +52,7 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
                 </Link>
               </li>
               <li>
-                <Link to={process.env.PUBLIC_URL + "/"}>
+                <Link to={process.env.PUBLIC_URL + "/hair-problems"}>
                   {t("hair_problems")}
                 </Link>
               </li>

@@ -5,6 +5,7 @@ import SEO from "../components/Seo";
 import LayoutOne from "../layouts/LayoutOne";
 import { cartItemStock, getDiscountPrice } from "../helpers/product";
 import { addToCart, decreaseQuantity, deleteAllFromCart, deleteFromCart } from "../redux/slice/cart-slice";
+import { currency } from "../helpers/currency";
 
 const Cart = () => {
   let cartTotalPrice = 0;
@@ -12,9 +13,8 @@ const Cart = () => {
   const [quantityCount] = useState(1);
   const dispatch = useDispatch();
   
-  const currency = useSelector((state) => state.currency);
   const { cartItems } = useSelector((state) => state.cart);
-
+console.log(cartItems);
   return (
     <Fragment>
       <SEO
@@ -46,10 +46,8 @@ const Cart = () => {
                         </thead>
                         <tbody>
                           {cartItems.map((cartItem, key) => {
-                            const discountedPrice = getDiscountPrice(
-                              cartItem.price,
-                              cartItem.discount
-                            );
+                            const discountedPrice =cartItem.discount
+                            ;
                             const finalProductPrice = (
                               cartItem.price * currency.currencyRate
                             ).toFixed(2);
@@ -74,11 +72,8 @@ const Cart = () => {
                                   >
                                     <img
                                       className="img-fluid"
-                                      src={
-                                        process.env.PUBLIC_URL +
-                                        cartItem.image[0]
-                                      }
-                                      alt=""
+                                      src={cartItem.image[0].url}
+                                      alt={cartItem.image[0].name}
                                     />
                                   </Link>
                                 </td>
