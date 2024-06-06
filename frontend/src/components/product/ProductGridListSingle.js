@@ -91,18 +91,18 @@ const ProductGridListSingle = ({
                   <button
                     onClick={() => dispatch(addToCart(product))}
                     className={
-                      cartItem !== undefined && cartItem.quantity > 0
+                      cartItem !== undefined && cartItem.cartQuantity > 0
                         ? "active"
                         : ""
                     }
-                    disabled={cartItem !== undefined && cartItem.quantity > 0}
+                    disabled={cartItem !== undefined && cartItem.cartQuantity > 0}
                     title={
                       cartItem !== undefined ? "Added to cart" : "Add to cart"
                     }
                   >
                     {" "}
                     <i className="pe-7s-cart"></i>{" "}
-                    {cartItem !== undefined && cartItem.quantity > 0
+                    {cartItem !== undefined && cartItem.cartQuantity > 0
                       ? "Added"
                       : "Add to cart"}
                   </button>
@@ -299,7 +299,7 @@ const ProductGridListSingle = ({
           </div>
         </div>
       {/* product modal */}
-      <ProductModal
+      {/* <ProductModal
         show={modalShow}
         onHide={() => setModalShow(false)}
         product={product}
@@ -309,7 +309,7 @@ const ProductGridListSingle = ({
         finalDiscountedPrice={finalDiscountedPrice}
         wishlistItem={wishlistItem}
         compareItem={compareItem}
-      />
+      /> */}
     </Fragment>
   );
 };

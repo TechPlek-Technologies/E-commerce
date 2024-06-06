@@ -9,17 +9,13 @@ const MenuCart = () => {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
   let cartTotalPrice = 0;
- 
   return (
     <div className="shopping-cart-content">
       {cartItems && cartItems.length > 0 ? (
         <Fragment>
           <ul>
             {cartItems.map((item) => {
-              const discountedPrice = getDiscountPrice(
-                item.price,
-                item.discount
-              );
+              const discountedPrice =item.discount;
               const finalProductPrice = (
                 item.price * currency.currencyRate
               ).toFixed(2);
@@ -28,16 +24,16 @@ const MenuCart = () => {
               ).toFixed(2);
 
               discountedPrice != null
-                ? (cartTotalPrice += finalDiscountedPrice * item.quantity)
-                : (cartTotalPrice += finalProductPrice * item.quantity);
+                ? (cartTotalPrice += finalDiscountedPrice * item.cartQuantity)
+                : (cartTotalPrice += finalProductPrice * item.cartQuantity);
 
               return (
                 <li className="single-shopping-cart" key={item.cartItemId}>
                   <div className="shopping-cart-img">
-                    <Link to={process.env.PUBLIC_URL + "/product/" + item.id}>
+                    <Link to={process.env.PUBLIC_URL + "/product/" + item.slug}>
                       <img
-                        alt=""
-                        src={process.env.PUBLIC_URL + item.image[0]}
+                        alt={item.image[0].name}
+                        src={process.env.PUBLIC_URL + item.image[0].url}
                         className="img-fluid"
                       />
                     </Link>
@@ -45,13 +41,13 @@ const MenuCart = () => {
                   <div className="shopping-cart-title">
                     <h4>
                       <Link
-                        to={process.env.PUBLIC_URL + "/product/" + item.id}
+                        to={process.env.PUBLIC_URL + "/product/" + item.slug}
                       >
                         {" "}
                         {item.name}{" "}
                       </Link>
                     </h4>
-                    <h6>Qty: {item.quantity}</h6>
+                    <h6>Qty: {item.cartQuantity}</h6>
                     <span>
                       {discountedPrice !== null
                         ? currency.currencySymbol + finalDiscountedPrice

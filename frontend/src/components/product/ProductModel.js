@@ -15,14 +15,15 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
 
+  console.log(product);
   const [selectedProductColor, setSelectedProductColor] = useState(
-    product.variation ? product.variation[0].color : ""
+    product.variants ? product.variants[0].color : ""
   );
   const [selectedProductSize, setSelectedProductSize] = useState(
-    product.variation ? product.variation[0].size[0].name : ""
+    product.variants ? product.variants[0].attr : ""
   );
   const [productStock, setProductStock] = useState(
-    product.variation ? product.variation[0].size[0].stock : product.stock
+    product.variants ? product.variants[0].qty : product.stock
   );
   const [quantityCount, setQuantityCount] = useState(1);
   const productCartQty = getProductCartQuantity(
@@ -75,9 +76,9 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
                     <SwiperSlide key={i}>
                       <div className="single-image">
                         <img
-                          src={process.env.PUBLIC_URL + img}
+                          src={img.src}
                           className="img-fluid"
-                          alt="Product"
+                          alt={img.name}
                         />
                       </div>
                     </SwiperSlide>
@@ -93,9 +94,9 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
                     <SwiperSlide key={i}>
                       <div className="single-image">
                         <img
-                          src={process.env.PUBLIC_URL + img}
+                          src={img.src}
                           className="img-fluid"
-                          alt=""
+                          alt={img.name}
                         />
                       </div>
                     </SwiperSlide>
@@ -134,12 +135,12 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
               <p>{product.shortDescription}</p>
             </div>
 
-            {product.variation ? (
+            {product.variants ? (
               <div className="pro-details-size-color">
                 <div className="pro-details-color-wrap">
                   <span>Color</span>
                   <div className="pro-details-color-content">
-                    {product.variation.map((single, key) => {
+                    {product.variants.map((single, key) => {
                       return (
                         <label
                           className={`pro-details-color-content--single ${single.color}`}
@@ -156,8 +157,8 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
                             }
                             onChange={() => {
                               setSelectedProductColor(single.color);
-                              setSelectedProductSize(single.size[0].name);
-                              setProductStock(single.size[0].stock);
+                              setSelectedProductSize(single.attr);
+                              setProductStock(single.qty);
                               setQuantityCount(1);
                             }}
                           />
@@ -170,8 +171,8 @@ function ProductModal({ product, currency, discountedPrice, finalProductPrice, f
                 <div className="pro-details-size">
                   <span>Size</span>
                   <div className="pro-details-size-content">
-                    {product.variation &&
-                      product.variation.map(single => {
+                    {product.variants &&
+                      product.variants.map(single => {
                         return single.color === selectedProductColor
                           ? single.size.map((singleSize, key) => {
                               return (
