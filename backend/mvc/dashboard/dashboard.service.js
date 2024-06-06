@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const attributesModel = require("../attributes/attributes.model");
 const categoryModel = require("../category/category.model");
 const colorsModel = require("../colors/colors.model");

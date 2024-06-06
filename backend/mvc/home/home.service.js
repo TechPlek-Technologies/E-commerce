@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const brandModel = require("../brand/brand.model");
 const categoryModel = require("../category/category.model");
 const orderModel = require("../orders/order.model");

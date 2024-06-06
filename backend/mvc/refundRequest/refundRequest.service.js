@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const { deleteFiles } = require("../../utils/functions");
 const orderModel = require("../orders/order.model");
 const refundModel = require("./refundRequest.model");

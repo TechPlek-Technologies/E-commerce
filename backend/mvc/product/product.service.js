@@ -1,5 +1,4 @@
 const customId = require("custom-id-new");
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const { convertToSlug, deleteFiles } = require("../../utils/functions");
 const { Types } = require("mongoose");
 const ProductModel = require("./product.model");

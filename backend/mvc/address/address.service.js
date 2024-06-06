@@ -1,5 +1,4 @@
 const { default: xss } = require("xss");
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const userModel = require("../user/user.model");
 
 module.exports = {

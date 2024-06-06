@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const notificationModel = require("./notification.model");
 
 module.exports = {

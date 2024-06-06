@@ -1,5 +1,4 @@
 const bcrypt = require("bcryptjs");
-const { dbConnect, dbDisconnect } = require("../../../utils/dbConnect");
 const userModel = require("../user.model");
 
 module.exports = {

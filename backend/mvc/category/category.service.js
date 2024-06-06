@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const { convertToSlug, deleteFiles } = require("../../utils/functions");
 const { parseForm } = require("../../utils/parseForm");
 const categoryModel = require("../category/category.model");

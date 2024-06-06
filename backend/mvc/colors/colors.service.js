@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const colorModel = require("./colors.model");
 
 module.exports = {
