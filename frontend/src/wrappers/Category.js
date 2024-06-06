@@ -67,7 +67,7 @@ const Category = () => {
 
       
   return (
-    <section className="category-section-two pt-100 rpt-70 pb-20">
+    <section className="category-section-two pt-40 rpt-70 pb-20">
         <div className="container">
           <Slider {...categoryActive} className="category-active">
 
