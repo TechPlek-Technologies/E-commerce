@@ -41,7 +41,7 @@ app.use(errorHandler);
 
 // start server
 const port =
-  process.env.NODE_ENV === "production" ? process.env.PORT  : process.env.DEV_PORT ?process.env.DEV_PORT:5000 ;
+  process.env.NODE_ENV === "production" ? process.env.PORT  : process.env.DEV_PORT ?process.env.DEV_PORT:10000 ;
 
 app.listen(port, (err) => {
   if (err) throw err;
