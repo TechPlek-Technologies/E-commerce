@@ -7,7 +7,7 @@ const FeatureArea = () => {
     const {footerBanner=[] }=useAllSetting() || {};
 
   return (
-    <section className="feature-three-area pb-40">
+    <section className="feature-three-area">
     <div className="container-fluid">
       <div className="feature-three-inner">
         <div className="feature-two-item wow fadeInUp delay-0-2s">

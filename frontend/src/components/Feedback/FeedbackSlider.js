@@ -11,8 +11,9 @@ const FeedbackSlider = () => {
       speed: 400,
       arrows: false,
       dots: false,
-      autoplay: false,
-      autoplaySpeed: 2000,
+      autoplay: true,
+      pauseOnHover:false,
+      autoplaySpeed: 3000,
       beforeChange: (current, next) => setSlideIndex((next / 2) * 100),
     };
       
@@ -20,7 +21,7 @@ const FeedbackSlider = () => {
     <Fragment>
          {FeedbackData && (
       <div className="feedback-content-area rmb-65 wow fadeInLeft delay-0-2s">
-        <div className="section-title mb-10">
+        <div className="section-title text-center mb-10">
           <h2>WHAT PEOPLE SAY</h2>
         </div>
 
