@@ -13,7 +13,7 @@ const corsOptions = {
   credentials: true, // This allows the server to accept cookies and other credentials
 };
 
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(cookieParser());
 connection();
 app.use("/", (req,res)=>{
