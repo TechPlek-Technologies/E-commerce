@@ -16,9 +16,7 @@ const corsOptions = {
 app.use(cors())
 app.use(cookieParser());
 connection();
-app.use("/", (req,res)=>{
-  res.send("Welcome to Homepage API")
-});
+
 app.use("/auth", require("./mvc/user/auth/auth.controller"));
 app.use("/profile", require("./mvc/user/profile/profile.controller"));
 app.use("/dashboard", require("./mvc/dashboard/dashboard.controller"));

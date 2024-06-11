@@ -56,6 +56,8 @@ function App() {
       const styleElement = document.createElement("style");
       styleElement.innerHTML = cssVariables;
       document.head.appendChild(styleElement);
+    }else{
+      setLoading(false)
     }
   }, [color,dispatch]);
 
