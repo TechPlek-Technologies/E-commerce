@@ -47,7 +47,7 @@ const ClientLogoSlider = () => {
   return (
     <Fragment>
       {ClientLogoData && (
-      <Slider {...clientLogo} className="client-logo-wrap py-60">
+      <Slider {...clientLogo} className="client-logo-wrap py-40">
       {ClientLogoData.map((single, key) => (
         <div className="client-logo-item" key={key}>
           <Link href="/contact">

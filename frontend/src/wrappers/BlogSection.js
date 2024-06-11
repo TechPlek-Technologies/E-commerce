@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const BlogSection = () => {
   return (
-    <section className="news-section pt-20 rpt-100 pb-70 rpb-40">
+    <section className="news-section pt-20 rpt-100 pb-20 rpb-40">
     <div className="container">
-      <div className="section-title text-center mb-60">
+      <div className="section-title text-center mb-40">
         <h2>Latest News &amp; Blog</h2>
       </div>
       <div className="row justify-content-center">
