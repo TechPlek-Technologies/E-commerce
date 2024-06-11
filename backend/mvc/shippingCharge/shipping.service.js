@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const shippingModel = require("./shipping.model");
 
 module.exports = {

@@ -9,13 +9,14 @@ const connection = require("./utils/connection");
 const app = express();
 app.use(express.json());
 const corsOptions = {
-  origin: ['http://localhost:8081',"http://localhost:3000"], // Replace with your client URL
+  origin: ["https://e-commerce-1-0ff7.onrender.com","https://e-commerce-yqol.onrender.com"], // Replace with your client URL
   credentials: true, // This allows the server to accept cookies and other credentials
 };
 
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(cookieParser());
 connection();
+
 app.use("/auth", require("./mvc/user/auth/auth.controller"));
 app.use("/profile", require("./mvc/user/profile/profile.controller"));
 app.use("/dashboard", require("./mvc/dashboard/dashboard.controller"));
@@ -41,7 +42,7 @@ app.use(errorHandler);
 
 // start server
 const port =
-  process.env.NODE_ENV === "production" ? process.env.PORT  : process.env.DEV_PORT;
+  process.env.NODE_ENV === "production" ? process.env.PORT  : process.env.DEV_PORT ?process.env.DEV_PORT:10000 ;
 
 app.listen(port, (err) => {
   if (err) throw err;

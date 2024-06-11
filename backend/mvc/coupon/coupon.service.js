@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const couponModel = require("./coupon.model");
 
 module.exports = {

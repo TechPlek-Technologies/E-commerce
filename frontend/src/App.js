@@ -49,15 +49,17 @@ function App() {
   }, [dispatch, loading]);
 
   const color = useSetting("color");
-
+  console.log(color);
   useEffect(() => {
     if (color) {
       const cssVariables = generateCssVariables(color);
       const styleElement = document.createElement("style");
       styleElement.innerHTML = cssVariables;
       document.head.appendChild(styleElement);
+    }else{
+      setLoading(false)
     }
-  }, [color]);
+  }, [color,dispatch]);
 
   if (loading) {
     return (
@@ -106,7 +108,7 @@ function App() {
               <Route path={"/wishlist"} element={<Wishlist />} />
               <Route path={"/shop"} element={<Shop />} />
               <Route path={"/diabetes-care"} element={<DiabetesCare />} />
-              <Route path={"/hair-problems"} element={<HairProblems/>} />
+              <Route path={"/hair-problems"} element={<HairProblems />} />
             </Routes>
           </Suspense>
         </ScrollToTop>

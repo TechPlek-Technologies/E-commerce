@@ -1,5 +1,4 @@
 const bcrypt = require("bcryptjs");
-const {dbConnect,dbDisconnect} = require("../../../utils/dbConnect");
 const userModel = require("../user.model");
 const { parseForm } = require("../../../utils/parseForm");
 const jwt = require("jsonwebtoken");
@@ -31,7 +30,6 @@ async function authenticateUser({ username, password }) {
         ? userData.isStaff
         : { status: false },
   }, authSecret, { expiresIn: 3 * 60 * 60 });
-  await dbDisconnect();
   return {token};
 }
 
@@ -50,5 +48,4 @@ async function registerUser(req) {
   const hash = await bcrypt.hash(password, salt);
   const userData = { name, email, hash, salt,isAdmin };
   await userModel.create(userData);
-  await dbDisconnect();
 }

@@ -1,4 +1,4 @@
-import GoogleMap from "../components/google-map";
+// import GoogleMap from "../components/google-map";
 import ContactForm from "../components/contact/ContactForm";
 import ContactService from "../components/contact/ContactService";
 
@@ -15,7 +15,7 @@ const ContactUsSection = () => {
           
         </div>
         <div className="contact-map mb-10 pt-20">
-          <GoogleMap lat={28.723465905623414} lng={77.12422076144072} />
+          {/* <GoogleMap lat={28.723465905623414} lng={77.12422076144072} /> */}
         </div>
       </div>
     </div>

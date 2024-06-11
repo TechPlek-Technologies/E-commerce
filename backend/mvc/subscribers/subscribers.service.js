@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const subscriberModel = require("./subscribers.model");
 
 module.exports = {

@@ -1,4 +1,3 @@
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const attrModel = require("./attributes.model");
 
 module.exports = {

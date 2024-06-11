@@ -1,5 +1,4 @@
 const customIdNew = require("custom-id-new");
-const { dbConnect, dbDisconnect } = require("../../utils/dbConnect");
 const brandModel = require("./brand.model");
 const { convertToSlug, deleteFiles } = require("../../utils/functions");
 
