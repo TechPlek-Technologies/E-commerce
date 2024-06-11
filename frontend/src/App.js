@@ -49,7 +49,7 @@ function App() {
   }, [dispatch, loading]);
 
   const color = useSetting("color");
-
+  console.log(color);
   useEffect(() => {
     if (color) {
       const cssVariables = generateCssVariables(color);
@@ -106,7 +106,7 @@ function App() {
               <Route path={"/wishlist"} element={<Wishlist />} />
               <Route path={"/shop"} element={<Shop />} />
               <Route path={"/diabetes-care"} element={<DiabetesCare />} />
-              <Route path={"/hair-problems"} element={<HairProblems/>} />
+              <Route path={"/hair-problems"} element={<HairProblems />} />
             </Routes>
           </Suspense>
         </ScrollToTop>
