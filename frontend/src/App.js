@@ -57,7 +57,7 @@ function App() {
       styleElement.innerHTML = cssVariables;
       document.head.appendChild(styleElement);
     }
-  }, [color]);
+  }, [color,dispatch]);
 
   if (loading) {
     return (
