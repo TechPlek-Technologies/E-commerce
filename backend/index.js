@@ -15,7 +15,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(cookieParser());
-connection();
+await connection();
 app.use("/auth", require("./mvc/user/auth/auth.controller"));
 app.use("/profile", require("./mvc/user/profile/profile.controller"));
 app.use("/dashboard", require("./mvc/dashboard/dashboard.controller"));
