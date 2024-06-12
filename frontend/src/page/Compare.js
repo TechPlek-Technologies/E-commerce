@@ -23,7 +23,7 @@ const Compare = () => {
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
       
-        <div className="compare-main-area pt-90 pb-100">
+        <div className="compare-main-area pt-40 pb-40">
           <div className="container">
             {compareItems && compareItems.length >= 1 ? (
               <div className="row">
