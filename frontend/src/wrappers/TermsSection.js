@@ -6,7 +6,7 @@ const TermsSection = () => {
   const page = usePage("termsPage");
 
   return (
-    <section className="who-we-are rel z-1 pt-40 rpt-100 rpy-100">
+    <section className="who-we-are rel z-1 pt-20 rpt-100 rpy-100">
     <div className="container">
       <div className="row align-items-center">
         <div>

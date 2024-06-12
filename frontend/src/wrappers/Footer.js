@@ -81,7 +81,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link to={process.env.PUBLIC_URL + "/shipping-and-delivery-policy"}>
                     <a>Shipping And Delivery Policy</a>
                   </Link>
                 </li>

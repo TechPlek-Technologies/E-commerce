@@ -16,7 +16,7 @@ const HairProblemSection = () => {
       // Set a timer to stop scrolling after 150ms
       timer = setTimeout(() => {
         setIsScrolling(false);
-      }, 150);
+      }, 1000000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -44,7 +44,7 @@ const HairProblemSection = () => {
                 <div id="dandruff">
                   <h3>Hair Problems And Their Treatments</h3>
                   <div>
-                    <div className="image pt-50 wow fadeInUp delay-0-2s">
+                    <div className="image pt-5 wow fadeInUp delay-0-2s">
                       <img
                         src="/assets/img/service-details/Dandruff-1.webp"
                         alt="Dandruff"
@@ -198,7 +198,7 @@ const HairProblemSection = () => {
 
                 {activeSection === 'Split Ends' && (
                 <div id="split-ends">
-                  <div className="image pt-10 wow fadeInUp delay-0-2s">
+                  <div className="image pt-5 wow fadeInUp delay-0-2s">
                     <img
                       src="/assets/img/service-details/Split-ends.jpg"
                       alt="Split-ends"
@@ -240,7 +240,7 @@ const HairProblemSection = () => {
 
                 {activeSection === 'Greasy Hair' && (
                 <div id="greasy-hair">
-                  <div className="image pt-10 wow fadeInUp delay-0-2s">
+                  <div className="image pt-5 wow fadeInUp delay-0-2s">
                     <img
                       src="/assets/img/service-details/Oily-scalp.webp"
                       alt="cause-of-diabetes"
@@ -289,7 +289,7 @@ const HairProblemSection = () => {
 
                 {activeSection === 'Hair Loss' && (
                 <div id="hair-loss">
-                  <div className="image pt-10 wow fadeInUp delay-0-2s">
+                  <div className="image pt-5 wow fadeInUp delay-0-2s">
                     <img
                       src="/assets/img/service-details/Hair-Loss.webp"
                       alt="cause-of-diabetes"
@@ -420,7 +420,7 @@ const HairProblemSection = () => {
 
                 {activeSection === 'Dry Hair' && (
                 <div id="dry-loss">
-                  <div className="image pt-10 wow fadeInUp delay-0-2s">
+                  <div className="image pt-5 wow fadeInUp delay-0-2s">
                     <img
                       src="/assets/img/service-details/Dry-Hair.webp"
                       alt="cause-of-diabetes"
@@ -533,7 +533,7 @@ const HairProblemSection = () => {
 
                 {activeSection === 'Premature Graying' && (
                 <div id="premature-graying">
-                  <div className="image pt-10 wow fadeInUp delay-0-2s">
+                  <div className="image pt-5 wow fadeInUp delay-0-2s">
                     <img
                       src="/assets/img/service-details/Premature-Graying.jpg"
                       alt="cause-of-diabetes"

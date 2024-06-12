@@ -431,7 +431,7 @@ a.theme-btn {
   color: #1a2428; }
   @media only screen and (min-width: 376px) {
     .list-style-two li {
-      font-size: 18px; } }
+      font-size: 16px; } }
   .list-style-two li:not(:last-child) {
     margin-bottom: 13px; }
   .list-style-two li:before {
@@ -6243,13 +6243,13 @@ blockquote {
 
 @media only screen and (min-width: 576px) {
   .service-details-content h3 {
-    font-size: 35px; } }
+    font-size: 32px; } }
 
 .service-details-content h4 {
-  font-size: 27px; }
+  font-size: 26px; }
 
 .service-details-content p {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 20px; }
 
 .service-details-content blockquote {
@@ -6865,8 +6865,8 @@ blockquote {
     color: #1a2428; }
 
 .service-sidebar .widget-menu li:not(:last-child) {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(118, 167, 19, 0.15); }
 
 .service-sidebar .widget-menu li a:not(:hover) {
