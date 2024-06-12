@@ -183,10 +183,10 @@
       "static/chunks/components_cookieContest_index_js.js"
     ]
   },
-  "dashboard\\blog\\[slug].js -> ~/components/BlogForm/blogEditForm": {
-    "id": "dashboard\\blog\\[slug].js -> ~/components/BlogForm/blogEditForm",
+  "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm": {
+    "id": "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm",
     "files": [
-      "static/chunks/components_BlogForm_blogEditForm_js.js"
+      "static/chunks/components_BlogForm_blogForm_js.js"
     ]
   },
   "dashboard\\blog\\index.js -> next/link": {
@@ -217,6 +217,18 @@
     "id": "dashboard\\blog\\index.js -> ~/components/tableFilter",
     "files": [
       "static/chunks/components_tableFilter_index_js.js"
+    ]
+  },
+  "dashboard\\categories\\create.js -> ~/components/FileUpload/fileUpload": {
+    "id": "dashboard\\categories\\create.js -> ~/components/FileUpload/fileUpload",
+    "files": [
+      "static/chunks/components_FileUpload_fileUpload_js.js"
+    ]
+  },
+  "dashboard\\categories\\create.js -> ~/components/Ui/Button": {
+    "id": "dashboard\\categories\\create.js -> ~/components/Ui/Button",
+    "files": [
+      "static/chunks/components_Ui_Button_index_js.js"
     ]
   }
 }

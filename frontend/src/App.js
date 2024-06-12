@@ -29,6 +29,8 @@ import DiabetesCare from "./page/DiabetesCare";
 import HairProblems from "./page/HairProblems";
 import ProductDetails from "./page/ProductDetails";
 import Checkout from "./page/Checkout";
+import ShippingPolicy from "./page/ShippingPolicy";
+import Blog from "./page/Blog";
 
 function App() {
   const dispatch = useDispatch();
@@ -109,6 +111,8 @@ function App() {
               <Route path={"/shop"} element={<Shop />} />
               <Route path={"/diabetes-care"} element={<DiabetesCare />} />
               <Route path={"/hair-problems"} element={<HairProblems />} />
+              <Route path={"/shipping-and-delivery-policy"} element={<ShippingPolicy />} />
+              <Route path={"/blog"} element={<Blog />} />
             </Routes>
           </Suspense>
         </ScrollToTop>

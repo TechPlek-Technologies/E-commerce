@@ -20,7 +20,7 @@ const Checkout = () => {
       />
       <LayoutOne headerTop="visible">
         
-        <div className="checkout-area pt-95 pb-100">
+        <div className="checkout-area pt-40 pb-40">
           <div className="container">
             {cartItems && cartItems.length >= 1 ? (
               <div className="row">

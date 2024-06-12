@@ -27,10 +27,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/dashboard/blog.js"
     ],
-    "/dashboard/blog/[slug]": [
+    "/dashboard/blog/create": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/dashboard/blog/[slug].js"
+      "static/chunks/pages/dashboard/blog/create.js"
+    ],
+    "/dashboard/categories/create": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/dashboard/categories/create.js"
     ]
   },
   "ampFirstPages": []

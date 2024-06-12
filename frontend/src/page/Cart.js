@@ -23,7 +23,7 @@ console.log(cartItems);
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
        
-        <div className="cart-main-area pt-90 pb-100">
+        <div className="cart-main-area pt-40 pb-40">
           <div className="container">
             {cartItems && cartItems.length >= 1 ? (
               <Fragment>

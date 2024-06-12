@@ -1,9 +1,9 @@
-import { usePage } from "../utils/page-utils";
+import React from 'react';
+import { usePage } from '../utils/page-utils';
 
+const ShippingSection = () => {
 
-const RefundSection = () => {
-
-    const page = usePage("returnPolicyPage");
+  const page = usePage("shippingPolicyPage");
 
   return (
     <section className="who-we-are rel z-1 pt-20 rpt-100 rpy-100">
@@ -24,4 +24,4 @@ const RefundSection = () => {
   )
 }
 
-export default RefundSection;
+export default ShippingSection;
