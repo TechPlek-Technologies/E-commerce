@@ -3882,7 +3882,9 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
   background-size: cover;
   z-index: 1;
   position: relative;
-  background-position: center; }
+  background-position: center; 
+  height: 300px;
+}
   .page-banner::before {
     position: absolute;
     content: "";
@@ -3896,7 +3898,7 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
 
 .banner-inner {
   position: relative;
-  padding: 40px 85px;
+  padding: 6px 85px;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
@@ -4308,7 +4310,8 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 30px;
-  border: 1px solid rgba(118, 167, 19, 0.15); }
+  /* border: 1px solid rgba(118, 167, 19, 0.15);  */
+}
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .about-feature-two {
       -ms-flex-wrap: wrap;
@@ -4331,14 +4334,14 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s; }
-  .about-feature-two:hover {
+  /* .about-feature-two:hover {
     border-radius: 10px;
     background: #76a713;
     border-color: #76a713; }
     .about-feature-two:hover h4,
     .about-feature-two:hover h4 a,
     .about-feature-two:hover .icon {
-      color: white; }
+      color: white; } */
   .about-feature-two.style-two {
     display: block;
     border-radius: 5px;

@@ -18,9 +18,9 @@ const WhyUsSection = () => {
                   <img src={single.image} />
                 </div>
                 <h4>
-                  <Link href="/">
-                    <a>{single.h4}</a>
-                  </Link>
+                 
+                    {single.h4}
+                  
                 </h4>
                 <p>{single.p}</p>
               </div>

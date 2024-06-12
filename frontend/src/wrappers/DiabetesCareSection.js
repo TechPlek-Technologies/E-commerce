@@ -34,7 +34,7 @@ const DiabetesCareSection = () => {
 
   return (
     <div>
-      <section className="service-details-page rel z-1 pt-65 rpt-35 pb-130 rpb-100">
+      <section className="service-details-page rel z-1 pt-40 rpt-35 pb-130 rpb-100">
         <div className="container">
           <div className="row">
             <div className="col-xl-9 mt-65">

@@ -37,7 +37,7 @@ const MobileNavMenu = () => {
           </ul>
         </li>
         <li className="menu-item-has-children">
-          <Link to={process.env.PUBLIC_URL + "/"}>
+          <Link to={process.env.PUBLIC_URL + "/blog"}>
           {t("blog")}
           </Link>
         </li>
