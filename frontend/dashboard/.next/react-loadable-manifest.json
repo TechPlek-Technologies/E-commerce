@@ -189,22 +189,22 @@
       "static/chunks/components_cookieContest_index_js.js"
     ]
   },
-  "dashboard\\page\\shipping.js -> ~/components/TextEditor": {
-    "id": "dashboard\\page\\shipping.js -> ~/components/TextEditor",
+  "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm": {
+    "id": "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm",
     "files": [
-      "static/chunks/components_TextEditor_index_js.js"
+      "static/chunks/components_BlogForm_blogForm_js.js"
     ]
   },
-  "dashboard\\page\\shipping.js -> ~/components/Ui/Button": {
-    "id": "dashboard\\page\\shipping.js -> ~/components/Ui/Button",
+  "dashboard\\brand\\create.js -> ~/components/FileUpload/fileUpload": {
+    "id": "dashboard\\brand\\create.js -> ~/components/FileUpload/fileUpload",
+    "files": [
+      "static/chunks/components_FileUpload_fileUpload_js.js"
+    ]
+  },
+  "dashboard\\brand\\create.js -> ~/components/Ui/Button": {
+    "id": "dashboard\\brand\\create.js -> ~/components/Ui/Button",
     "files": [
       "static/chunks/components_Ui_Button_index_js.js"
-    ]
-  },
-  "dashboard\\page\\shipping.js -> ~/components/Ui/Spinner": {
-    "id": "dashboard\\page\\shipping.js -> ~/components/Ui/Spinner",
-    "files": [
-      "static/chunks/components_Ui_Spinner_index_js.js"
     ]
   }
 }

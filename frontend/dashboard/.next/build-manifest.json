@@ -27,10 +27,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/dashboard/page/shipping": [
+    "/dashboard/blog/create": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/dashboard/page/shipping.js"
+      "static/chunks/pages/dashboard/blog/create.js"
+    ],
+    "/dashboard/brand/create": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/dashboard/brand/create.js"
     ]
   },
   "ampFirstPages": []

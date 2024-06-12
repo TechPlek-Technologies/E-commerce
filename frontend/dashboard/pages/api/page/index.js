@@ -57,7 +57,7 @@ export default async function apiHandler(req, res) {
             await pageData.save();
             break;
           case "shipping":
-            pageData.shippingPage.content = body.content;
+            pageData.shippingPolicyPage.content = body.content;
             await pageData.save();
             break;
 

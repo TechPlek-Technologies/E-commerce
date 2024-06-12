@@ -350,3 +350,27 @@ export const address = {
   addressType: String,
   addressTitle: String,
 };
+
+
+export const blogs = {
+  date: { type: Date, default: Date.now },
+  name: String,
+  slug: String,
+  blogId: String,
+  description: String,
+  shortDescription: String,
+  seo: {
+    title: String,
+    description: String,
+    image: Array,
+  },
+  review: [
+    {
+      date: { type: Date, default: Date.now },
+      userName: String,
+      email: String,
+      rating: Number,
+      comment: String,
+    },
+  ]
+};

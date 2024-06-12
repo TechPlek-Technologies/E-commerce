@@ -12,6 +12,7 @@ import {
   HouseGear,
   Tag,
   People,
+  Pen
 } from "@styled-icons/bootstrap";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -161,6 +162,22 @@ const DashboardMenu = (props) => {
         {
           name: t("Add New Brand"),
           url: "/dashboard/brand/create",
+          create: true,
+        },
+      ],
+    },
+    {
+      name: t("Blogs"),
+      icon: <Pen width={20} height={20} />,
+      target: "blogs",
+      subMenu: [
+        {
+          name: t("All Blogs"),
+          url: "/dashboard/blog",
+        },
+        {
+          name: t("Add New Blog"),
+          url: "/dashboard/blog/create",
           create: true,
         },
       ],

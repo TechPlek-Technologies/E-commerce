@@ -22,7 +22,7 @@ const ShippingPageSetup = () => {
   useEffect(() => {
     if (data && data.page) {
         console.log(data.page);
-      setEditorState(data.page?.shippingPage?.content);
+      setEditorState(data.page.shippingPolicyPage.content);
     }
   }, [data]);
 
