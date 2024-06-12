@@ -266,6 +266,10 @@ const DashboardMenu = (props) => {
           url: "/dashboard/page/privacy",
         },
         {
+          name: t("shipping_policy"),
+          url: "/dashboard/page/shipping",
+        },
+        {
           name: t("terms_and_conditions"),
           url: "/dashboard/page/terms",
         },

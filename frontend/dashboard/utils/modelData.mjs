@@ -303,6 +303,9 @@ export const webpage = {
   returnPolicyPage: {
     content: String,
   },
+  shippingPolicyPage: {
+    content: String,
+  },
   faqPage: {
     content: String,
   },
