@@ -35,6 +35,7 @@ app.use("/refund", require("./mvc/refundRequest/refundRequest.controller"));
 app.use("/setting", require("./mvc/settings/settings.controller"));
 app.use("/page", require("./mvc/webpage/webpage.controller"));
 app.use("/uploads", require("./mvc/fileUpload/fileupload.controller"));
+app.use("/blogs", require("./mvc/blogs/blogs.controller"));
 
 app.use("/home", require("./mvc/home/home.controller"));
 

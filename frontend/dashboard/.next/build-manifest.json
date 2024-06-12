@@ -22,6 +22,7 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+<<<<<<< HEAD
     "/dashboard/product": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -41,6 +42,17 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/dashboard/settings/graphics.js"
+=======
+    "/dashboard/blog": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/dashboard/blog.js"
+    ],
+    "/dashboard/blog/[slug]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/dashboard/blog/[slug].js"
+>>>>>>> 16551abc6573cb6db2ab40d848c6cabaead3217a
     ]
   },
   "ampFirstPages": []

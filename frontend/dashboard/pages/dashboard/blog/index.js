@@ -19,7 +19,6 @@ const BlogList = () => {
   const { data, error, mutate } = useSWR(url, fetchData);
   const [blogList, setBlogList] = useState([]);
   useEffect(() => {
-    console.log("data",data);
     if (data && data.blog) {
       setBlogList(data.blog);
     }
@@ -27,10 +26,6 @@ const BlogList = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedBlog, setSelectedBlog] = useState("");
   const { t } = useTranslation();
-
-  const settings = useSelector((state) => state.settings);
-  const currencySymbol = settings.settingsData.currency.symbol;
-
   const { session } = useSelector((state) => state.localSession);
   const [permissions, setPermissions] = useState({});
   useEffect(() => {
@@ -45,19 +40,19 @@ const BlogList = () => {
     setIsOpen(false);
   };
 
-//   const deleteProduct = async () => {
-//     setIsOpen(false);
-//     await deleteData(`/api/product/delete/${selectedProduct}`)
-//       .then((data) =>
-//         data.success
-//           ? (toast.success("Product Deleted Successfully"), mutate())
-//           : toast.error("Something Went Wrong")
-//       )
-//       .catch((err) => {
-//         console.log(err);
-//         toast.error("Something Went Wrong");
-//       });
-//   };
+  const deleteProduct = async () => {
+    setIsOpen(false);
+    await deleteData(`/api/blog/delete/${selectedBlog}`)
+      .then((data) =>
+        data.success
+          ? (toast.success("Blog Deleted Successfully"), mutate())
+          : toast.error("Something Went Wrong")
+      )
+      .catch((err) => {
+        console.log(err);
+        toast.error("Something Went Wrong");
+      });
+  };
 
   const [filterText, setFilterText] = React.useState("");
   const [resetPaginationToggle, setResetPaginationToggle] =
@@ -83,16 +78,16 @@ const BlogList = () => {
     );
   }, [filterText, resetPaginationToggle]);
 
-//   async function cloneDoc(id) {
-//     try {
-//       const resp = await updateData("/api/product", { id });
-//       resp.success
-//         ? (toast.success(resp.message), mutate())
-//         : toast.error(resp.message);
-//     } catch (err) {
-//       console.log(err.message);
-//     }
-//   }
+  async function cloneDoc(id) {
+    try {
+      const resp = await updateData("/api/blog", { id });
+      resp.success
+        ? (toast.success(resp.message), mutate())
+        : toast.error(resp.message);
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
 
   const columns = [
     {
@@ -105,7 +100,7 @@ const BlogList = () => {
       sortable: true,
     },
     {
-      name: t("Description"),
+      name: t("Short Description"),
       selector: (row) => row.shortDescription,
       sortable: true,
     },
@@ -119,7 +114,7 @@ const BlogList = () => {
             </div>
           )}
           {permissions.edit && (
-            <Link href={`/dashboard/product/${row.slug}`}>
+            <Link href={`/dashboard/blog/${row.slug}`}>
               <div className={classes.button}>
                 <PencilSquare width={22} height={22} title="EDIT" />
               </div>

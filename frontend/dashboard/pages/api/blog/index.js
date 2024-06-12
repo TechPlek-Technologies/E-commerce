@@ -39,8 +39,8 @@ export default async function apiHandler(req, res) {
           true
         );
         clonedDocument.date = Date.now();
-        clonedDocument.productId =
-          "P" + customIdNew({ randomLength: 4, upperCase: true });
+        clonedDocument.blogId =
+          "B" + customIdNew({ randomLength: 4, upperCase: true });
         await clonedDocument.save();
 
         res
