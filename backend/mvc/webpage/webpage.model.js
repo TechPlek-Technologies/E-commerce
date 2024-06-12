@@ -53,6 +53,9 @@ const webpagesSchema = new Schema(
         faqPage: {
           content: String,
         },
+        shippingPolicyPage: {
+          content: String,
+        },
       }
 );
 

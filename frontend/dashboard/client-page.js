@@ -1,3 +1,3 @@
-export const clientUrl="https://e-commerce-zju0.onrender.com"
+export const clientUrl="http://localhost:3000"
 
-export const backendUrl="https://e-commerce-2-eovj.onrender.com"
+export const backendUrl="http://localhost:5000"

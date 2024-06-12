@@ -303,6 +303,9 @@ export const webpage = {
   returnPolicyPage: {
     content: String,
   },
+  shippingPolicyPage: {
+    content: String,
+  },
   faqPage: {
     content: String,
   },
@@ -346,4 +349,28 @@ export const address = {
   user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
   addressType: String,
   addressTitle: String,
+};
+
+
+export const blogs = {
+  date: { type: Date, default: Date.now },
+  name: String,
+  slug: String,
+  blogId: String,
+  description: String,
+  shortDescription: String,
+  seo: {
+    title: String,
+    description: String,
+    image: Array,
+  },
+  review: [
+    {
+      date: { type: Date, default: Date.now },
+      userName: String,
+      email: String,
+      rating: Number,
+      comment: String,
+    },
+  ]
 };

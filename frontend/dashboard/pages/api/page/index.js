@@ -56,6 +56,10 @@ export default async function apiHandler(req, res) {
             pageData.faqPage.content = body.content;
             await pageData.save();
             break;
+          case "shipping":
+            pageData.shippingPolicyPage.content = body.content;
+            await pageData.save();
+            break;
 
           default:
             return res.status(400).json({ success: false });
