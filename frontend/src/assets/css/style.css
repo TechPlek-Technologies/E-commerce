@@ -290,10 +290,11 @@ input[type=checkbox], input[type=radio] {
 
 /** Section Title style **/
 .sub-title {
-  font-size: 30px;
+  font-size: 22px;
   display: inline-block;
   color: #ff7800;
-  font-family: "Shadows Into Light", cursive;
+  /* font-family: "Shadows Into Light", cursive; */
+  font-family: "Livvic", sans-serif;
   text-transform: capitalize; }
   @media only screen and (max-width: 575px) {
     .sub-title {
@@ -5732,8 +5733,8 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
         font-weight: 700;
         margin-bottom: 5px; }
   .news-item h4 {
-    font-size: 22px;
-    margin-top: 15px; }
+    font-size: 20px;
+    margin-top: 6px; }
     .news-item h4 a:hover {
       color: #1a2428;
       text-decoration: underline; }
@@ -6360,7 +6361,8 @@ blockquote {
   -ms-flex-pack: center;
   justify-content: center;
   background: #f9f6ef;
-  margin-bottom: 10px; }
+  /* margin-bottom: 10px;  */
+}
   @media only screen and (max-width: 375px) {
     .feature-two-item {
       padding-left: 20px;
