@@ -143,12 +143,6 @@
       "static/chunks/node_modules_crypto-js_aes_js.js"
     ]
   },
-  "404.js -> ~/components/error/404": {
-    "id": "404.js -> ~/components/error/404",
-    "files": [
-      "static/chunks/components_error_404_js.js"
-    ]
-  },
   "_app.js -> ../public/js/bootstrap.bundle.min.js": {
     "id": "_app.js -> ../public/js/bootstrap.bundle.min.js",
     "files": [
@@ -189,22 +183,40 @@
       "static/chunks/components_cookieContest_index_js.js"
     ]
   },
-  "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm": {
-    "id": "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm",
+  "dashboard\\blog\\[slug].js -> ~/components/BlogForm/blogEditForm": {
+    "id": "dashboard\\blog\\[slug].js -> ~/components/BlogForm/blogEditForm",
     "files": [
-      "static/chunks/components_BlogForm_blogForm_js.js"
+      "static/chunks/components_BlogForm_blogEditForm_js.js"
     ]
   },
-  "dashboard\\brand\\create.js -> ~/components/FileUpload/fileUpload": {
-    "id": "dashboard\\brand\\create.js -> ~/components/FileUpload/fileUpload",
+  "dashboard\\blog\\index.js -> next/link": {
+    "id": "dashboard\\blog\\index.js -> next/link",
     "files": [
-      "static/chunks/components_FileUpload_fileUpload_js.js"
+      "static/chunks/node_modules_next_link_js.js"
     ]
   },
-  "dashboard\\brand\\create.js -> ~/components/Ui/Button": {
-    "id": "dashboard\\brand\\create.js -> ~/components/Ui/Button",
+  "dashboard\\blog\\index.js -> react-data-table-component": {
+    "id": "dashboard\\blog\\index.js -> react-data-table-component",
     "files": [
-      "static/chunks/components_Ui_Button_index_js.js"
+      "static/chunks/node_modules_react-data-table-component_dist_index_cjs_js.js"
+    ]
+  },
+  "dashboard\\blog\\index.js -> ~/components/Ui/Modal/modal": {
+    "id": "dashboard\\blog\\index.js -> ~/components/Ui/Modal/modal",
+    "files": [
+      "static/chunks/components_Ui_Modal_modal_js.js"
+    ]
+  },
+  "dashboard\\blog\\index.js -> ~/components/Ui/Spinner": {
+    "id": "dashboard\\blog\\index.js -> ~/components/Ui/Spinner",
+    "files": [
+      "static/chunks/components_Ui_Spinner_index_js.js"
+    ]
+  },
+  "dashboard\\blog\\index.js -> ~/components/tableFilter": {
+    "id": "dashboard\\blog\\index.js -> ~/components/tableFilter",
+    "files": [
+      "static/chunks/components_tableFilter_index_js.js"
     ]
   }
 }
