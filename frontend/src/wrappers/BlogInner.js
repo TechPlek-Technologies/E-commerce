@@ -39,7 +39,7 @@ const BlogInner = ({ data }) => {
                       </Link>
                     </h4>
                     <p>{item.shortDescription ? item.shortDescription : ""}</p>
-                    <Link href={`domain/${item.slug}`}>
+                    <Link to={{ pathname: `/blog/${item.slug}`}}>
                       <a className="read-more">
                         Read More <i className="fas fa-angle-double-right" />
                       </a>
