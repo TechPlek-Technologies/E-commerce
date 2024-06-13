@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const BlogDetailsInner = ({data}) => {
 
-  console.log("data",data);
   return (
     <section className="news-standard-page rel z-1 pt-65 rpt-35 pb-130 rpb-100">
     
@@ -14,9 +13,9 @@ const BlogDetailsInner = ({data}) => {
 
             <div
             className="who-we-are-content rmb-35 wow fadeInLeft delay-0-2s"
-            // dangerouslySetInnerHTML={{
-            //   __html: page && page.content,
-            // }}
+            dangerouslySetInnerHTML={{
+              __html: data && data.content,
+            }}
           ></div>)}
           
             </div>

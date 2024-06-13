@@ -32,7 +32,6 @@ import Checkout from "./page/Checkout";
 import ShippingPolicy from "./page/ShippingPolicy";
 import Blog from "./page/Blog";
 import BlogDetails from "./page/BlogDetails";
-import { useAllBlog } from "./utils/blog-utils";
 import { fetchBlogs } from "./redux/slice/blog-slice";
 
 function App() {
@@ -66,8 +65,6 @@ function App() {
     }
   }, [color,dispatch]);
 
- const blog = useAllBlog();
- console.log("blog",blog);
 
 
   if (loading) {

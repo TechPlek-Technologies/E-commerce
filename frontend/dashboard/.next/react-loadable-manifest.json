@@ -119,12 +119,6 @@
       "static/chunks/components_Layout_Dashboard_layout_js.js"
     ]
   },
-  "..\\components\\TextEditor\\index.js -> suneditor-react": {
-    "id": "..\\components\\TextEditor\\index.js -> suneditor-react",
-    "files": [
-      "static/chunks/node_modules_suneditor-react_dist_index_js.js"
-    ]
-  },
   "..\\lib\\clientFunctions.js -> axios": {
     "id": "..\\lib\\clientFunctions.js -> axios",
     "files": [
@@ -183,10 +177,10 @@
       "static/chunks/components_cookieContest_index_js.js"
     ]
   },
-  "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm": {
-    "id": "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm",
+  "dashboard\\blog\\category\\create.js -> ~/components/Ui/Button": {
+    "id": "dashboard\\blog\\category\\create.js -> ~/components/Ui/Button",
     "files": [
-      "static/chunks/components_BlogForm_blogForm_js.js"
+      "static/chunks/components_Ui_Button_index_js.js"
     ]
   },
   "dashboard\\blog\\index.js -> next/link": {

@@ -2,15 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const formatDate = (isoDate) => {
-    const date = new Date(isoDate);
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Intl.DateTimeFormat('en-US', options).format(date);
-  };
+  const date = new Date(isoDate);
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return new Intl.DateTimeFormat("en-US", options).format(date);
+};
 
 const BlogInner = ({ data }) => {
-    const isoDateStr = data[0].date;
-    const formattedDate = formatDate(isoDateStr);
-    const domain = process.env.REACT_APP_URL;
+  const isoDateStr = data[0].date;
+  const formattedDate = formatDate(isoDateStr);
   return (
     <section className="news-standard-page rel z-1 pt-40 rpt-35 pb-40 rpb-100">
       {data && (
@@ -39,7 +38,7 @@ const BlogInner = ({ data }) => {
                       </Link>
                     </h4>
                     <p>{item.shortDescription ? item.shortDescription : ""}</p>
-                    <Link to={{ pathname: `/blog/${item.slug}`}}>
+                    <Link to={{ pathname: `/blog/${item.slug}` }}>
                       <a className="read-more">
                         Read More <i className="fas fa-angle-double-right" />
                       </a>
@@ -63,7 +62,7 @@ const BlogInner = ({ data }) => {
                     />
                   </form>
                 </div>
-                {BlogCategory()}
+                {BlogCategory({data})}
               </div>
             </div>
           </div>
@@ -73,33 +72,19 @@ const BlogInner = ({ data }) => {
   );
 };
 
-const BlogCategory = () => {
+const BlogCategory = ({data}) => {
   return (
     <div className="widget widget-menu wow fadeInUp delay-0-4s">
       <h4 className="widget-title">
         <i className="flaticon-leaf-1" />
         Category
       </h4>
+      {data.map((item) => (
       <ul>
         <li>
-          <Link href="/">Organic Fruits</Link>
+          <Link href="#">{item.category?item.category:""}</Link>
         </li>
-        <li>
-          <Link href="/">Fresh Vegetables</Link>
-        </li>
-        <li>
-          <Link href="/">Crisp Bread &amp; Cake</Link>
-        </li>
-        <li>
-          <Link href="/">Sea Foods</Link>
-        </li>
-        <li>
-          <Link href="/">Chiken Eggs</Link>
-        </li>
-        <li>
-          <Link href="/">Milk &amp; Meat</Link>
-        </li>
-      </ul>
+      </ul> ))}
     </div>
   );
 };

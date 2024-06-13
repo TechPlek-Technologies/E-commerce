@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment} from "react";
 import SEO from "../components/Seo";
 import LayoutOne from "../layouts/LayoutOne";
 import BlogInner from "../wrappers/BlogInner";
@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 const Blog = () => {
 
   const { blogData } = useSelector((store) => store.blog);
+  console.log(blogData);
 
   return (
     <Fragment>
