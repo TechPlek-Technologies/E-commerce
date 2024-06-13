@@ -11,6 +11,12 @@
       "static/chunks/components_error_403_js.js"
     ]
   },
+  "..\\components\\Auth\\signin.js -> ~/components/Ui/Button": {
+    "id": "..\\components\\Auth\\signin.js -> ~/components/Ui/Button",
+    "files": [
+      "static/chunks/components_Ui_Button_index_js.js"
+    ]
+  },
   "..\\components\\Layout\\Client\\cartView.js -> ~/components/Image": {
     "id": "..\\components\\Layout\\Client\\cartView.js -> ~/components/Image",
     "files": [
@@ -177,6 +183,7 @@
       "static/chunks/components_cookieContest_index_js.js"
     ]
   },
+<<<<<<< HEAD
   "dashboard\\blog\\category\\create.js -> ~/components/Ui/Button": {
     "id": "dashboard\\blog\\category\\create.js -> ~/components/Ui/Button",
     "files": [
@@ -185,32 +192,51 @@
   },
   "dashboard\\blog\\index.js -> next/link": {
     "id": "dashboard\\blog\\index.js -> next/link",
+=======
+  "dashboard\\product\\index.js -> next/link": {
+    "id": "dashboard\\product\\index.js -> next/link",
+>>>>>>> e1fbf1d3f68f34f277308312abc69552bf54276d
     "files": [
       "static/chunks/node_modules_next_link_js.js"
     ]
   },
-  "dashboard\\blog\\index.js -> react-data-table-component": {
-    "id": "dashboard\\blog\\index.js -> react-data-table-component",
+  "dashboard\\product\\index.js -> react-data-table-component": {
+    "id": "dashboard\\product\\index.js -> react-data-table-component",
     "files": [
       "static/chunks/node_modules_react-data-table-component_dist_index_cjs_js.js"
     ]
   },
-  "dashboard\\blog\\index.js -> ~/components/Ui/Modal/modal": {
-    "id": "dashboard\\blog\\index.js -> ~/components/Ui/Modal/modal",
+  "dashboard\\product\\index.js -> ~/components/Image": {
+    "id": "dashboard\\product\\index.js -> ~/components/Image",
+    "files": [
+      "static/chunks/components_Image_index_js.js"
+    ]
+  },
+  "dashboard\\product\\index.js -> ~/components/Ui/Modal/modal": {
+    "id": "dashboard\\product\\index.js -> ~/components/Ui/Modal/modal",
     "files": [
       "static/chunks/components_Ui_Modal_modal_js.js"
     ]
   },
-  "dashboard\\blog\\index.js -> ~/components/Ui/Spinner": {
-    "id": "dashboard\\blog\\index.js -> ~/components/Ui/Spinner",
+  "dashboard\\product\\index.js -> ~/components/Ui/Spinner": {
+    "id": "dashboard\\product\\index.js -> ~/components/Ui/Spinner",
     "files": [
       "static/chunks/components_Ui_Spinner_index_js.js"
     ]
   },
-  "dashboard\\blog\\index.js -> ~/components/tableFilter": {
-    "id": "dashboard\\blog\\index.js -> ~/components/tableFilter",
+  "dashboard\\product\\index.js -> ~/components/tableFilter": {
+    "id": "dashboard\\product\\index.js -> ~/components/tableFilter",
     "files": [
       "static/chunks/components_tableFilter_index_js.js"
     ]
+<<<<<<< HEAD
+=======
+  },
+  "index.js -> ~/components/Auth/signin": {
+    "id": "index.js -> ~/components/Auth/signin",
+    "files": [
+      "static/chunks/components_Auth_signin_js.js"
+    ]
+>>>>>>> e1fbf1d3f68f34f277308312abc69552bf54276d
   }
 }

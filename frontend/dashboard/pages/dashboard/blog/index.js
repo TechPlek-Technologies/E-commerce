@@ -17,6 +17,7 @@ const Link = dynamic(() => import("next/link"));
 const BlogList = () => {
   const url = `/api/blog`;
   const { data, error, mutate } = useSWR(url, fetchData);
+  console.warn(data)
   const [blogList, setBlogList] = useState([]);
   useEffect(() => {
     if (data && data.blog) {
