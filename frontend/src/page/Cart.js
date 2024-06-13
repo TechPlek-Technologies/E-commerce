@@ -12,7 +12,6 @@ const Cart = () => {
   const dispatch = useDispatch();
   
   const { cartItems } = useSelector((state) => state.cart);
-console.log(cartItems);
   return (
     <Fragment>
       <SEO
@@ -295,7 +294,7 @@ console.log(cartItems);
                     </div>
                     <div className="item-empty-area__text">
                       No items found in cart <br />{" "}
-                      <Link to={process.env.PUBLIC_URL + "/shop-grid-standard"}>
+                      <Link to={process.env.PUBLIC_URL + "/shop"}>
                         Shop Now
                       </Link>
                     </div>

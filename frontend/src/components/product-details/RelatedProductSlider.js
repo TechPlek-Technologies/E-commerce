@@ -6,6 +6,7 @@ import SwiperSlider, { SwiperSlide } from "../swiper/swiperSlider";
 import { getProducts } from "../../helpers/product";
 import SectionTitle from "../section-title/SectionTitle";
 import ProductGridSingle from "./ProductGridSingle";
+import { currency } from "../../helpers/currency";
 
 const settings = {
   loop: false,
@@ -30,12 +31,11 @@ const settings = {
 
 
 const RelatedProductSlider = ({ spaceBottomClass, category }) => {
-  const { products } = useSelector((state) => state.product);
-  const currency = useSelector((state) => state.currency);
+  const { products } = useSelector((state) => state.products);
   const { cartItems } = useSelector((state) => state.cart);
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
-  const prods = getProducts(products, category, null, 6);
+  const prods = getProducts(products.product, category, null, 6);
   
   return (
     <div className={clsx("related-product-area", spaceBottomClass)}>
@@ -48,21 +48,21 @@ const RelatedProductSlider = ({ spaceBottomClass, category }) => {
         {prods?.length ? (
           <SwiperSlider options={settings}>
               {prods.map(product => (
-                <SwiperSlide key={product.id}>
+                <SwiperSlide key={product._id}>
                   <ProductGridSingle
                     product={product}
                     currency={currency}
                     cartItem={
-                      cartItems.find((cartItem) => cartItem.id === product.id)
+                      cartItems.find((cartItem) => cartItem._id === product._id)
                     }
                     wishlistItem={
                       wishlistItems.find(
-                        (wishlistItem) => wishlistItem.id === product.id
+                        (wishlistItem) => wishlistItem._id === product._id
                       )
                     }
                     compareItem={
                       compareItems.find(
-                        (compareItem) => compareItem.id === product.id
+                        (compareItem) => compareItem._id === product._id
                       )
                     }
                   />
