@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { getDiscountPrice } from "../../helpers/product";
 import { addToWishlist } from "../../redux/slice/wishlist-slice";
 import { addToCart } from "../../redux/slice/cart-slice";
 import ProductRating from "../product/ProductRating";
@@ -17,7 +16,7 @@ const ProductGridSingle = ({
   spaceBottomClass
 }) => {
   const [modalShow, setModalShow] = useState(false);
-  const discountedPrice = getDiscountPrice(product.price, product.discount);
+  const discountedPrice = product.discount;
   const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
   const finalDiscountedPrice = +(
     discountedPrice * currency.currencyRate
@@ -28,17 +27,17 @@ const ProductGridSingle = ({
     <Fragment>
       <div className={clsx("product-wrap", spaceBottomClass)}>
         <div className="product-img">
-          <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
+          <Link to={process.env.PUBLIC_URL + "/product/" + product.slug}>
             <img
               className="default-img"
-              src={process.env.PUBLIC_URL + product.image[0]}
-              alt=""
+              src={process.env.PUBLIC_URL + product.image[0].url}
+              alt={product.image[0].name}
             />
-            {product.image.length > 1 ? (
+            {product.image[0].length > 1 ? (
               <img
                 className="hover-img"
-                src={process.env.PUBLIC_URL + product.image[1]}
-                alt=""
+                src={process.env.PUBLIC_URL + product.image[1].url}
+                alt={product.image[1].name}
               />
             ) : (
               ""
@@ -47,7 +46,7 @@ const ProductGridSingle = ({
           {product.discount || product.new ? (
             <div className="product-img-badges">
               {product.discount ? (
-                <span className="pink">-{product.discount}%</span>
+                <span className="pink">-{product.discountPercentage}%</span>
               ) : (
                 ""
               )}
@@ -82,26 +81,26 @@ const ProductGridSingle = ({
                   {" "}
                   Buy now{" "}
                 </a>
-              ) : product.variation && product.variation.length >= 1 ? (
-                <Link to={`${process.env.PUBLIC_URL}/product/${product.id}`}>
+              ) : product.variants && product.variants.length >= 1 ? (
+                <Link to={`${process.env.PUBLIC_URL}/product/${product.slug}`}>
                   Select Option
                 </Link>
-              ) : product.stock && product.stock > 0 ? (
+              ) : product.quantity && product.quantity > 0 ? (
                 <button
                   onClick={() => dispatch(addToCart(product))}
                   className={
-                    cartItem !== undefined && cartItem.quantity > 0
+                    cartItem !== undefined && cartItem.cartQuantity > 0
                       ? "active"
                       : ""
                   }
-                  disabled={cartItem !== undefined && cartItem.quantity > 0}
+                  disabled={cartItem !== undefined && cartItem.cartQuantity > 0}
                   title={
                     cartItem !== undefined ? "Added to cart" : "Add to cart"
                   }
                 >
                   {" "}
                   <i className="pe-7s-cart"></i>{" "}
-                  {cartItem !== undefined && cartItem.quantity > 0
+                  {cartItem !== undefined && cartItem.cartQuantity > 0
                     ? "Added"
                     : "Add to cart"}
                 </button>
@@ -120,7 +119,7 @@ const ProductGridSingle = ({
         </div>
         <div className="product-content text-center">
           <h3>
-            <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
+            <Link to={process.env.PUBLIC_URL + "/product/" + product.slug}>
               {product.name}
             </Link>
           </h3>

@@ -14,7 +14,7 @@ const ProductDetails = () => {
   const { products } = useSelector((state) => state.products);
   const product = products.product.find(product => product.slug === slug);
   
-
+console.log(product);
   return (
     <Fragment>
       <SEO
@@ -38,10 +38,10 @@ const ProductDetails = () => {
         />
 
         {/* related product slider */}
-        {/* <RelatedProductSlider
+        <RelatedProductSlider
           spaceBottomClass="pb-95"
-          category={product.category[0]}
-        /> */}
+          category={product.categories[0]}
+        />
       </LayoutOne>
     </Fragment>
   );

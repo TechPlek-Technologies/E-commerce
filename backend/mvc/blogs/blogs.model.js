@@ -23,7 +23,8 @@ const blogSchema = new Schema(
       rating: Number,
       comment: String,
     },
-  ]
+  ],
+  icon:String,
 }
 );
 

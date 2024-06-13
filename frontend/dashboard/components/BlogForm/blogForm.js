@@ -1,4 +1,4 @@
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "react-toastify";
 import useSWR from "swr";
 import { fetchData, postData } from "~/lib/clientFunctions";
@@ -9,15 +9,18 @@ import Spinner from "../Ui/Spinner";
 import { useTranslation } from "react-i18next";
 
 const BlogForm = () => {
+  const url = `/api/blog/create`;
+  const { data, error } = useSWR(url, fetchData);
   const seo_title = useRef("");
   const seo_desc = useRef("");
   const [seoImage, setSeoImage] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [editorState, setEditorState] = useState("");
   const [buttonState, setButtonState] = useState("");
   const [resetImageInput, setResetImageInput] = useState("");
+  const [blogImage, updateBlogImage] = useState([]);
 
   const { t } = useTranslation();
-
 
   const updatedValueCb = (data) => {
     setEditorState(data);
@@ -28,8 +31,16 @@ const BlogForm = () => {
     const data = !!editorData.replace(regex, "").length ? editorData : "";
     return data;
   };
+
+  function updateCategory(e) {
+    setSelectedCategory(e.target.value);
+  }
+
   const formHandler = async (e) => {
     e.preventDefault();
+    if (!blogImage[0]) {
+      return toast.warning("Please add Blog icon");
+    }
     setButtonState("loading");
     const form = document.querySelector("#blog_form");
     const formData = new FormData(form);
@@ -39,7 +50,9 @@ const BlogForm = () => {
       image: seoImage,
     };
     formData.append("seo", JSON.stringify(seo));
+    formData.append("blogImage", JSON.stringify(blogImage));
     formData.append("description", getEditorStateData(editorState));
+    formData.append("category", selectedCategory);
 
     await postData("/api/blog/create", formData)
       .then((status) => {
@@ -60,18 +73,13 @@ const BlogForm = () => {
   return (
     <>
       <h4 className="text-center pt-3 pb-5">{t("Create New Blog")}</h4>
-      <form
-        id="blog_form"
-        encType="multipart/form-data"
-        onSubmit={formHandler}
-      >
+      <form id="blog_form" encType="multipart/form-data" onSubmit={formHandler}>
         <div className="row">
           <div className="col-lg-12">
             {blogInformation()}
             {blogDescription()}
             {seoInput()}
           </div>
-          
         </div>
         <div className="my-4">
           <LoadingButton
@@ -101,6 +109,30 @@ const BlogForm = () => {
               className="form-control"
               name="name"
               required
+            />
+          </div>
+          <div className="py-3">
+            <label className="form-label">{t("category")}*</label>
+            <select
+              className="form-select"
+              onChange={updateCategory}
+              defaultValue=""
+              required
+            >
+              <option value="">Select Category</option>
+              {data?.category?.map((x, i) => (
+                <option key={i} value={x.slug}>
+                  {x.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-4 pt-2">
+            <FileUpload
+              accept=".jpg,.png,.jpeg"
+              label={`${t("Upload your blog Thumbnail here")}*`}
+              maxFileSizeInBytes={2000000}
+              updateFilesCb={updateBlogImage}
             />
           </div>
         </div>

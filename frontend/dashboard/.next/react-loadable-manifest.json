@@ -11,30 +11,6 @@
       "static/chunks/components_error_403_js.js"
     ]
   },
-  "..\\components\\Auth\\signin.js -> ~/components/Ui/Button": {
-    "id": "..\\components\\Auth\\signin.js -> ~/components/Ui/Button",
-    "files": [
-      "static/chunks/components_Ui_Button_index_js.js"
-    ]
-  },
-  "..\\components\\Dashboard\\monthlySale.js -> react-apexcharts": {
-    "id": "..\\components\\Dashboard\\monthlySale.js -> react-apexcharts",
-    "files": [
-      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_js.js"
-    ]
-  },
-  "..\\components\\Dashboard\\orderStatus.js -> react-apexcharts": {
-    "id": "..\\components\\Dashboard\\orderStatus.js -> react-apexcharts",
-    "files": [
-      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_js.js"
-    ]
-  },
-  "..\\components\\Dashboard\\orderSummary.js -> react-apexcharts": {
-    "id": "..\\components\\Dashboard\\orderSummary.js -> react-apexcharts",
-    "files": [
-      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_js.js"
-    ]
-  },
   "..\\components\\Layout\\Client\\cartView.js -> ~/components/Image": {
     "id": "..\\components\\Layout\\Client\\cartView.js -> ~/components/Image",
     "files": [
@@ -167,12 +143,6 @@
       "static/chunks/node_modules_crypto-js_aes_js.js"
     ]
   },
-  "404.js -> ~/components/error/404": {
-    "id": "404.js -> ~/components/error/404",
-    "files": [
-      "static/chunks/components_error_404_js.js"
-    ]
-  },
   "_app.js -> ../public/js/bootstrap.bundle.min.js": {
     "id": "_app.js -> ../public/js/bootstrap.bundle.min.js",
     "files": [
@@ -247,12 +217,6 @@
     "id": "dashboard\\blog\\index.js -> ~/components/tableFilter",
     "files": [
       "static/chunks/components_tableFilter_index_js.js"
-    ]
-  },
-  "index.js -> ~/components/Auth/signin": {
-    "id": "index.js -> ~/components/Auth/signin",
-    "files": [
-      "static/chunks/components_Auth_signin_js.js"
     ]
   }
 }

@@ -91,7 +91,7 @@ const BlogList = () => {
 
   const columns = [
     {
-      name: t("Blog Id"),
+      name: t("Id"),
       selector: (row) => row.blogId,
     },
     {

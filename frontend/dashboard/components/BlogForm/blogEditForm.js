@@ -13,17 +13,23 @@ import { useTranslation } from "react-i18next";
 const BlogEditForm = (props) => {
   const url = `/api/blog/edit?slug=${props.slug}`;
   const { data, error } = useSWR(url, fetchData);
-
+console.log(data);
   const seo_title = useRef("");
   const seo_desc = useRef("");
   const [seoImage, setSeoImage] = useState([]);
   const [editorState, setEditorState] = useState("");
   const [buttonState, setButtonState] = useState("");
+  const [blogImage, updateBlogImage] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   const { t } = useTranslation();
   useEffect(() => {
     if (data && data.blog) {
+      console.log(data.blog);
       setSeoImage(data.blog.seo.image);
       setEditorState(data.blog.description);
+      updateBlogImage(data.blog.icon);
+      setSelectedCategory(data.blog.category);
     }
   }, [data]);
 
@@ -52,6 +58,8 @@ const BlogEditForm = (props) => {
       title: seo_title.current.value.trim(),
       description: seo_desc.current.value.trim(),
       image: seoImage,
+      blogImage,
+      category:selectedCategory
     };
     formData.append("seo", JSON.stringify(seo));
     formData.append("description", getEditorStateData(editorState));
@@ -126,7 +134,9 @@ const BlogEditForm = (props) => {
   }
 
 
-
+  function updateCategory(e) {
+    setSelectedCategory(e.target.value);
+  }
 
 
 
@@ -148,6 +158,30 @@ const BlogEditForm = (props) => {
               name="name"
               defaultValue={data.blog.name}
               required
+            />
+          </div>
+          <div className="py-3">
+            <label className="form-label">{t("category")}*</label>
+            <select
+              className="form-select"
+              onChange={updateCategory}
+              defaultValue=""
+              required
+            >
+              <option value={selectedCategory}>Select Category</option>
+              {data.category.map((x, i) => (
+                <option key={i} value={x.slug}>
+                  {x.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-4 pt-2">
+            <FileUpload
+              accept=".jpg,.png,.jpeg"
+              label={`${t("Upload your blog Thumbnail here")}*`}
+              maxFileSizeInBytes={2000000}
+              updateFilesCb={updateBlogImage}
             />
           </div>
         </div>

@@ -26,7 +26,7 @@ const ProductDescriptionInfo = ({
     product.variants.length>0 ? product.variation[0].size[0].name : ""
   );
   const [productStock, setProductStock] = useState(
-    product.variants.length>0 ? product.variation[0].size[0].stock : product.quantity
+    product.variants.length>0 ? product.variants[0] : product.quantity
   );
   const [quantityCount, setQuantityCount] = useState(1);
 
@@ -65,7 +65,7 @@ const ProductDescriptionInfo = ({
         <p>{product.shortDescription}</p>
       </div>
 
-      {product.variation ? (
+      {product.variants.length>0 ? (
         <div className="pro-details-size-color">
           <div className="pro-details-color-wrap">
             <span>Color</span>
