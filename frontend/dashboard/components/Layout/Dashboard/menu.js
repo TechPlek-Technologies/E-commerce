@@ -172,12 +172,22 @@ const DashboardMenu = (props) => {
       target: "blogs",
       subMenu: [
         {
-          name: t("All Blogs"),
+          name: t("All Blog"),
           url: "/dashboard/blog",
         },
         {
           name: t("Add New Blog"),
           url: "/dashboard/blog/create",
+          create: true,
+        },
+        {
+          name: t("All Blog Category"),
+          url: "/dashboard/blog/category",
+          create: true,
+        },
+        {
+          name: t("New Blog Category"),
+          url: "/dashboard/blog/category/create",
           create: true,
         },
       ],

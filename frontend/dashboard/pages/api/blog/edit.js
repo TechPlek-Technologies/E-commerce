@@ -1,5 +1,6 @@
 import sessionChecker from "~/lib/sessionPermission";
 import BlogModel from "../../../models/blogs";
+import categoryModel from "../../../models/blogCategory";
 import dbConnect from "../../../utils/dbConnect";
 import { parseFormMultiple } from "../../../utils/parseForm";
 
@@ -23,9 +24,10 @@ export default async function apiHandler(req, res) {
       try {
         const { slug } = req.query;
         const blog = await BlogModel.findOne({ slug: slug });
+        const category = await categoryModel.find({});
         res
           .status(200)
-          .json({ success: true, blog });
+          .json({ success: true, blog,category });
       } catch (err) {
         console.log(err);
         res.status(400).json({ success: false });
@@ -41,6 +43,8 @@ export default async function apiHandler(req, res) {
           description,
           short_description,
           seo,
+          blogImage,
+          category
         } = data.field;
        
         const seoData = JSON.parse(seo);
@@ -50,6 +54,8 @@ export default async function apiHandler(req, res) {
           shortDescription: short_description.trim(),
           description,
           seo: seoData,
+          icon:blogImage,
+          category:category
         };
      
         await BlogModel.findByIdAndUpdate(pid, blogData);

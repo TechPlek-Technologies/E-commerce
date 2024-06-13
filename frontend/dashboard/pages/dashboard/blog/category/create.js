@@ -6,11 +6,9 @@ import { toast } from "react-toastify";
 import classes from "~/components/ProductForm/productForm.module.css";
 import { postData } from "~/lib/clientFunctions";
 
-const FileUpload = dynamic(() => import("~/components/FileUpload/fileUpload"));
 const LoadingButton = dynamic(() => import("~/components/Ui/Button"));
 
 const NewCategory = (props) => {
-  const [categoryImage, updateCategoryImage] = useState([]);
   const [buttonState, setButtonState] = useState("");
   const name = useRef(null);
   const router = useRouter();
@@ -24,18 +22,15 @@ const NewCategory = (props) => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      if (!categoryImage[0]) {
-        return toast.warning("Please add category icon");
-      }
+     
       setButtonState("loading");
       const formData = {
         name: name.current.value,
-        categoryImage,
       };
-      const response = await postData("/api/categories", formData);
+      const response = await postData("/api/blog/category", formData);
       response.success
         ? (toast.success("Category Added Successfully"),
-          redirectToPage("/dashboard/categories", 2000))
+          redirectToPage("/dashboard/blog/category", 2000))
         : toast.error("Something Went Wrong");
       setButtonState("");
     } catch (err) {
@@ -45,7 +40,7 @@ const NewCategory = (props) => {
   };
   return ( 
     <>
-      <h4 className="text-center pt-3 pb-5">{t("Create New Category")}</h4>
+      <h4 className="text-center pt-3 pb-5">{t("Create New Blog Category")}</h4>
       <form id="category_form" onSubmit={submitHandler}>
         <div className="mb-5">
           <label htmlFor="inp-1" className="form-label">
@@ -57,14 +52,6 @@ const NewCategory = (props) => {
             className={classes.input + " form-control"}
             ref={name}
             required
-          />
-        </div>
-        <div className="mb-4 pt-2">
-          <FileUpload
-            accept=".jpg,.png,.jpeg"
-            label={`${t("Upload your category icon here")}*`}
-            maxFileSizeInBytes={2000000}
-            updateFilesCb={updateCategoryImage}
           />
         </div>
         <div className="mb-4">

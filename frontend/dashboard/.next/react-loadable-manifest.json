@@ -189,6 +189,12 @@
       "static/chunks/components_BlogForm_blogEditForm_js.js"
     ]
   },
+  "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm": {
+    "id": "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm",
+    "files": [
+      "static/chunks/components_BlogForm_blogForm_js.js"
+    ]
+  },
   "dashboard\\blog\\index.js -> next/link": {
     "id": "dashboard\\blog\\index.js -> next/link",
     "files": [

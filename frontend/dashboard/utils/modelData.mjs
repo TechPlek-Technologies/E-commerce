@@ -359,6 +359,8 @@ export const blogs = {
   blogId: String,
   description: String,
   shortDescription: String,
+  icon:String,
+  category:String,
   seo: {
     title: String,
     description: String,
@@ -373,4 +375,10 @@ export const blogs = {
       comment: String,
     },
   ]
+};
+export const blogCategory = {
+  date: { type: Date, default: Date.now },
+  name: String,
+  slug: String,
+  categoryId:String
 };
