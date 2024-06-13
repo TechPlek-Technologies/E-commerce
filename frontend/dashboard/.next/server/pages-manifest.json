@@ -4,10 +4,5 @@
   "/_document": "pages/_document.js",
   "/dashboard/blog": "pages/dashboard/blog.js",
   "/dashboard/blog/create": "pages/dashboard/blog/create.js",
-  "/dashboard/blog/[slug]": "pages/dashboard/blog/[slug].js",
-  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/api/home/wishlist": "pages/api/home/wishlist.js",
-  "/api/notification": "pages/api/notification.js",
-  "/api/blog/edit": "pages/api/blog/edit.js",
-  "/api/blog/create": "pages/api/blog/create.js"
+  "/dashboard/blog/[slug]": "pages/dashboard/blog/[slug].js"
 }

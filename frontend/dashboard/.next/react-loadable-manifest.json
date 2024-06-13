@@ -183,12 +183,6 @@
       "static/chunks/components_cookieContest_index_js.js"
     ]
   },
-  "dashboard\\blog\\[slug].js -> ~/components/BlogForm/blogEditForm": {
-    "id": "dashboard\\blog\\[slug].js -> ~/components/BlogForm/blogEditForm",
-    "files": [
-      "static/chunks/components_BlogForm_blogEditForm_js.js"
-    ]
-  },
   "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm": {
     "id": "dashboard\\blog\\create.js -> ~/components/BlogForm/blogForm",
     "files": [
