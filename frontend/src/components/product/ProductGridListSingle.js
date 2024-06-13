@@ -299,7 +299,7 @@ const ProductGridListSingle = ({
           </div>
         </div>
       {/* product modal */}
-      <ProductModal
+      {/* <ProductModal
         show={modalShow}
         onHide={() => setModalShow(false)}
         product={product}
@@ -309,7 +309,7 @@ const ProductGridListSingle = ({
         finalDiscountedPrice={finalDiscountedPrice}
         wishlistItem={wishlistItem}
         compareItem={compareItem}
-      />
+      /> */}
     </Fragment>
   );
 };
