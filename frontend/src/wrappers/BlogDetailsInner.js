@@ -34,7 +34,7 @@ const BlogDetailsInner = ({data}) => {
                     />
                   </form>
                 </div>
-                {BlogCategory()}
+                {BlogCategory({data})}
               </div>
             </div>
           </div>
@@ -44,35 +44,21 @@ const BlogDetailsInner = ({data}) => {
   )
 }
 
-const BlogCategory = () => {
+const BlogCategory = ({data}) => {
     return (
       <div className="widget widget-menu wow fadeInUp delay-0-4s">
-        <h4 className="widget-title">
-          <i className="flaticon-leaf-1" />
-          Category
-        </h4>
-        <ul>
-          <li>
-            <Link href="/">Organic Fruits</Link>
-          </li>
-          <li>
-            <Link href="/">Fresh Vegetables</Link>
-          </li>
-          <li>
-            <Link href="/">Crisp Bread &amp; Cake</Link>
-          </li>
-          <li>
-            <Link href="/">Sea Foods</Link>
-          </li>
-          <li>
-            <Link href="/">Chiken Eggs</Link>
-          </li>
-          <li>
-            <Link href="/">Milk &amp; Meat</Link>
-          </li>
-        </ul>
-      </div>
+      <h4 className="widget-title">
+        <i className="flaticon-leaf-1" />
+        Category
+      </h4>
+      {data.map((item) => (
+      <ul>
+        <li>
+          <Link href="#">{item.category?item.category:""}</Link>
+        </li>
+      </ul> ))}
+    </div>
     );
   };
 
-export default BlogDetailsInner
+export default BlogDetailsInner;
