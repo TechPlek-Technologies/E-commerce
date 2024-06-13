@@ -13,7 +13,6 @@ import { useTranslation } from "react-i18next";
 const BlogEditForm = (props) => {
   const url = `/api/blog/edit?slug=${props.slug}`;
   const { data, error } = useSWR(url, fetchData);
-console.log(data);
   const seo_title = useRef("");
   const seo_desc = useRef("");
   const [seoImage, setSeoImage] = useState([]);
@@ -165,10 +164,10 @@ console.log(data);
             <select
               className="form-select"
               onChange={updateCategory}
-              defaultValue=""
+              value={selectedCategory}
               required
             >
-              <option value={selectedCategory}>Select Category</option>
+              <option value="">Select Category</option>
               {data.category.map((x, i) => (
                 <option key={i} value={x.slug}>
                   {x.name}

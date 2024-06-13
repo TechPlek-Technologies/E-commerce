@@ -12,6 +12,11 @@
   ],
   "rootMainFiles": [],
   "pages": {
+    "/": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -22,23 +27,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/dashboard/blog": [
+    "/dashboard/product": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/dashboard/blog.js"
-    ],
-    "/dashboard/blog/create": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/dashboard/blog/create.js"
-<<<<<<< HEAD
-=======
-    ],
-    "/dashboard/categories/create": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/dashboard/categories/create.js"
->>>>>>> 487642ec8339f516651f7db4aa5098a2255e1fa2
+      "static/chunks/pages/dashboard/product.js"
     ]
   },
   "ampFirstPages": []
