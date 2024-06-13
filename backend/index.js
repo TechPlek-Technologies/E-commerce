@@ -8,8 +8,11 @@ const connection = require("./utils/connection");
 
 const app = express();
 app.use(express.json());
+
+const siteUrl=process.env.siteURL;
+const url=process.env.URL;
 const corsOptions = {
-  origin: ["https://e-commerce-1-0ff7.onrender.com","https://e-commerce-yqol.onrender.com"], // Replace with your client URL
+  origin: [siteUrl,url], // Replace with your client URL
   credentials: true, // This allows the server to accept cookies and other credentials
 };
 
