@@ -21,7 +21,6 @@ function ProductModal({
   wishlistItem,
   compareItem,
 }) {
-  console.log("product",wishlistItem);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
@@ -148,7 +147,7 @@ function ProductModal({
                 <p>{product.shortDescription}</p>
               </div>
 
-              {product.variants ? (
+              {product.variants.length>0 ? (
                 <div className="pro-details-size-color">
                   <div className="pro-details-color-wrap">
                     <span>Color</span>
@@ -184,7 +183,7 @@ function ProductModal({
                   <div className="pro-details-size">
                     <span>Size</span>
                     <div className="pro-details-size-content">
-                      {product.variants &&
+                      {product.variants.length>0 &&
                         product.variants.map((single) => {
                           return single.color === selectedProductColor
                             ? single.size.map((singleSize, key) => {

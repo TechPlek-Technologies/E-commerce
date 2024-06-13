@@ -64,7 +64,7 @@ const Category = () => {
       };
 
       const category=useCategory("category");
-
+console.log("category",category);
       
   return (
     <section className="category-section-two pt-40 rpt-70 pb-20">
