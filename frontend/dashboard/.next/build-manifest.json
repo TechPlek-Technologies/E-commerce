@@ -31,6 +31,14 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/dashboard/blog/create.js"
+<<<<<<< HEAD
+=======
+    ],
+    "/dashboard/categories/create": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/dashboard/categories/create.js"
+>>>>>>> 487642ec8339f516651f7db4aa5098a2255e1fa2
     ]
   },
   "ampFirstPages": []

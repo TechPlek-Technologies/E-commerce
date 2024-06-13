@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
-import { useAllHomeData, useCategory } from '../utils/home-utils';
+import { useCategory } from '../utils/home-utils';
 
 const Category = () => {
 

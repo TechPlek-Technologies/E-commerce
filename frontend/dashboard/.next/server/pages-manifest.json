@@ -2,7 +2,18 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+<<<<<<< HEAD
   "/dashboard/blog": "pages/dashboard/blog.js",
   "/dashboard/blog/create": "pages/dashboard/blog/create.js",
   "/dashboard/blog/[slug]": "pages/dashboard/blog/[slug].js"
+=======
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
+  "/api/home/wishlist": "pages/api/home/wishlist.js",
+  "/api/notification": "pages/api/notification.js",
+  "/dashboard/blog": "pages/dashboard/blog.js",
+  "/dashboard/blog/[slug]": "pages/dashboard/blog/[slug].js",
+  "/dashboard/categories/create": "pages/dashboard/categories/create.js",
+  "/dashboard/blog/create": "pages/dashboard/blog/create.js",
+  "/api/blog": "pages/api/blog.js"
+>>>>>>> 487642ec8339f516651f7db4aa5098a2255e1fa2
 }

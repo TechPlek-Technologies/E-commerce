@@ -16,7 +16,7 @@ const DiabetesCareSection = () => {
       // Set a timer to stop scrolling after 150ms
       timer = setTimeout(() => {
         setIsScrolling(false);
-      }, 150);
+      }, 1000000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,7 +34,7 @@ const DiabetesCareSection = () => {
 
   return (
     <div>
-      <section className="service-details-page rel z-1 pt-65 rpt-35 pb-130 rpb-100">
+      <section className="service-details-page rel z-1 pt-40 rpt-35 pb-130 rpb-100">
         <div className="container">
           <div className="row">
             <div className="col-xl-9 mt-65">
@@ -48,7 +48,7 @@ const DiabetesCareSection = () => {
                     complications in many ways.
                   </p>
                   <h4>Common diabetes health complications include:</h4>
-                  <div className="image pt-50 wow fadeInUp delay-0-2s">
+                  <div className="image pt-5 wow fadeInUp delay-0-2s">
                     <img
                       src="/assets/img/service-details/diabetes-symptoms.webp"
                       alt="diabetes-symptoms"
@@ -113,7 +113,7 @@ const DiabetesCareSection = () => {
                 {activeSection === 'What Causes Diabetes?' && (
                 <div id="what-causes-diabetes">
                   <h4>What Causes Diabetes?</h4>
-                  <div className="image pt-10 wow fadeInUp delay-0-2s">
+                  <div className="image pt-5 wow fadeInUp delay-0-2s">
                     <img
                       src="/assets/img/service-details/cause-of-diabetes.webp"
                       alt="cause-of-diabetes"
@@ -146,7 +146,7 @@ const DiabetesCareSection = () => {
                 <div id="home-remedies">
                   <h4>Home Remedies for Diabetes:</h4>
 
-                  <div className="image pt-50 wow fadeInUp delay-0-2s">
+                  <div className="image pt-5 wow fadeInUp delay-0-2s">
                     <img
                       src="/assets/img/service-details/home-remedies.webp"
                       alt="home-remedies"
@@ -285,7 +285,7 @@ const DiabetesCareSection = () => {
                     Treatment Vedarma offer to control blood sugar naturally:
                   </h4>
 
-                  <div className="image pt-50 wow fadeInUp delay-0-2s">
+                  <div className="image pt-5 wow fadeInUp delay-0-2s">
                     <img
                       src="/assets/img/service-details/ayurveda-treatment.webp"
                       alt="ayurveda-treatment"

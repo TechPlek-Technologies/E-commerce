@@ -218,5 +218,17 @@
     "files": [
       "static/chunks/components_tableFilter_index_js.js"
     ]
+  },
+  "dashboard\\categories\\create.js -> ~/components/FileUpload/fileUpload": {
+    "id": "dashboard\\categories\\create.js -> ~/components/FileUpload/fileUpload",
+    "files": [
+      "static/chunks/components_FileUpload_fileUpload_js.js"
+    ]
+  },
+  "dashboard\\categories\\create.js -> ~/components/Ui/Button": {
+    "id": "dashboard\\categories\\create.js -> ~/components/Ui/Button",
+    "files": [
+      "static/chunks/components_Ui_Button_index_js.js"
+    ]
   }
 }

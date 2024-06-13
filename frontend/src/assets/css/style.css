@@ -101,7 +101,7 @@ h1 {
 
 h2 {
   line-height: 1.25;
-  font-size: 45px; }
+  font-size: 38px; }
 
 h3 {
   line-height: 1.3;
@@ -109,7 +109,7 @@ h3 {
 
 h4 {
   line-height: 1.45;
-  font-size: 24px; }
+  font-size: 22px; }
 
 h5 {
   font-size: 20px; }
@@ -146,7 +146,7 @@ textarea,
   width: 100%;
   height: auto;
   border-radius: 5px;
-  padding: 16px 25px;
+  padding: 8px 10px;
   background-color: #fff;
   border: 1px solid rgba(118, 167, 19, 0.15); }
   @media only screen and (min-width: 576px) {
@@ -155,7 +155,7 @@ textarea,
     textarea,
     .nice-select,
     .form-control {
-      font-size: 18px; } }
+      font-size: 14px; } }
 
 .nice-select {
   font-size: 18px;
@@ -431,7 +431,7 @@ a.theme-btn {
   color: #1a2428; }
   @media only screen and (min-width: 376px) {
     .list-style-two li {
-      font-size: 18px; } }
+      font-size: 16px; } }
   .list-style-two li:not(:last-child) {
     margin-bottom: 13px; }
   .list-style-two li:before {
@@ -3882,7 +3882,9 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
   background-size: cover;
   z-index: 1;
   position: relative;
-  background-position: center; }
+  background-position: center; 
+  height: 300px;
+}
   .page-banner::before {
     position: absolute;
     content: "";
@@ -3896,7 +3898,7 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
 
 .banner-inner {
   position: relative;
-  padding: 40px 85px;
+  padding: 6px 85px;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
@@ -4308,7 +4310,8 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 30px;
-  border: 1px solid rgba(118, 167, 19, 0.15); }
+  /* border: 1px solid rgba(118, 167, 19, 0.15);  */
+}
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .about-feature-two {
       -ms-flex-wrap: wrap;
@@ -4331,14 +4334,14 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s; }
-  .about-feature-two:hover {
+  /* .about-feature-two:hover {
     border-radius: 10px;
     background: #76a713;
     border-color: #76a713; }
     .about-feature-two:hover h4,
     .about-feature-two:hover h4 a,
     .about-feature-two:hover .icon {
-      color: white; }
+      color: white; } */
   .about-feature-two.style-two {
     display: block;
     border-radius: 5px;
@@ -4350,7 +4353,7 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
       font-size: 60px;
       margin: 0 0 15px; }
     .about-feature-two.style-two h4 {
-      font-size: 20px; }
+      font-size: 16px; }
 
 .about-btn-number {
   display: -webkit-box;
@@ -6243,13 +6246,13 @@ blockquote {
 
 @media only screen and (min-width: 576px) {
   .service-details-content h3 {
-    font-size: 35px; } }
+    font-size: 32px; } }
 
 .service-details-content h4 {
-  font-size: 27px; }
+  font-size: 26px; }
 
 .service-details-content p {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 20px; }
 
 .service-details-content blockquote {
@@ -6865,8 +6868,8 @@ blockquote {
     color: #1a2428; }
 
 .service-sidebar .widget-menu li:not(:last-child) {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(118, 167, 19, 0.15); }
 
 .service-sidebar .widget-menu li a:not(:hover) {
