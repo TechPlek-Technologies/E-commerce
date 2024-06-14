@@ -30,7 +30,7 @@ const FeedbackSlider = () => {
           <div className="feedback-item style-two delay-0-2s">
           <div className="content-image">
             <p>
-            {single.para}
+            {single.para?single.para:""}
             </p>
           </div>
           <div className="feedback-author">
@@ -38,7 +38,7 @@ const FeedbackSlider = () => {
               <i className="flaticon-quote" />
             </div>
             <div className="title">
-              <h4>{single.name}</h4>
+              <h4>{single.name?single.name:""}</h4>
             </div>
             <div className="ratting">
               <i className="fas fa-star" />

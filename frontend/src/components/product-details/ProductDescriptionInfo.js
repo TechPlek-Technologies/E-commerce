@@ -135,8 +135,8 @@ const ProductDescriptionInfo = ({
                               : ""
                           }
                           onChange={() => {
-                            setSelectedProductSize(single.name);
-                            setProductStock(single.stock);
+                            setSelectedPackSize(single.attr);
+                            setProductStock(single.qty);
                             setQuantityCount(1);
                           }}
                         />

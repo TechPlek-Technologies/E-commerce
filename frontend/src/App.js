@@ -31,10 +31,11 @@ import ProductDetails from "./page/ProductDetails";
 import Checkout from "./page/Checkout";
 import ShippingPolicy from "./page/ShippingPolicy";
 import Blog from "./page/Blog";
+import BlogDetails from "./page/BlogDetails";
+import { fetchBlogs } from "./redux/slice/blog-slice";
 
 function App() {
   const dispatch = useDispatch();
-
   const loading = useSelector((state) => state.loading.loading);
 
   useEffect(() => {
@@ -43,6 +44,7 @@ function App() {
         dispatch(fetchSettings()),
         dispatch(fetchPages()),
         dispatch(fetchProducts()),
+        dispatch(fetchBlogs()),
       ]);
       dispatch(setLoading(false));
     };
@@ -51,7 +53,7 @@ function App() {
   }, [dispatch, loading]);
 
   const color = useSetting("color");
-  console.log(color);
+  // console.log(color);
   useEffect(() => {
     if (color) {
       const cssVariables = generateCssVariables(color);
@@ -62,6 +64,8 @@ function App() {
       setLoading(false)
     }
   }, [color,dispatch]);
+
+
 
   if (loading) {
     return (
@@ -113,6 +117,7 @@ function App() {
               <Route path={"/hair-problems"} element={<HairProblems />} />
               <Route path={"/shipping-and-delivery-policy"} element={<ShippingPolicy />} />
               <Route path={"/blog"} element={<Blog />} />
+              <Route path={"/blog/:slug"} element={<BlogDetails/>} />
             </Routes>
           </Suspense>
         </ScrollToTop>

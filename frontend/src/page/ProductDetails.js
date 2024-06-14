@@ -14,6 +14,7 @@ const ProductDetails = () => {
   const { products } = useSelector((state) => state.products);
   const product = products.product.find(product => product.slug === slug);
   
+// console.log(product);
   return (
     <Fragment>
       <SEO
