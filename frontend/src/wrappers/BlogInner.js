@@ -8,18 +8,21 @@ const formatDate = (isoDate) => {
 };
 
 const BlogInner = ({ data }) => {
-  const isoDateStr = data[0].date;
+
+
+
+  const isoDateStr = data.blogs[0].date;
   const formattedDate = formatDate(isoDateStr);
   return (
     <section className="news-standard-page rel z-1 pt-40 rpt-35 pb-40 rpb-100">
-      {data && (
+      {data?.blogs && (
         <div className="container">
           <div className="row">
             <div className="col-xl-8 mt-65">
-              {data.map((item) => (
+              {data?.blogs.map((item) => (
                 <div className="news-standard-item wow fadeInUp delay-0-2s">
                   <div className="image">
-                    <img src={item.description ? item.description : "Blogs"} />
+                    <img src={JSON.parse(item.icon)? JSON.parse(item.icon)[0].url:""} />
                   </div>
                   <div className="content">
                     <ul className="blog-meta">
@@ -73,16 +76,17 @@ const BlogInner = ({ data }) => {
 };
 
 const BlogCategory = ({data}) => {
+  console.log(data);
   return (
     <div className="widget widget-menu wow fadeInUp delay-0-4s">
       <h4 className="widget-title">
         <i className="flaticon-leaf-1" />
         Category
       </h4>
-      {data.map((item) => (
+      {data.categories.map((item) => (
       <ul>
         <li>
-          <Link href="#">{item.category?item.category:""}</Link>
+          <Link href="#">{item.name ? item.name:""}</Link>
         </li>
       </ul> ))}
     </div>

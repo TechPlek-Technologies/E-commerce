@@ -14,7 +14,7 @@ export const fetchBlogs = createAsyncThunk(
     try {
       const domain = process.env.REACT_APP_URL;
       const response = await axios.get(`${domain}/blogs`); // Replace with your API endpoint
-      return response.data.blogs;
+      return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
     }

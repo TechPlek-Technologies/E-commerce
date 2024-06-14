@@ -7,19 +7,15 @@ import { useParams } from 'react-router-dom';
 
 const BlogDetails = () => {
 
+  let { slug } = useParams();
   const { blogData } = useSelector((store) => store.blog);
-  const param = useParams();
-
-  const desiredBlog = blogData.find(
-    (blog) => blog?.slug === param.slug
-  );
-
+  const desiredBlog = blogData.blogs.find(blog => blog?.slug === slug);
   return (
     <Fragment>
       <SEO titleTemplate="Blog" />
 
       <LayoutOne>
-      <BlogDetailsInner data={desiredBlog}/>
+      <BlogDetailsInner data={desiredBlog} category={blogData.categories}/>
       </LayoutOne>
     </Fragment>
   )

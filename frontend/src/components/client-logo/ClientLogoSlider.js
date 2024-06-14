@@ -53,7 +53,7 @@ const ClientLogoSlider = () => {
           <Link href="/contact">
             <a>
               <img
-                src={single.image}
+                src={single.image?single.image:""}
                 alt="Client Logo"
               />
             </a>

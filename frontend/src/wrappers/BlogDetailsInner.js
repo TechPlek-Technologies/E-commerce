@@ -1,23 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const BlogDetailsInner = ({data}) => {
-
+const BlogDetailsInner = ({ data,category }) => {
   return (
     <section className="news-standard-page rel z-1 pt-65 rpt-35 pb-130 rpb-100">
-    
+      {data && (
         <div className="container">
           <div className="row">
             <div className="col-xl-8 mt-65">
-            {data && (
-
-            <div
-            className="who-we-are-content rmb-35 wow fadeInLeft delay-0-2s"
-            dangerouslySetInnerHTML={{
-              __html: data && data.content,
-            }}
-          ></div>)}
-          
+              <div>
+                {data.description}
+              </div>
             </div>
             <div className="col-xl-4 col-lg-6 col-md-8">
               <div className="blog-sidebar mt-65">
@@ -34,19 +27,19 @@ const BlogDetailsInner = ({data}) => {
                     />
                   </form>
                 </div>
-                {BlogCategory({data})}
+               { <BlogCategory data={category}/>}
               </div>
             </div>
           </div>
         </div>
-      
+      )}
     </section>
-  )
-}
+  );
+};
 
 const BlogCategory = ({data}) => {
-    return (
-      <div className="widget widget-menu wow fadeInUp delay-0-4s">
+  return (
+    <div className="widget widget-menu wow fadeInUp delay-0-4s">
       <h4 className="widget-title">
         <i className="flaticon-leaf-1" />
         Category
@@ -54,11 +47,10 @@ const BlogCategory = ({data}) => {
       {data.map((item) => (
       <ul>
         <li>
-          <Link href="#">{item.category?item.category:""}</Link>
+          <Link href="#">{item.name?item.name:""}</Link>
         </li>
       </ul> ))}
     </div>
-    );
-  };
-
+  );
+};
 export default BlogDetailsInner;

@@ -14,7 +14,7 @@ const BlogSection = () => {
     speed: 400,
     arrows: false,
     dots: false,
-    autoplay: false,
+    autoplay: true,
     pauseOnHover:false,
     autoplaySpeed: 3000,
     beforeChange: (current, next) => setSlideIndex((next / 2) * 100),

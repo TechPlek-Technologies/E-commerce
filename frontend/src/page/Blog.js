@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const Blog = () => {
 
   const { blogData } = useSelector((store) => store.blog);
-  console.log(blogData);
+
 
   return (
     <Fragment>
