@@ -31,7 +31,7 @@ const BlogSection = () => {
         <div className="section-title text-center mb-40">
           <h2>Latest News &amp; Blog</h2>
         </div>
-        {blogData && (
+        {blogData.blogs && (
           <Slider {...props} className="feedback-active mt-20">
             {blogData.blogs.map((item) => (
               <div className="row justify-content-center">

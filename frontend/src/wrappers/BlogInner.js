@@ -6,7 +6,12 @@ const formatDate = (isoDate) => {
   const options = { year: "numeric", month: "long", day: "numeric" };
   return new Intl.DateTimeFormat("en-US", options).format(date);
 };
-
+const truncateText = (text, limit) => {
+  if (text.length <= limit) {
+    return text;
+  }
+  return text.split(" ").slice(0, limit).join(" ") + "...";
+};
 const BlogInner = ({ data }) => {
 
 
@@ -40,7 +45,7 @@ const BlogInner = ({ data }) => {
                         <a>{item.name ? item.name : ""}</a>
                       </Link>
                     </h4>
-                    <p>{item.shortDescription ? item.shortDescription : ""}</p>
+                    <p> {item.shortDescription ? truncateText(item.shortDescription, 20) : ""}</p>
                     <Link to={{ pathname: `/blog/${item.slug}` }}>
                       <a className="read-more">
                         Read More <i className="fas fa-angle-double-right" />
