@@ -36,7 +36,6 @@ const RelatedProductSlider = ({ spaceBottomClass, category }) => {
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
   const prods = getProducts(products.product, category, null, 6);
-  
   return (
     <div className={clsx("related-product-area", spaceBottomClass)}>
       <div className="container">

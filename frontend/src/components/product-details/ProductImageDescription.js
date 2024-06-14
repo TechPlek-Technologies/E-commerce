@@ -13,7 +13,7 @@ const ProductImageDescription = ({ spaceTopClass, spaceBottomClass, galleryType,
   const wishlistItem = wishlistItems.find(item => item.id === product.id);
   const compareItem = compareItems.find(item => item.id === product.id);
 
-  const discountedPrice = getDiscountPrice(product.price, product.discount);
+  const discountedPrice =  product.discount;
   const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
   const finalDiscountedPrice = +(
     discountedPrice * currency.currencyRate

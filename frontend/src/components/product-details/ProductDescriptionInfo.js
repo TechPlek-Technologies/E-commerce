@@ -19,14 +19,25 @@ const ProductDescriptionInfo = ({
   compareItem,
 }) => {
   const dispatch = useDispatch();
+
+  console.log(product.variants);
+
+  const [selectedPackSize,setSelectedPackSize]=useState( product.variants.length > 0 && product.variants[0].attr
+    ? product.variants[0].attr
+    : "")
+
   const [selectedProductColor, setSelectedProductColor] = useState(
-    product.variants.length>0 ? product.variants[0].color : ""
+    product.variants.length > 0 && product.variants[0].color
+      ? product.variants[0].color
+      : ""
   );
   const [selectedProductSize, setSelectedProductSize] = useState(
-    product.variants.length>0 ? product.variation[0].size[0].name : ""
+    product.variants.length > 0 && product.variants[0].size
+      ? product.variants[0].size
+      : ""
   );
   const [productStock, setProductStock] = useState(
-    product.variants.length>0 ? product.variants[0] : product.quantity
+    product.variants.length > 0 ? product?.variants[0].qty : product.quantity
   );
   const [quantityCount, setQuantityCount] = useState(1);
 
@@ -65,75 +76,126 @@ const ProductDescriptionInfo = ({
         <p>{product.shortDescription}</p>
       </div>
 
-      {product.variants.length>0 ? (
+      {product.variants.length > 0 ? (
         <div className="pro-details-size-color">
-          <div className="pro-details-color-wrap">
-            <span>Color</span>
-            <div className="pro-details-color-content">
-              {product?.variation.map((single, key) => {
-                return (
-                  <label
-                    className={`pro-details-color-content--single ${single.color}`}
-                    key={key}
-                  >
-                    <input
-                      type="radio"
-                      value={single.color}
-                      name="product-color"
-                      checked={
-                        single.color === selectedProductColor ? "checked" : ""
-                      }
-                      onChange={() => {
-                        setSelectedProductColor(single.color);
-                        setSelectedProductSize(single.size[0].name);
-                        setProductStock(single.size[0].stock);
-                        setQuantityCount(1);
-                      }}
-                    />
-                    <span className="checkmark"></span>
-                  </label>
-                );
-              })}
-            </div>
-          </div>
-          <div className="pro-details-size">
-            <span>Size</span>
-            <div className="pro-details-size-content">
-              {product.variation &&
-                product.variation.map(single => {
-                  return single.color === selectedProductColor
-                    ? single.size.map((singleSize, key) => {
-                        return (
-                          <label
-                            className={`pro-details-size-content--single`}
-                            key={key}
-                          >
-                            <input
-                              type="radio"
-                              value={singleSize.name}
-                              checked={
-                                singleSize.name === selectedProductSize
-                                  ? "checked"
-                                  : ""
-                              }
-                              onChange={() => {
-                                setSelectedProductSize(singleSize.name);
-                                setProductStock(singleSize.stock);
-                                setQuantityCount(1);
-                              }}
-                            />
-                            <span className="size-name">{singleSize.name}</span>
-                          </label>
-                        );
-                      })
-                    : "";
+
+         
+
+          {product.variants.color ? (
+            <div className="pro-details-color-wrap">
+              <span>Color</span>
+              <div className="pro-details-color-content">
+                {product?.variants.map((single, key) => {
+                  return (
+                    <label
+                      className={`pro-details-color-content--single ${single.color}`}
+                      key={key}
+                    >
+                      <input
+                        type="radio"
+                        value={single.color}
+                        name="product-color"
+                        checked={
+                          single.color === selectedProductColor ? "checked" : ""
+                        }
+                        onChange={() => {
+                          setSelectedProductColor(single.color);
+                          setSelectedProductSize(single.size[0].name);
+                          setProductStock(single.size[0].stock);
+                          setQuantityCount(1);
+                        }}
+                      />
+                      <span className="checkmark"></span>
+                    </label>
+                  );
                 })}
+              </div>
             </div>
-          </div>
+          ) : (
+            ""
+          )}
+
+          {product.variants[0].attr ? (
+            <div className="pro-details-size">
+              <span>Pack Size</span>
+              <div className="pro-details-size-content">
+                {product.variants &&
+                  product.variants.map((single) => 
+                    (
+                      <label
+                        className={`pro-details-size-content--single`}
+                        key={""}
+                      >
+                        <input
+                          type="radio"
+                          value={single.price}
+                          checked={
+                            single.attr === selectedPackSize
+                              ? "checked"
+                              : ""
+                          }
+                          onChange={() => {
+                            setSelectedProductSize(single.name);
+                            setProductStock(single.stock);
+                            setQuantityCount(1);
+                          }}
+                        />
+                        <span className="size-name">
+                          {single.attr}
+                        </span>
+                      </label>
+                    )
+                  )}
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+          {product.variants[0].size ? (
+            <div className="pro-details-size">
+              <span>Size</span>
+              <div className="pro-details-size-content">
+                {product.variants &&
+                  product.variants.map((single) => {
+                    return single.attr === selectedProductColor
+                      ? single.size.map((singleSize, key) => {
+                          return (
+                            <label
+                              className={`pro-details-size-content--single`}
+                              key={key}
+                            >
+                              <input
+                                type="radio"
+                                value={singleSize.name}
+                                checked={
+                                  singleSize.name === selectedProductSize
+                                    ? "checked"
+                                    : ""
+                                }
+                                onChange={() => {
+                                  setSelectedProductSize(singleSize.name);
+                                  setProductStock(singleSize.stock);
+                                  setQuantityCount(1);
+                                }}
+                              />
+                              <span className="size-name">
+                                {singleSize.name}
+                              </span>
+                            </label>
+                          );
+                        })
+                      : "";
+                  })}
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       ) : (
         ""
       )}
+
       {product.affiliateLink ? (
         <div className="pro-details-quality">
           <div className="pro-details-cart btn-hover ml-0">
@@ -180,12 +242,22 @@ const ProductDescriptionInfo = ({
             {productStock && productStock > 0 ? (
               <button
                 onClick={() =>
-                  dispatch(addToCart({
-                    ...product,
-                    quantity: quantityCount,
-                    selectedProductColor: selectedProductColor ? selectedProductColor : product.selectedProductColor ? product.selectedProductColor : null,
-                    selectedProductSize: selectedProductSize ? selectedProductSize : product.selectedProductSize ? product.selectedProductSize : null
-                  }))
+                  dispatch(
+                    addToCart({
+                      ...product,
+                      quantity: quantityCount,
+                      selectedProductColor: selectedProductColor
+                        ? selectedProductColor
+                        : product.selectedProductColor
+                        ? product.selectedProductColor
+                        : null,
+                      selectedProductSize: selectedProductSize
+                        ? selectedProductSize
+                        : product.selectedProductSize
+                        ? product.selectedProductSize
+                        : null,
+                    })
+                  )
                 }
                 disabled={productCartQty >= productStock}
               >
@@ -226,6 +298,7 @@ const ProductDescriptionInfo = ({
           </div>
         </div>
       )}
+
       {product.category ? (
         <div className="pro-details-meta">
           <span>Categories :</span>
@@ -244,6 +317,7 @@ const ProductDescriptionInfo = ({
       ) : (
         ""
       )}
+
       {product.tag ? (
         <div className="pro-details-meta">
           <span>Tags :</span>
@@ -304,7 +378,7 @@ ProductDescriptionInfo.propTypes = {
   finalDiscountedPrice: PropTypes.number,
   finalProductPrice: PropTypes.number,
   product: PropTypes.shape({}),
-  wishlistItem: PropTypes.shape({})
+  wishlistItem: PropTypes.shape({}),
 };
 
 export default ProductDescriptionInfo;

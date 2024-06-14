@@ -21,9 +21,7 @@ const Shop = () => {
   const [sortedProducts, setSortedProducts] = useState([]);
   const { products } = useSelector((state) => state.products);
 
-  console.log("products",products);
   const pageLimit = 9;
-  let { pathname } = useLocation();
 
   const getLayout = layout => {
     setLayout(layout);

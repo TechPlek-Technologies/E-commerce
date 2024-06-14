@@ -2,7 +2,7 @@ node_modules
 
 .env
 
-uploads
+backend/uploads
 
 node_modules
 

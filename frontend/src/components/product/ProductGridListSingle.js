@@ -18,6 +18,8 @@ const ProductGridListSingle = ({
   compareItem,
   spaceBottomClass
 }) => {
+  console.log("products",product);
+
   const [modalShow, setModalShow] = useState(false);
   const discountedPrice = product.descount;
   const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
@@ -83,7 +85,7 @@ const ProductGridListSingle = ({
                     {" "}
                     Buy now{" "}
                   </a>
-                ) : product.variation && product.variation.length >= 1 ? (
+                ) : product.variants && product.variants.length >= 1 ? (
                   <Link to={`${process.env.PUBLIC_URL}/product/${product.slug}`}>
                     Select Option
                   </Link>
@@ -229,9 +231,9 @@ const ProductGridListSingle = ({
                         {" "}
                         Buy now{" "}
                       </a>
-                    ) : product.variation && product.variation.length >= 1 ? (
+                    ) : product.variants && product.variants.length >= 1 ? (
                       <Link
-                        to={`${process.env.PUBLIC_URL}/product/${product.id}`}
+                        to={`${process.env.PUBLIC_URL}/product/${product.slug}`}
                       >
                         Select Option
                       </Link>
