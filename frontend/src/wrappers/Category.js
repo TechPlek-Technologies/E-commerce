@@ -81,7 +81,7 @@ console.log("category",category);
                         />
                         </div>
                         <h5>
-                           <Link href="/">{item.name}</Link>
+                           <Link href="/">{item.name?item.name:""}</Link>
                         </h5>
               
                     </div>
