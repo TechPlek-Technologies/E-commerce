@@ -81,7 +81,6 @@ const BlogInner = ({ data }) => {
 };
 
 const BlogCategory = ({data}) => {
-  console.log(data);
   return (
     <div className="widget widget-menu wow fadeInUp delay-0-4s">
       <h4 className="widget-title">

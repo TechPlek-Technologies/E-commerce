@@ -6,7 +6,6 @@ import Slider from "react-slick";
 const BlogSection = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const { blogData } = useSelector((store) => store.blog);
-  console.log(blogData);
   const props = {
     slidesToShow: 2,
     slidesToScroll: 1,

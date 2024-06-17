@@ -53,7 +53,6 @@ function App() {
   }, [dispatch, loading]);
 
   const color = useSetting("color");
-  // console.log(color);
   useEffect(() => {
     if (color) {
       const cssVariables = generateCssVariables(color);

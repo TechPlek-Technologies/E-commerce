@@ -35,7 +35,6 @@ export const logout = createAsyncThunk(
     const domain = process.env.REACT_APP_URL;
     try {
       const response = await axios.post(`${domain}/auth/logout`, {}, { withCredentials: true });
-      console.log(response.data);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response.data);

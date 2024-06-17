@@ -114,7 +114,6 @@ const cartSlice = createSlice({
     increaseQuantity(state, action) {
       const cartItem = action.payload;
       const cartItemId = cartItem.cartItemId;
-      console.log(cartItem, cartItemId);
       if (cartItem) {
         if (cartItem.quantity <=0) {
           
