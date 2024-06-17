@@ -1,7 +1,7 @@
 require("rootpath")();
 require('dotenv').config()
 const express = require("express");
-const errorHandler = require("_middleware/error-handler");
+const errorHandler = require("./_middleware/error-handler");
 const cors=require("cors")
 const cookieParser = require('cookie-parser');
 const connection = require("./utils/connection");
