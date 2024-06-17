@@ -14,8 +14,6 @@ const truncateText = (text, limit) => {
 };
 const BlogInner = ({ data }) => {
 
-
-
   const isoDateStr = data.blogs[0].date;
   const formattedDate = formatDate(isoDateStr);
   return (
