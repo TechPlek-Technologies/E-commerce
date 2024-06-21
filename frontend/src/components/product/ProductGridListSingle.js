@@ -21,7 +21,7 @@ const ProductGridListSingle = ({
   console.log("products",product);
 
   const [modalShow, setModalShow] = useState(false);
-  const discountedPrice = product.descount;
+  const discountedPrice = product.discount;
   const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
   const finalDiscountedPrice = +(
     discountedPrice * currency.currencyRate
@@ -301,7 +301,7 @@ const ProductGridListSingle = ({
           </div>
         </div>
       {/* product modal */}
-      {/* <ProductModal
+      <ProductModal
         show={modalShow}
         onHide={() => setModalShow(false)}
         product={product}
@@ -311,7 +311,7 @@ const ProductGridListSingle = ({
         finalDiscountedPrice={finalDiscountedPrice}
         wishlistItem={wishlistItem}
         compareItem={compareItem}
-      /> */}
+      />
     </Fragment>
   );
 };

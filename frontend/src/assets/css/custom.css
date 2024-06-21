@@ -5,3 +5,120 @@
   z-index: 10000000;
   top: 220px;
   }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the video */
+  }
+  
+  .react-player {
+    position: relative;
+  }
+  
+  .video-btn {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 8px 14px;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .share-buttons {
+    position: absolute;
+    top: 0;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+    transform: translate(-111%, 8%);
+  }
+  
+  .share-button {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .share-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .video-play1{
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    background: #ffffff;
+    line-height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    color: #010101;
+    display: inline-block;
+  }
+
+  .video-play1:hover{
+    color: #76a713;
+  }
+
+  .video-h3{
+    margin: 10px;
+    font-weight: 600;
+  }
+
+  .button-container {
+    position: absolute;
+    bottom: 80px;
+    right: 10px;
+    gap: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container1 {
+    position: absolute;
+    transform: translate(50%, 2%);
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .rating-form-style1 input,
+.rating-form-style1 textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-submit1 {
+  background: #76a713;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.form-submit1:hover {
+  background: #000;
+  color: white;
+}
+
+.modal-close-button-wrapper {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}

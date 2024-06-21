@@ -9,6 +9,7 @@ import FeatureArea from "../wrappers/FeatureArea";
 import BlogSection from "../wrappers/BlogSection";
 import WhyUsSection from "../wrappers/WhyUsSection";
 import Banner from "../wrappers/Banner";
+import Video from "../wrappers/Video";
 
 
 const Home = () => {
@@ -24,6 +25,8 @@ const Home = () => {
         <HeroSlider/>
 
         <Category/>
+
+        <Video/>
 
         <Banner/>
 

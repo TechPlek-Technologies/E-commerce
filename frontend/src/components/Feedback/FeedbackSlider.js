@@ -22,7 +22,7 @@ const FeedbackSlider = () => {
          {FeedbackData && (
       <div className="feedback-content-area rmb-65 wow fadeInLeft delay-0-2s">
         <div className="section-title text-center mb-10">
-          <h2>WHAT PEOPLE SAY</h2>
+          <h2>What People Say</h2>
         </div>
 
         <Slider {...props} className="feedback-active mt-20">

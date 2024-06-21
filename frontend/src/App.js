@@ -33,6 +33,7 @@ import ShippingPolicy from "./page/ShippingPolicy";
 import Blog from "./page/Blog";
 import BlogDetails from "./page/BlogDetails";
 import { fetchBlogs } from "./redux/slice/blog-slice";
+import SwipeableEdgeDrawer from "./Drawer";
 
 function App() {
   const dispatch = useDispatch();
@@ -53,7 +54,10 @@ function App() {
   }, [dispatch, loading]);
 
   const color = useSetting("color");
-  // console.log(color);
+
+  // const fav = useSetting("favicon");
+  // console.log("fav",fav);
+
   useEffect(() => {
     if (color) {
       const cssVariables = generateCssVariables(color);
@@ -64,7 +68,6 @@ function App() {
       setLoading(false)
     }
   }, [color,dispatch]);
-
 
 
   if (loading) {

@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import ScrollTopBtn from "../components/footer/ScrollTopBtn";
 import { useAllSetting } from "../utils/setting-utils";
+import axios from "axios";
+import { useRef } from "react";
+import { setLoading } from "../redux/slice/loading-slice";
 
 const Footer = () => {
   const {
@@ -15,16 +18,36 @@ const Footer = () => {
     social = [],
   } = useAllSetting() || {};
 
+  const domain = process.env.REACT_APP_URL;
+ const subscriberEmail = useRef(null);
+
+
+  const postData = async () => {
+    const response1 = await axios.post(`${domain}/subscribers`, { email:subscriberEmail.current.value || "" });
+    if (response1.data.success) {
+      setLoading(false);
+      console.log("post",response1.data);
+    }
+    else{
+      console.log("error");
+    }
+  };
+
   return (
     <footer className="main-footer bg-green text-white">
       <div className="container-fluid px-5">
         <div className="footer-top-newsletter py-45 mb-75">
           <div className="section-title">
-            <h2 style={{fontSize:"42px",fontWeight:"500"}}>Newsletter Subscribe</h2>
+            <h2 style={{ fontSize: "42px", fontWeight: "500" }}>
+              Newsletter Subscribe
+            </h2>
           </div>
           <form onSubmit={(e) => e.preventDefault()} action="#">
-            <input type="email" placeholder="Email Address" required="" />
-            <button className="theme-btn">
+            <input type="email" ref={subscriberEmail} placeholder="Email Address" id="post" required="" />
+            <button
+              className="theme-btn"
+              onClick={() => postData()}
+            >
               subscribe now <i className="fas fa-angle-double-right" />
             </button>
           </form>
@@ -33,12 +56,12 @@ const Footer = () => {
           <div className="col-lg-4 col-md-6 order-md-1">
             <div className="footer-widget about-widget text-left">
               <div className="footer-logo mb-30">
-                <Link href="/" style={{background:"#204d00"}}> 
-                    <img
-                    style={{width:"250px"}}
-                      alt={logo ? logo[0].name : "Logo"}
-                      src={logo ? logo[0].url : ""}
-                    />
+                <Link href="/" style={{ background: "#204d00" }}>
+                  <img
+                    style={{ width: "250px" }}
+                    alt={logo ? logo[0].name : "Logo"}
+                    src={logo ? logo[0].url : ""}
+                  />
                 </Link>
               </div>
               <p className="mb-70">{description ? description : ""}</p>
@@ -66,7 +89,9 @@ const Footer = () => {
               <h4 className="footer-title">INFORMATION</h4>
               <ul>
                 <li>
-                  <Link to={process.env.PUBLIC_URL + "/cancellation-refund-policy"}>
+                  <Link
+                    to={process.env.PUBLIC_URL + "/cancellation-refund-policy"}
+                  >
                     <a>Cancellation & Refund Policy</a>
                   </Link>
                 </li>
@@ -81,7 +106,11 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to={process.env.PUBLIC_URL + "/shipping-and-delivery-policy"}>
+                  <Link
+                    to={
+                      process.env.PUBLIC_URL + "/shipping-and-delivery-policy"
+                    }
+                  >
                     <a>Shipping And Delivery Policy</a>
                   </Link>
                 </li>
@@ -142,8 +171,9 @@ const Footer = () => {
                 <li>
                   <i className="far fa-phone" />
                   <a href={`calto:${phoneFooter}`}>
-                    For Doctor Consultation <br /> {phoneFooter ? phoneFooter : ""} <br /> Timing
-                    - 12:00 - 4:00 p.m{" "}
+                    For Doctor Consultation <br />{" "}
+                    {phoneFooter ? phoneFooter : ""} <br /> Timing - 12:00 -
+                    4:00 p.m{" "}
                   </a>
                 </li>
                 <li>
