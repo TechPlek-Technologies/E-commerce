@@ -15,7 +15,7 @@ const BlogDetails = () => {
       <SEO titleTemplate="Blog" />
 
       <LayoutOne>
-      <BlogDetailsInner data={desiredBlog} category={blogData.categories}/>
+      <BlogDetailsInner data={desiredBlog} category={blogData.categories} blogData={blogData}/>
       </LayoutOne>
     </Fragment>
   )

@@ -122,3 +122,33 @@
   font-size: 30px;
   cursor: pointer;
 }
+
+.sidebar-blog-content {
+  span {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+
+    display: block;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #333;
+  }
+  h4 {
+    font-size: 14px;
+
+    margin: 5px 0 0;
+  }
+}
+
+.sidebar-blog-img {
+  flex: 0 0 70px;
+
+  margin: 0 20px 0 0;
+ 
+  img {
+    width: 100%;
+  }
+}
