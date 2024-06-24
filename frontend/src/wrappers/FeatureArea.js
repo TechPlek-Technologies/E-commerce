@@ -18,7 +18,7 @@ const FeatureArea = () => {
             <h4>
               <Link href="/">{footerBanner?footerBanner.delivery.title:""}</Link>
             </h4>
-            <p>{footerBanner?footerBanner.delivery.description:""}</p>
+            <p>{footerBanner?footerBanner.delivery.title:""}</p>
           </div>
         </div>
         <div className="feature-two-item wow fadeInDown delay-0-4s">
