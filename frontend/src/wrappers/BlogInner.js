@@ -14,13 +14,12 @@ const truncateText = (text, limit) => {
 };
 const BlogInner = ({ data }) => {
 
+console.log("data",data);
 
 
-  const isoDateStr = data.blogs[0].date;
-  const formattedDate = formatDate(isoDateStr);
   return (
     <section className="news-standard-page rel z-1 pt-40 rpt-35 pb-40 rpb-100">
-      {data?.blogs && (
+      {data?.blogs.length > 0 && (
         <div className="container">
           <div className="row">
             <div className="col-xl-8 mt-65">
@@ -33,7 +32,7 @@ const BlogInner = ({ data }) => {
                     <ul className="blog-meta">
                       <li>
                         <i className="far fa-calendar-alt" />
-                        <a href="#">{item.date ? formattedDate : ""}</a>
+                        <a href="#">{formatDate(data.blogs[0].date)}</a>
                       </li>
                       <li>
                         <i className="far fa-comment-dots" />
