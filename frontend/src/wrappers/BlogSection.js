@@ -47,14 +47,16 @@ const BlogSection = () => {
                       />
                     </div>
                     <div className="content">
+                    <Link to={`/blog/${item.slug}`}>
                       <span className="sub-title">
                         {item.name ? item.name : ""}
                       </span>
-                      <h5>
-                        <Link to={`/blog/${item.slug}`}>
+                      </Link>
+                      <p>
+                       
                           {item.shortDescription ? truncateText(item.shortDescription, 20) : ""}
-                        </Link>
-                      </h5>
+                        
+                      </p>
                       <Link to={{ pathname: `/blog/${item.slug}` }}>
                         Read More <i className="fas fa-angle-double-right" />
                       </Link>
