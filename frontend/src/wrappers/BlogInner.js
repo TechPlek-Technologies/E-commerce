@@ -12,18 +12,19 @@ const truncateText = (text, limit) => {
   }
   return text.split(" ").slice(0, limit).join(" ") + "...";
 };
+
+const capitalizeFirstLetter = (string) => {
+  if (!string) return '';
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const BlogInner = ({ data }) => {
 
-<<<<<<< HEAD
 console.log("data",data);
 
 
-=======
-  const isoDateStr = data.blogs[0].date;
-  const formattedDate = formatDate(isoDateStr);
->>>>>>> b37668c73749ba634a3afc63cf20d7bcbce0f115
   return (
-    <section className="news-standard-page rel z-1 pt-40 rpt-35 pb-40 rpb-100">
+    <section className="news-standard-page rel z-1 rpt-35 pb-40 rpb-100">
       {data?.blogs.length > 0 && (
         <div className="container">
           <div className="row">
@@ -40,12 +41,12 @@ console.log("data",data);
                         <a href="#">{formatDate(data.blogs[0].date)}</a>
                       </li>
                       <li>
-                        <i className="far fa-comment-dots" />
-                        <a href="#">{item.review ? item.review.length : 0}</a>
+                        <i className="fas fa-award" />
+                        <a href="#">{item.category ? capitalizeFirstLetter(item.category) : ""}</a>
                       </li>
                     </ul>
                     <h4>
-                      <Link href="/blog-details">
+                      <Link to={{ pathname: `/blog/${item.slug}` }}>
                         <a>{item.name ? item.name : ""}</a>
                       </Link>
                     </h4>
@@ -85,10 +86,6 @@ console.log("data",data);
 };
 
 const BlogCategory = ({data}) => {
-<<<<<<< HEAD
-
-=======
->>>>>>> b37668c73749ba634a3afc63cf20d7bcbce0f115
   return (
     <div className="widget widget-menu wow fadeInUp delay-0-4s">
       <h4 className="widget-title">

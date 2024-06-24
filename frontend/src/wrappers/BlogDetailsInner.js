@@ -2,13 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const BlogDetailsInner = ({ data,category }) => {
-  console.log(data.description);
+  console.log("data" , data);
   return (
-    <section className="news-standard-page rel z-1 pt-65 rpt-35 pb-130 rpb-100">
+    <section className="news-standard-page rel z-1 rpt-35 pb-130 rpb-100">
       {data && (
         <div className="container">
           <div className="row">
             <div className="col-xl-8 mt-65">
+            <div className="image pt-5 wow fadeInUp delay-0-2s">
+                    <img
+                      src={JSON.parse(data.icon)? JSON.parse(data.icon)[0].url:""}
+                      alt=""
+                    />
+              </div>
               <div dangerouslySetInnerHTML={{
               __html: data && data.description,
             }}>
