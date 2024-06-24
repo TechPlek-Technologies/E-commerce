@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import VideoInner1 from "../components/VideoInner/VideoInner1";
 
 const Video = () => {
   const { products } = useSelector((state) => state.products);
-  console.log("products", products);
 
   if (products === null) {
     return (

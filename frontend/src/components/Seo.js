@@ -7,22 +7,23 @@ const SEO = ({ titleTemplate }) => {
         title: "E-Commerce",
         titleTemplate: "Home Page",
         description: "Ecommerce Website meta description",
-        favicon: "./favicon.ico"
+        favicon: "./favicon.webp"
     };
 
     const seo=useSetting("seo");
+    console.log(seo);
 
-const { description = '', image: favicon = '', keyword = '', title = '' } = seo || {};
+
 
     return (
         <HelmetProvider>
             <Helmet>
                 <meta charSet="utf-8" />
-                <link rel="icon" href={favicon? favicon[0].url :defaultProps.favicon} />
+                <link rel="icon" href={seo.favicon? seo.favicon[1].url :defaultProps.favicon} />
                 <title>
-                {title ? title :defaultProps.title} | {titleTemplate? titleTemplate :defaultProps.titleTemplate}
+                {seo.title ? seo.title :defaultProps.title} | {titleTemplate? titleTemplate :defaultProps.titleTemplate}
                 </title>
-                <meta name="description" content={description? description :defaultProps.description} />
+                <meta name="description" content={seo.description? seo.description :defaultProps.description} />
             </Helmet>
         </HelmetProvider>
     );

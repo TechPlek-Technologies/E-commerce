@@ -9,7 +9,7 @@ const Blog = () => {
 
   const { blogData } = useSelector((store) => store.blog);
 
-
+console.log(blogData);
   return (
     <Fragment>
       <SEO titleTemplate="Blog" />

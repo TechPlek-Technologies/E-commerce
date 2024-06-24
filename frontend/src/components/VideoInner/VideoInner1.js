@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 const VideoInner1 = ({
   products,
 }) => {
+  console.log("products",products);
   const [modalShow, setModalShow] = useState(false);
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
@@ -66,7 +67,7 @@ const VideoInner1 = ({
             
             <div
               className="wow fadeInUp delay-0-2s"
-              key={item.video[0].name}
+              key={item.video ? item.video[0].name :""}
               onMouseEnter={showControls}
               onMouseLeave={hideControls}
             >
@@ -85,21 +86,21 @@ const VideoInner1 = ({
 
                   }
               >
-                <source src={item.video[0].url} type="video/mp4" />
+                <source src={item.video? item.video[0].url:""} type="video/mp4" />
               </video>
             </div>
           ))}
         </Slider>
       </div>
 
-      <VideoModal
+      {/* <VideoModal
         show={modalShow}
         onHide={() => setModalShow(false)}
         product={singleProduct}
         currency={currency}
         wishlistItem={wishlistItems}
         compareItem={compareItems}
-      />
+      /> */}
     </section>
   );
 };

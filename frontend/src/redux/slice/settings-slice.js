@@ -13,7 +13,6 @@ export const fetchSettings = createAsyncThunk(
   async () => {
     const domain = process.env.REACT_APP_URL;
     const response = await axios.get(`${domain}/home`); // Replace with your API endpoint
-    console.log("Home1",response.data);
     return response.data;
   }
 );
