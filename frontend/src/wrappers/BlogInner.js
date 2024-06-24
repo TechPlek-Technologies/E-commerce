@@ -14,9 +14,14 @@ const truncateText = (text, limit) => {
 };
 const BlogInner = ({ data }) => {
 
+<<<<<<< HEAD
 console.log("data",data);
 
 
+=======
+  const isoDateStr = data.blogs[0].date;
+  const formattedDate = formatDate(isoDateStr);
+>>>>>>> b37668c73749ba634a3afc63cf20d7bcbce0f115
   return (
     <section className="news-standard-page rel z-1 pt-40 rpt-35 pb-40 rpb-100">
       {data?.blogs.length > 0 && (
@@ -80,7 +85,10 @@ console.log("data",data);
 };
 
 const BlogCategory = ({data}) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> b37668c73749ba634a3afc63cf20d7bcbce0f115
   return (
     <div className="widget widget-menu wow fadeInUp delay-0-4s">
       <h4 className="widget-title">

@@ -49,7 +49,16 @@ const MyAccount = () => {
   const { authData, isAuthenticated } = useSelector((state) => state.auth);
   const { profileData } = useSelector((state) => state.profile);
   const { user } = profileData;
-  const { name="", email="", phone="", house="", city="", state="", zipCode="", country="" } = user|| {};
+  const {
+    name = "",
+    email = "",
+    phone = "",
+    house = "",
+    city = "",
+    state = "",
+    zipCode = "",
+    country = "",
+  } = user || {};
   const [userInfo, setUserInfo] = useState({
     name: name || "",
     email: email || "",
@@ -59,8 +68,8 @@ const MyAccount = () => {
     state: state || "",
     zipCode: zipCode || "",
     country: country || "",
-    password:"",
-    confirmPassword:""
+    password: "",
+    confirmPassword: "",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,7 +77,6 @@ const MyAccount = () => {
       ...prevState,
       [name]: value,
     }));
-    console.log(userInfo);
   };
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -91,11 +99,10 @@ const MyAccount = () => {
       { data },
       { withCredentials: true }
     );
-    dispatch(updateProfile(userInfo))
-if(response.data.success){
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-    console.log(response.data);
+    dispatch(updateProfile(userInfo));
+    if (response.data.success) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
@@ -271,20 +278,29 @@ if(response.data.success){
                             <div className="col-lg-12 col-md-12">
                               <div className="billing-info">
                                 <label>Password</label>
-                                <input type="password" name="name" onChange={handleChange}/>
-                                
+                                <input
+                                  type="password"
+                                  name="name"
+                                  onChange={handleChange}
+                                />
                               </div>
                             </div>
                             <div className="col-lg-12 col-md-12">
                               <div className="billing-info">
                                 <label>Password Confirm</label>
-                                <input type="password" name="confirmPassword" onChange={handleChange}/>
+                                <input
+                                  type="password"
+                                  name="confirmPassword"
+                                  onChange={handleChange}
+                                />
                               </div>
                             </div>
                           </div>
                           <div className="billing-back-btn">
                             <div className="billing-btn">
-                              <button disabled type="submit">Continue</button>
+                              <button disabled type="submit">
+                                Continue
+                              </button>
                             </div>
                           </div>
                         </div>
