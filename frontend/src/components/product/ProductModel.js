@@ -1,6 +1,5 @@
 import { Fragment, useState } from "react";
 import PropTypes from "prop-types";
-import { EffectFade, Thumbs } from "swiper";
 import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductCartQuantity } from "../../helpers/product";
@@ -49,8 +48,8 @@ function ProductModal({
     fadeEffect: {
       crossFade: true,
     },
-    thumbs: { swiper: thumbsSwiper },
-    modules: [EffectFade, Thumbs],
+    // thumbs: { swiper: thumbsSwiper },
+    // modules: [EffectFade, Thumbs],
   };
 
   const thumbnailSwiperParams = {

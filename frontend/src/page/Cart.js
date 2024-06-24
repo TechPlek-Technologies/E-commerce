@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import SEO from "../components/Seo";
@@ -12,6 +12,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   
   const { cartItems } = useSelector((state) => state.cart);
+
   return (
     <Fragment>
       <SEO
@@ -249,7 +250,7 @@ const Cart = () => {
                       <div className="discount-code">
                         <p>Enter your coupon code if you have one.</p>
                         <form>
-                          <input type="text" required name="name" />
+                          <input type="text" required name="name"/>
                           <button className="cart-btn-2" type="submit">
                             Apply Coupon
                           </button>

@@ -12,13 +12,20 @@ const truncateText = (text, limit) => {
   }
   return text.split(" ").slice(0, limit).join(" ") + "...";
 };
+
+const capitalizeFirstLetter = (string) => {
+  if (!string) return '';
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const BlogInner = ({ data }) => {
 
-  const isoDateStr = data.blogs[0].date;
-  const formattedDate = formatDate(isoDateStr);
+console.log("data",data);
+
+
   return (
-    <section className="news-standard-page rel z-1 pt-40 rpt-35 pb-40 rpb-100">
-      {data?.blogs && (
+    <section className="news-standard-page rel z-1 rpt-35 pb-40 rpb-100">
+      {data?.blogs.length > 0 && (
         <div className="container">
           <div className="row">
             <div className="col-xl-8 mt-65">
@@ -31,15 +38,15 @@ const BlogInner = ({ data }) => {
                     <ul className="blog-meta">
                       <li>
                         <i className="far fa-calendar-alt" />
-                        <a href="#">{item.date ? formattedDate : ""}</a>
+                        <a href="#">{formatDate(data.blogs[0].date)}</a>
                       </li>
                       <li>
-                        <i className="far fa-comment-dots" />
-                        <a href="#">{item.review ? item.review.length : 0}</a>
+                        <i className="fas fa-award" />
+                        <a href="#">{item.category ? capitalizeFirstLetter(item.category) : ""}</a>
                       </li>
                     </ul>
                     <h4>
-                      <Link href="/blog-details">
+                      <Link to={{ pathname: `/blog/${item.slug}` }}>
                         <a>{item.name ? item.name : ""}</a>
                       </Link>
                     </h4>

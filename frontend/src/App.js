@@ -33,6 +33,7 @@ import ShippingPolicy from "./page/ShippingPolicy";
 import Blog from "./page/Blog";
 import BlogDetails from "./page/BlogDetails";
 import { fetchBlogs } from "./redux/slice/blog-slice";
+import SwipeableEdgeDrawer from "./Drawer";
 
 function App() {
   const dispatch = useDispatch();
@@ -63,7 +64,6 @@ function App() {
       setLoading(false)
     }
   }, [color,dispatch]);
-
 
 
   if (loading) {

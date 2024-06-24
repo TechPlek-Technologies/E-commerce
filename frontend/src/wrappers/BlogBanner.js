@@ -2,7 +2,7 @@ const BlogBanner = ({ pageName, pageTitle }) => {
   return (
     <section
     className="page-banner text-white py-165 rpy-130"
-    style={{ backgroundImage: "url(assets/images/banner/banner.jpg)" }}
+    style={{ backgroundImage: "url(/assets/img/service-details/ayurveda-treatment.webp)" }}
   >
     <div className="container">
       <div className="banner-inner">
