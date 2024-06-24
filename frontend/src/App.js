@@ -54,10 +54,6 @@ function App() {
   }, [dispatch, loading]);
 
   const color = useSetting("color");
-
-  // const fav = useSetting("favicon");
-  // console.log("fav",fav);
-
   useEffect(() => {
     if (color) {
       const cssVariables = generateCssVariables(color);

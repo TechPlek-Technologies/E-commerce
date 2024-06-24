@@ -35,7 +35,7 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
           </li>
 
          <li>
-            <Link to={process.env.PUBLIC_URL + "#"}>
+            <Link >
               {t("shop_by_concern")}
               {sidebarMenu ? (
                 <span>

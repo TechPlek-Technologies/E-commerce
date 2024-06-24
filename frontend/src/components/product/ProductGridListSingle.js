@@ -18,7 +18,6 @@ const ProductGridListSingle = ({
   compareItem,
   spaceBottomClass
 }) => {
-  console.log("products",product);
 
   const [modalShow, setModalShow] = useState(false);
   const discountedPrice = product.discount;

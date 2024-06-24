@@ -14,8 +14,6 @@ const truncateText = (text, limit) => {
 };
 const BlogInner = ({ data }) => {
 
-
-
   const isoDateStr = data.blogs[0].date;
   const formattedDate = formatDate(isoDateStr);
   return (
@@ -81,7 +79,6 @@ const BlogInner = ({ data }) => {
 };
 
 const BlogCategory = ({data}) => {
-
   return (
     <div className="widget widget-menu wow fadeInUp delay-0-4s">
       <h4 className="widget-title">

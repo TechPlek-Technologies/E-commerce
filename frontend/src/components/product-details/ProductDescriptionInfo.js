@@ -20,8 +20,6 @@ const ProductDescriptionInfo = ({
 }) => {
   const dispatch = useDispatch();
 
-  console.log(product.variants);
-
   const [selectedPackSize,setSelectedPackSize]=useState( product.variants.length > 0 && product.variants[0].attr
     ? product.variants[0].attr
     : "")
