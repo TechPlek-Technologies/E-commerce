@@ -4,7 +4,7 @@ import VideoInner1 from "../components/VideoInner/VideoInner1";
 
 const Video = () => {
   const { products } = useSelector((state) => state.products);
-  console.log("products", products);
+  // console.log("products", products);
 
   if (products === null) {
     return (

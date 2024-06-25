@@ -56,7 +56,7 @@ export default function VideoPlayerWithDialog(video) {
   const [open, setOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(false);
   const [showShareButtons, setShowShareButtons] = useState(false);
-console.log("video",video);
+// console.log("video",video);
   const handleClickOpen = () => {
     setOpen(true);
   };

@@ -12,7 +12,7 @@ const VideoModal = ({ show, onHide, wishlistItem, compareItem,currency, product 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { cartItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-console.log("VideoModal",product);
+// console.log("VideoModal",product);
 
 
   const [selectedProductColor, setSelectedProductColor] = useState(
