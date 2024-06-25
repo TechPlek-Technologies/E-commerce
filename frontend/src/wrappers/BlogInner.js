@@ -12,40 +12,58 @@ const truncateText = (text, limit) => {
   }
   return text.split(" ").slice(0, limit).join(" ") + "...";
 };
+
+const capitalizeFirstLetter = (string) => {
+  if (!string) return "";
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const BlogInner = ({ data }) => {
 
-
-
-  const isoDateStr = data.blogs[0].date;
-  const formattedDate = formatDate(isoDateStr);
   return (
-    <section className="news-standard-page rel z-1 pt-40 rpt-35 pb-40 rpb-100">
-      {data?.blogs && (
+    <section className="news-standard-page rel z-1 rpt-35 pb-40 rpb-100">
+      {data?.blogs.length > 0 && (
         <div className="container">
           <div className="row">
             <div className="col-xl-8 mt-65">
               {data?.blogs.map((item) => (
                 <div className="news-standard-item wow fadeInUp delay-0-2s">
                   <div className="image">
-                    <img src={JSON.parse(item.icon)? JSON.parse(item.icon)[0].url:""} alt="" />
+                    <img
+                      src={
+                        JSON.parse(item.icon)
+                          ? JSON.parse(item.icon)[0].url
+                          : ""
+                      }
+                      alt=""
+                    />
                   </div>
                   <div className="content">
                     <ul className="blog-meta">
                       <li>
                         <i className="far fa-calendar-alt" />
-                        <a href="#">{item.date ? formattedDate : ""}</a>
+                        <a href="#">{formatDate(data.blogs[0].date)}</a>
                       </li>
                       <li>
-                        <i className="far fa-comment-dots" />
-                        <a href="#">{item.review ? item.review.length : 0}</a>
+                        <i className="fas fa-award" />
+                        <a href="#">
+                          {item.category
+                            ? capitalizeFirstLetter(item.category)
+                            : ""}
+                        </a>
                       </li>
                     </ul>
                     <h4>
-                      <Link href="/blog-details">
+                      <Link to={{ pathname: `/blog/${item.slug}` }}>
                         <a>{item.name ? item.name : ""}</a>
                       </Link>
                     </h4>
-                    <p> {item.shortDescription ? truncateText(item.shortDescription, 20) : ""}</p>
+                    <p>
+                      {" "}
+                      {item.shortDescription
+                        ? truncateText(item.shortDescription, 20)
+                        : ""}
+                    </p>
                     <Link to={{ pathname: `/blog/${item.slug}` }}>
                       <a className="read-more">
                         Read More <i className="fas fa-angle-double-right" />
@@ -70,7 +88,8 @@ const BlogInner = ({ data }) => {
                     />
                   </form>
                 </div>
-                {BlogCategory({data})}
+                {BlogRecent({ data })}
+                {BlogCategory({ data })}
               </div>
             </div>
           </div>
@@ -80,8 +99,7 @@ const BlogInner = ({ data }) => {
   );
 };
 
-const BlogCategory = ({data}) => {
-
+const BlogCategory = ({ data }) => {
   return (
     <div className="widget widget-menu wow fadeInUp delay-0-4s">
       <h4 className="widget-title">
@@ -89,11 +107,45 @@ const BlogCategory = ({data}) => {
         Category
       </h4>
       {data.categories.map((item) => (
-      <ul>
-        <li>
-          <Link href="#">{item.name ? item.name:""}</Link>
-        </li>
-      </ul> ))}
+        <ul>
+          <li>
+            <Link href="#">{item.name ? item.name : ""}</Link>
+          </li>
+        </ul>
+      ))}
+    </div>
+  );
+};
+
+const BlogRecent = ({ data }) => {
+  return (
+    <div className="widget widget-news wow fadeInUp delay-0-2s">
+      <h4 className="widget-title">
+        <i className="flaticon-leaf-1" />
+        Recent Posts
+      </h4>
+      {data?.blogs.slice(0, 5).map((item, index) => (
+        <ul key={index}>
+          <li>
+            <div className="image">
+              <img
+                src={JSON.parse(item.icon) ? JSON.parse(item.icon)[0].url : ""}
+                alt=""
+              />
+            </div>
+            <div className="content pt-10">
+              <h6>
+                <Link to={{ pathname: `/blog/${item.slug}` }}>
+                  {item.name ? item.name : ""}
+                </Link>
+              </h6>
+              <span className="name">
+                {item.category ? capitalizeFirstLetter(item.category) : ""}
+              </span>
+            </div>
+          </li>
+        </ul>
+      ))}
     </div>
   );
 };

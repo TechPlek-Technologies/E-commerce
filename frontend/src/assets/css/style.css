@@ -97,22 +97,22 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 h1 {
   line-height: 1.13;
-  font-size: 80px; }
+  font-size: 45px; }
 
 h2 {
   line-height: 1.25;
-  font-size: 38px; }
+  font-size: 30px; }
 
 h3 {
   line-height: 1.3;
-  font-size: 30px; }
+  font-size: 22px; }
 
 h4 {
   line-height: 1.45;
-  font-size: 22px; }
+  font-size: 20px; }
 
 h5 {
-  font-size: 20px; }
+  font-size: 18px; }
 
 h6 {
   line-height: 1.5;
@@ -3904,7 +3904,7 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
   max-width: max-content;
   margin-left: auto;
   margin-right: auto;
-  background: #76a713; }
+  background: #0000006e; }
   @media only screen and (max-width: 575px) {
     .banner-inner {
       padding: 25px 55px; } }
@@ -5845,8 +5845,8 @@ h1, h2, h3, h4, h5, h6, blockquote, .tag-coulds a {
     line-height: 1;
     margin-bottom: 10px; }
     .blog-meta li:not(:last-child) {
-      margin-right: 30px;
-      padding-right: 30px;
+      margin-right: 20px;
+      padding-right: 20px;
       border-right: 1px solid #666666; }
       @media only screen and (max-width: 375px) {
         .blog-meta li:not(:last-child) {
@@ -6754,7 +6754,7 @@ blockquote {
         max-width: 70px;
         margin-right: 15px; } }
   .widget-news ul li h6 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 0; }
     @media only screen and (max-width: 375px) {

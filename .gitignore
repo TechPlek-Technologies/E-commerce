@@ -1,11 +1,11 @@
 node_modules
 
-.env
 
+uploads
 backend/uploads
 
 node_modules
 
 frontend/dashboard/.next
 
-client-page.js
+
