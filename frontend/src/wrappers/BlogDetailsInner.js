@@ -7,7 +7,7 @@ const capitalizeFirstLetter = (string) => {
 };
 
 const BlogDetailsInner = ({ data,category,blogData }) => {
-  console.log("Blogdata" , data);
+  // console.log("Blogdata" , data);
   return (
     <section className="news-standard-page rel z-1 rpt-35 pb-130 rpb-100">
       {data && (
@@ -61,7 +61,7 @@ const BlogCategory = ({data}) => {
       {data.map((item) => (
       <ul>
         <li>
-          <Link href="#">{item.name?item.name:""}</Link>
+          <Link to={{ pathname: `/blog/category/${item?.slug}` }}>{item.name?item.name:""}</Link>
         </li>
       </ul> ))}
     </div>

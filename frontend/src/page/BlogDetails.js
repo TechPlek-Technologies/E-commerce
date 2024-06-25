@@ -10,6 +10,7 @@ const BlogDetails = () => {
   let { slug } = useParams();
   const { blogData } = useSelector((store) => store.blog);
   const desiredBlog = blogData.blogs.find(blog => blog?.slug === slug);
+  // console.log("slug",slug);
   return (
     <Fragment>
       <SEO titleTemplate="Blog" />
