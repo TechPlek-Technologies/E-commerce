@@ -11,7 +11,7 @@ const ProductImageGallery = ({ product }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [index, setIndex] = useState(-1);
 
-
+console.log("ProductImageGallery",product);
   const slides = product?.image?.map((img, i) => ({
     src: img.url,
     key: i,

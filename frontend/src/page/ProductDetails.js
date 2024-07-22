@@ -33,7 +33,7 @@ const ProductDetails = () => {
         {/* product description tab */}
         <ProductDescriptionTab
           spaceBottomClass="pb-90"
-          productFullDesc={product.description}
+          product={product}
         />
 
         {/* related product slider */}

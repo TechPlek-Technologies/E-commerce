@@ -73,7 +73,7 @@ export default function VideoPlayerWithDialog(video) {
   return (
     <div style={{ position: 'relative'}}>
       <ReactPlayer
-        url={video.video.url}
+        url={"/assets/Video/Video-129.mp4"}
         controls
         width="100%"
         height="100%"

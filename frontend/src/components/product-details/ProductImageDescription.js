@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
-import { getDiscountPrice } from "../../helpers/product";
 import ProductImageGallery from "./ProductImageGallery";
 import ProductDescriptionInfo from "./ProductDescriptionInfo";
 import { currency } from "../../helpers/currency";
@@ -12,7 +11,6 @@ const ProductImageDescription = ({ spaceTopClass, spaceBottomClass, galleryType,
   const { compareItems } = useSelector((state) => state.compare);
   const wishlistItem = wishlistItems.find(item => item.id === product.id);
   const compareItem = compareItems.find(item => item.id === product.id);
-
   const discountedPrice =  product.discount;
   const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
   const finalDiscountedPrice = +(

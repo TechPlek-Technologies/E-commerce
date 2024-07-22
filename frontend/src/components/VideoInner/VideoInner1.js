@@ -66,7 +66,7 @@ const VideoInner1 = ({
             
             <div
               className="wow fadeInUp delay-0-2s"
-              key={item.video[0].name}
+              key={item.video ? item.video[0].name :""}
               onMouseEnter={showControls}
               onMouseLeave={hideControls}
             >
@@ -77,7 +77,7 @@ const VideoInner1 = ({
                 muted
                 autoPlay
                 loop
-                controls={controlsVisible}
+                // controls={controlsVisible}
                 onClick={async() =>{
                   await setSingleProduct(item);
                   setModalShow(true)
@@ -85,8 +85,12 @@ const VideoInner1 = ({
 
                   }
               >
-                <source src={item.video[0].url} type="video/mp4" />
+                <source src={"./assets/Video/Video-12.mp4"} type="video/mp4" />
+                <div>
+                <p>this is a demo text</p>
+              </div>
               </video>
+             
             </div>
           ))}
         </Slider>

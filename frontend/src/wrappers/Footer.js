@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { setLoading } from "../redux/slice/loading-slice";
 
 const Footer = () => {
+  // dyanmic data
   const {
     logo = [],
     copyright = "",
@@ -17,6 +18,27 @@ const Footer = () => {
     email = "",
     social = [],
   } = useAllSetting() || {};
+
+
+  // static data to be removed 
+  // const logo=[{name:"logo",url:"https://vedarma.com/wp-content/uploads/2023/12/Vedarma_logo-1.png" }];
+  // const copyright="© 2024 - Vedarma";
+  // // const name=""
+
+  // const description="Vedarma Wellness Pvt. Ltd. is a Trusted Ayurvedic and Nutraceuticals Company guiding your journey towards natural, transformative well-being, through high-quality, safe, and effective products."
+
+  // const address="Shiva Market, Pitampura, Delhi 110034";
+  // const phoneFooter="+91 9315951993";
+  // const phoneHeader="+91 9315951993";
+  // const email="contact@vedarma.com";
+  // const social={
+  //   facebook:"https://www.facebook.com/vedarma1",
+  //   instagram:"https://www.instagram.com/vedarma/",
+  //   twitter:"https://x.com/vedarma1"
+
+  // }
+
+  // static data end
 
   const domain = process.env.REACT_APP_URL;
  const subscriberEmail = useRef(null);

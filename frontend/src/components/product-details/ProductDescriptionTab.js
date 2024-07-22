@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 
-const ProductDescriptionTab = ({ spaceBottomClass, productFullDesc }) => {
+const ProductDescriptionTab = ({ spaceBottomClass, product }) => {
   return (
     <div className={clsx("description-review-area", spaceBottomClass)}>
       <div className="container">
@@ -19,7 +19,7 @@ const ProductDescriptionTab = ({ spaceBottomClass, productFullDesc }) => {
                 <Nav.Link eventKey="productDescription">Description</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="productReviews">Reviews(2)</Nav.Link>
+                <Nav.Link eventKey="productReviews">Reviews({product.review.length})</Nav.Link>
               </Nav.Item>
             </Nav>
             <Tab.Content className="description-review-bottom">
@@ -43,7 +43,7 @@ const ProductDescriptionTab = ({ spaceBottomClass, productFullDesc }) => {
                 </div>
               </Tab.Pane>
               <Tab.Pane eventKey="productDescription">
-                {productFullDesc}
+              <div dangerouslySetInnerHTML={{ __html: product.description }} />
               </Tab.Pane>
               <Tab.Pane eventKey="productReviews">
                 <div className="row">

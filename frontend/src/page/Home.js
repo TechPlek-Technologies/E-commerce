@@ -26,7 +26,7 @@ const Home = () => {
 
         <Category/>
 
-        <Video/>
+        {/* <Video/> */}
 
         <Banner/>
 

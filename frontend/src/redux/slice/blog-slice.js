@@ -12,9 +12,13 @@ export const fetchBlogs = createAsyncThunk(
   "blogs/fetchBlogs",
   async (_,{ rejectWithValue }) => {
     try {
-      const domain = process.env.REACT_APP_URL;
-      const response = await axios.get(`${domain}/blogs`); // Replace with your API endpoint
-      return response.data;
+      // const domain = process.env.REACT_APP_URL;
+      // const response = await axios.get(`${domain}/blogs`); // Replace with your API endpoint
+      // console.log(response.data);
+      // return response.data;
+      
+    const response = await axios.get('/data/blogs.json');
+    return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
     }

@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import PropTypes from "prop-types";
-import { Modal } from "react-bootstrap";
+import { Image, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductCartQuantity } from "../../helpers/product";
 import SwiperSlider, { SwiperSlide } from "../swiper/swiperSlider";
@@ -67,7 +67,7 @@ function ProductModal({
     setThumbsSwiper(null);
     onHide();
   };
-
+console.log("productModel",product);
   return (
     <Modal
       show={show}
@@ -82,12 +82,13 @@ function ProductModal({
             <div className="product-large-image-wrapper">
               <SwiperSlider options={gallerySwiperParams}>
                 {product.image &&
-                  product.image.map((img, i) => {
+                  product?.image?.map((img, i) => {
                     return (
                       <SwiperSlide key={i}>
                         <div className="single-image">
-                          <img
+                          <Image
                             src={img.src}
+                            // href={img.src}
                             className="img-fluid"
                             alt={img.name}
                           />
@@ -100,7 +101,7 @@ function ProductModal({
             <div className="product-small-image-wrapper mt-15">
               <SwiperSlider options={thumbnailSwiperParams}>
                 {product.image &&
-                  product.image.map((img, i) => {
+                  product?.image.map((img, i) => {
                     return (
                       <SwiperSlide key={i}>
                         <div className="single-image">
@@ -146,7 +147,7 @@ function ProductModal({
                 <p>{product.shortDescription}</p>
               </div>
 
-              {product.variants.length>0 ? (
+              {/* {product.variants.length>0 ? (
                 <div className="pro-details-size-color">
                   <div className="pro-details-color-wrap">
                     <span>Color</span>
@@ -218,7 +219,7 @@ function ProductModal({
                 </div>
               ) : (
                 ""
-              )}
+              )} */}
               {product.affiliateLink ? (
                 <div className="pro-details-quality">
                   <div className="pro-details-cart btn-hover">

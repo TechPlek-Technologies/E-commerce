@@ -12,8 +12,12 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async (_,{ rejectWithValue }) => {
     try {
-      const domain = process.env.REACT_APP_URL;
-      const response = await axios.get(`${domain}/products`); // Replace with your API endpoint
+      // const domain = process.env.REACT_APP_URL;
+      // const response = await axios.get(`${domain}/products`); // Replace with your API endpoint
+      // console.log(response.data);
+      // return response.data;
+
+      const response = await axios.get('/data/product.json');
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

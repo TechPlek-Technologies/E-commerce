@@ -22,21 +22,21 @@ const ProductGridSingle = ({
     discountedPrice * currency.currencyRate
   ).toFixed(2);
   const dispatch = useDispatch();
-
+console.log("product",product);
   return (
     <Fragment>
       <div className={clsx("product-wrap", spaceBottomClass)}>
         <div className="product-img">
-          <Link to={process.env.PUBLIC_URL + "/product/" + product.slug}>
+          <Link to={"/product/" + product.slug}>
             <img
               className="default-img"
-              src={process.env.PUBLIC_URL + product.image[0].url}
+              src={product.image[0].url}
               alt={product.image[0].name}
             />
             {product.image[0].length > 1 ? (
               <img
                 className="hover-img"
-                src={process.env.PUBLIC_URL + product.image[1].url}
+                src={product.image[1].url}
                 alt={product.image[1].name}
               />
             ) : (
