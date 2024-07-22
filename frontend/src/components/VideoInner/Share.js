@@ -56,7 +56,7 @@ export default function VideoPlayerWithDialog(video) {
   const [open, setOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(false);
   const [showShareButtons, setShowShareButtons] = useState(false);
-console.log("video",video);
+// console.log("video",video);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -73,7 +73,7 @@ console.log("video",video);
   return (
     <div style={{ position: 'relative'}}>
       <ReactPlayer
-        url={video.video.url}
+        url={"/assets/Video/Video-129.mp4"}
         controls
         width="100%"
         height="100%"

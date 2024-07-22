@@ -1,0 +1,457 @@
+{
+    "success": true,
+    "category": [
+        {
+            "_id": "66791f9b381c5ef7a2cb1366",
+            "name": "Joint Care",
+            "icon": [
+                {
+                    "name": "812f54d7826e225a03b4a1802.webp",
+                    "url": "https://vedarma.com/wp-content/uploads/2024/04/Joint-pain.webp"
+                }
+            ],
+            "slug": "joint-care"
+        },
+        {
+            "_id": "66791fb1381c5ef7a2cb136a",
+            "name": "Health Care",
+            "icon": [
+                {
+                    "name": "812f54d7826e225a03b4a1803.webp",
+                    "url": "https://vedarma.com/wp-content/uploads/2024/04/Diabetic-1.webp"
+                }
+            ],
+            "slug": "health-care"
+        },
+        {
+            "_id": "66791fef381c5ef7a2cb136f",
+            "name": "Hair Care",
+            "icon": [
+                {
+                    "name": "812f54d7826e225a03b4a1804.webp",
+                    "url": "https://vedarma.com/wp-content/uploads/2024/04/Hair-care-1.webp"
+                }
+            ],
+            "slug": "hair-care"
+        },
+        {
+            "_id": "66792002381c5ef7a2cb1374",
+            "name": "Mens Health",
+            "icon": [
+                {
+                    "name": "812f54d7826e225a03b4a1805.webp",
+                    "url": "https://vedarma.com/wp-content/uploads/2024/04/men-health-1.webp"
+                }
+            ],
+            "slug": "mens-health"
+        },
+        {
+            "_id": "66792012381c5ef7a2cb1379",
+            "name": "Womens Health",
+            "icon": [
+                {
+                    "name": "812f54d7826e225a03b4a1806.webp",
+                    "url": "https://vedarma.com/wp-content/uploads/2024/04/women-health.png"
+                }
+            ],
+            "slug": "womens-health"
+        }
+    ],
+    "additional": {
+        "homePage": {
+            "carousel": {
+                "background": [
+                    {
+                        "name": "bg.png",
+                        "url": "https://backend.regalstyling.com/bg.png"
+                    }
+                ],
+                "carouselData": [
+                    {
+                        "title": "Accessories",
+                        "subTitle": "Premium Quality Gadget",
+                        "description": "Quisque sit amet felis feugiat, tincidunt turpis quis, tristique massa. Suspendisse potenti. Donec gravida enim et libero sollicitudin viverra.",
+                        "url": "/gallery?category=gadget",
+                        "image": [
+                            {
+                                "name": "gad.png",
+                                "url": "https://backend.regalstyling.com/gad.png"
+                            }
+                        ],
+                        "id": "9990botz9090euao"
+                    },
+                    {
+                        "title": "Skincare",
+                        "subTitle": "Glow up your skin",
+                        "description": "Quisque sit amet felis feugiat, tincidunt turpis quis, tristique massa. Suspendisse potenti. Donec gravida enim et libero sollicitudin viverra.",
+                        "url": "/gallery?category=skin-care",
+                        "image": [
+                            {
+                                "name": "skn.png",
+                                "url": "https://backend.regalstyling.com/skn.png"
+                            }
+                        ],
+                        "id": "3005bhek0336dbdo"
+                    }
+                ]
+            },
+            "banner": {
+                "title": "Deal Of The Day",
+                "subTitle": "Save Up to 40% Off!",
+                "description": "Praesent nec finibus massa. Phasellus id auctor lacus, at iaculis lorem. Donec quis arcu elit. In vehicula purus se.Praesent nec finibus maskkgduDonec quis arcu elit. In vehicula purus se.Praesent nec finibus maskkgduylkwhfiusa ylkwhfiusa",
+                "url": "/gallery",
+                "image": [
+                    {
+                        "name": "812f54d7826e225a03b4a1801.png",
+                        "url": "https://backend.regalstyling.com/uploads/812f54d7826e225a03b4a1801.png"
+                    }
+                ]
+            },
+            "collection": {
+                "scopeA": {
+                    "title": "Save 17% on organic Juice",
+                    "url": "/gallery?category=gadget",
+                    "image": [
+                        {
+                            "name": "bg2.png",
+                            "url": "https://backend.regalstyling.com/bg2.png"
+                        }
+                    ]
+                },
+                "scopeB": {
+                    "title": "Make your Breakfast Healthy and Easy",
+                    "url": "/gallery?category=clothing-and-fashion",
+                    "image": [
+                        {
+                            "name": "bg3.png",
+                            "url": "https://backend.regalstyling.com/bg3.png"
+                        }
+                    ]
+                },
+                "scopeC": {
+                    "title": "The best Organic Products Online",
+                    "url": "/gallery?category=fruits-and-vegetables",
+                    "image": [
+                        {
+                            "name": "bg4.png",
+                            "url": "https://backend.regalstyling.com/bg4.png"
+                        }
+                    ]
+                },
+                "scopeD": {
+                    "title": "Everyday Fresh & Clean with Our Products",
+                    "url": "/gallery?category=skin-care",
+                    "image": [
+                        {
+                            "name": "bg5.png",
+                            "url": "https://backend.regalstyling.com/bg5.png"
+                        }
+                    ]
+                }
+            }
+        },
+        "_id": "66791cc917219513f14d29b8"
+    },
+    "trending": [
+        {
+            "_id": "66792871381c5ef7a2cb155c",
+            "name": "DIABASSIST(TABLETS) -CONTROL BLOOD SUGAR NATURALLY",
+            "slug": "diabassist-tablets-control-blood-sugar-naturally-66xu85ys",
+            "unit": "12",
+            "unitValue": "12",
+            "price": 999,
+            "discount": 939.1,
+            "type": "variable",
+            "image": [
+                {
+                    "name": "812f54d7826e225a03b4a180c.webp",
+                    "url": "https://backend.regalstyling.com/uploads/812f54d7826e225a03b4a180c.webp"
+                }
+            ],
+            "variants": [
+                {
+                    "color": null,
+                    "attr": "PACK OF 1 ",
+                    "price": "949",
+                    "sku": "asqweqw123",
+                    "qty": "10",
+                    "imageIndex": 0
+                },
+                {
+                    "color": null,
+                    "attr": "PACK OF 2",
+                    "price": "1698",
+                    "sku": "2ASDff",
+                    "qty": "10",
+                    "imageIndex": 0
+                },
+                {
+                    "color": null,
+                    "attr": "PACK OF 3",
+                    "price": "2247",
+                    "sku": "afasd2",
+                    "qty": "10",
+                    "imageIndex": 0
+                }
+            ],
+            "date": "2024-06-24T08:04:01.128Z",
+            "review": []
+        },
+        {
+            "_id": "667976b5c99a1841c9753871",
+            "name": "Hair Ropan : Ayurvedic Hair Oil For Hair Growth",
+            "slug": "hair-ropan-ayurvedic-hair-oil-for-hair-growth-65ot55yb",
+            "unit": "12",
+            "unitValue": "12",
+            "price": 1042,
+            "discount": 1042,
+            "type": "variable",
+            "image": [
+                {
+                    "name": "aaa3002827a3fffcce1798904.webp",
+                    "url": "https://backend.regalstyling.com/uploads/aaa3002827a3fffcce1798904.webp"
+                }
+            ],
+            "variants": [],
+            "date": "2024-06-24T13:37:57.454Z",
+            "review": []
+        }
+    ],
+    "newProduct": [
+        {
+            "_id": "66792871381c5ef7a2cb155c",
+            "name": "DIABASSIST(TABLETS) -CONTROL BLOOD SUGAR NATURALLY",
+            "slug": "diabassist-tablets-control-blood-sugar-naturally-66xu85ys",
+            "unit": "12",
+            "unitValue": "12",
+            "price": 999,
+            "discount": 939.1,
+            "type": "variable",
+            "image": [
+                {
+                    "name": "812f54d7826e225a03b4a180c.webp",
+                    "url": "https://backend.regalstyling.com/uploads/812f54d7826e225a03b4a180c.webp"
+                }
+            ],
+            "variants": [
+                {
+                    "color": null,
+                    "attr": "PACK OF 1 ",
+                    "price": "949",
+                    "sku": "asqweqw123",
+                    "qty": "10",
+                    "imageIndex": 0
+                },
+                {
+                    "color": null,
+                    "attr": "PACK OF 2",
+                    "price": "1698",
+                    "sku": "2ASDff",
+                    "qty": "10",
+                    "imageIndex": 0
+                },
+                {
+                    "color": null,
+                    "attr": "PACK OF 3",
+                    "price": "2247",
+                    "sku": "afasd2",
+                    "qty": "10",
+                    "imageIndex": 0
+                }
+            ],
+            "date": "2024-06-24T08:04:01.128Z",
+            "review": []
+        },
+        {
+            "_id": "667976b5c99a1841c9753871",
+            "name": "Hair Ropan : Ayurvedic Hair Oil For Hair Growth",
+            "slug": "hair-ropan-ayurvedic-hair-oil-for-hair-growth-65ot55yb",
+            "unit": "12",
+            "unitValue": "12",
+            "price": 1042,
+            "discount": 1042,
+            "type": "variable",
+            "image": [
+                {
+                    "name": "aaa3002827a3fffcce1798904.webp",
+                    "url": "https://backend.regalstyling.com/uploads/aaa3002827a3fffcce1798904.webp"
+                }
+            ],
+            "variants": [],
+            "date": "2024-06-24T13:37:57.454Z",
+            "review": []
+        }
+    ],
+    "bestSelling": [
+        {
+            "_id": "66792871381c5ef7a2cb155c",
+            "name": "DIABASSIST(TABLETS) -CONTROL BLOOD SUGAR NATURALLY",
+            "slug": "diabassist-tablets-control-blood-sugar-naturally-66xu85ys",
+            "unit": "12",
+            "unitValue": "12",
+            "price": 999,
+            "discount": 939.1,
+            "type": "variable",
+            "image": [
+                {
+                    "name": "812f54d7826e225a03b4a180c.webp",
+                    "url": "https://backend.regalstyling.com/uploads/812f54d7826e225a03b4a180c.webp"
+                }
+            ],
+            "variants": [
+                {
+                    "color": null,
+                    "attr": "PACK OF 1 ",
+                    "price": "949",
+                    "sku": "asqweqw123",
+                    "qty": "10",
+                    "imageIndex": 0
+                },
+                {
+                    "color": null,
+                    "attr": "PACK OF 2",
+                    "price": "1698",
+                    "sku": "2ASDff",
+                    "qty": "10",
+                    "imageIndex": 0
+                },
+                {
+                    "color": null,
+                    "attr": "PACK OF 3",
+                    "price": "2247",
+                    "sku": "afasd2",
+                    "qty": "10",
+                    "imageIndex": 0
+                }
+            ],
+            "date": "2024-06-24T08:04:01.128Z",
+            "review": []
+        },
+        {
+            "_id": "667976b5c99a1841c9753871",
+            "name": "Hair Ropan : Ayurvedic Hair Oil For Hair Growth",
+            "slug": "hair-ropan-ayurvedic-hair-oil-for-hair-growth-65ot55yb",
+            "unit": "12",
+            "unitValue": "12",
+            "price": 1042,
+            "discount": 1042,
+            "type": "variable",
+            "image": [
+                {
+                    "name": "aaa3002827a3fffcce1798904.webp",
+                    "url": "https://backend.regalstyling.com/uploads/aaa3002827a3fffcce1798904.webp"
+                }
+            ],
+            "variants": [],
+            "date": "2024-06-24T13:37:57.454Z",
+            "review": []
+        }
+    ],
+    "brand": [],
+    "settings": {
+        "footerBanner": {
+            "security": {
+                "title": "MONEY BACK GUARANTEE",
+                "description": "Lorem ipsum dolor sit amet consectetur"
+            },
+            "support": {
+                "title": "24/7 CUSTOMER SUPPORT",
+                "description": "Lorem ipsum dolor sit amet consectetur"
+            },
+            "delivery": {
+                "title": "FAST AND LOW COST DELIVERY",
+                "description": "Lorem ipsum dolor sit amet consectetur"
+            }
+        },
+        "seo": {
+            "title": "Vedarma",
+            "description": "demo",
+            "keyword": "demo,demo,demo",
+            "image": [
+                {
+                    "name": "fav.png",
+                    "url": "https://backend.regalstyling.com/fav.png"
+                },
+                {
+                    "name": "812f54d7826e225a03b4a1800.webp",
+                    "url": "https://backend.regalstyling.com/uploads/812f54d7826e225a03b4a1800.webp"
+                }
+            ]
+        },
+        "social": {
+            "facebook": "https://www.facebook.com",
+            "instagram": "https://www.instagram.com",
+            "twitter": "https://www.twitter.com",
+            "youtube": "https://www.youtube.com",
+            "pinterest": "https://www.pinterest.com"
+        },
+        "currency": {
+            "name": "INR",
+            "symbol": "Rs",
+            "exchangeRate": 1
+        },
+        "color": {
+            "primary": "#204d00",
+            "primary_hover": "#83bc2e",
+            "secondary": "#00c466",
+            "body_gray": "#dde8e3",
+            "body_gray_contrast": "#333333",
+            "primary_contrast": "#ffffff",
+            "primary_hover_contrast": "#ffffff",
+            "secondary_contrast": "#ffffff"
+        },
+        "script": {
+            "googleSiteVerificationId": "",
+            "facebookAppId": "",
+            "googleAnalyticsId": "",
+            "facebookPixelId": "",
+            "messengerPageId": ""
+        },
+        "paymentGateway": {
+            "cod": true,
+            "paypal": false,
+            "stripe": false,
+            "sslCommerz": false,
+            "razorpay": false
+        },
+        "login": {
+            "facebook": false,
+            "google": false
+        },
+        "security": {
+            "loginForPurchase": true
+        },
+        "_id": "66791cc917219513f14d2903",
+        "name": "Vedarma",
+        "title": "Ecommerce Shopping Platform",
+        "address": "Shiva Market, Pitampura, Delhi 110034",
+        "shortAddress": "Shiva Market, Pitampura, Delhi 110034",
+        "email": "contact@vedarma.com",
+        "description": "Vedarma Wellness Pvt. Ltd. is a Trusted Ayurvedic and Nutraceuticals Company guiding your journey towards natural, transformative well-being, through high-quality, safe, and effective products.",
+        "phoneHeader": "+91 9315951993",
+        "phoneFooter": "+91 9315951993",
+        "copyright": "© 2024 - Vedarma",
+        "logo": [
+            {
+                "name": "9bf2cc0e2b1458fce8e802300.png",
+                "url": "https://cdn-ilaalef.nitrocdn.com/wyKyggLJhaTUJttvkfaQZxfAdbyqhBUG/assets/images/optimized/rev-ebd6adf/vedarma.com/wp-content/uploads/2023/12/Vedarma_logo-1.png"
+            }
+        ],
+        "favicon": [
+            {
+                "name": "fav.png",
+                "url": "https://cdn-ilaalef.nitrocdn.com/wyKyggLJhaTUJttvkfaQZxfAdbyqhBUG/assets/images/optimized/rev-ebd6adf/vedarma.com/wp-content/uploads/2024/01/cropped-New-Project-1-32x32.png"
+            }
+        ],
+        "gatewayImage": [
+            {
+                "name": "gateway.png",
+                "url": "https://backend.regalstyling.com/gateway.png"
+            }
+        ],
+        "headerCustomScript": "",
+        "footerCustomScript": "",
+        "language": "en",
+        "__v": 2
+    }
+}

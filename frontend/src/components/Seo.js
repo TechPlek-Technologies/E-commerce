@@ -11,7 +11,6 @@ const SEO = ({ titleTemplate }) => {
     };
 
     const seo=useSetting("seo");
-    console.log(seo);
 
 
 

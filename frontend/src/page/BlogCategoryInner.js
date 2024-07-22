@@ -1,33 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-const formatDate = (isoDate) => {
-  const date = new Date(isoDate);
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  return new Intl.DateTimeFormat("en-US", options).format(date);
-};
-const truncateText = (text, limit) => {
-  if (text.length <= limit) {
-    return text;
-  }
-  return text.split(" ").slice(0, limit).join(" ") + "...";
-};
+import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 
 const capitalizeFirstLetter = (string) => {
-  if (!string) return "";
-  return string.charAt(0).toUpperCase() + string.slice(1);
-};
+    if (!string) return "";
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
 
-const BlogInner = ({ data,category }) => {
-// console.log("data",data);
-// console.log("category",category);
+const BlogCategoryInner = () => {
+  let { category } = useParams();
+  const { blogData } = useSelector((store) => store.blog);
+
+  const desiredCategory = blogData.blogs.filter(
+    (blog) => blog?.category === category
+  );
+
+//   console.log("category", typeof desiredCategory);
+//   console.log("category", desiredCategory);
+
+  const formatDate = (isoDate) => {
+    const date = new Date(isoDate);
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Intl.DateTimeFormat("en-US", options).format(date);
+  };
+
+  const truncateText = (text, limit) => {
+    if (text.length <= limit) {
+      return text;
+    }
+    return text.split(" ").slice(0, limit).join(" ") + "...";
+  };
   return (
     <section className="news-standard-page rel z-1 rpt-35 pb-40 rpb-100">
-      {data && (
+      {desiredCategory && (
         <div className="container">
           <div className="row">
             <div className="col-xl-8 mt-65">
-              {data?.map((item) => (
+              {desiredCategory.map((item) => (
                 <div className="news-standard-item wow fadeInUp delay-0-2s">
                   <div className="image">
                     <img
@@ -81,7 +90,7 @@ const BlogInner = ({ data,category }) => {
                     <input
                       type="text"
                       placeholder="Search keywords"
-                      required=""
+                     
                     />
                     <button
                       type="submit"
@@ -89,8 +98,8 @@ const BlogInner = ({ data,category }) => {
                     />
                   </form>
                 </div>
-                {BlogRecent({ data })}
-                {<BlogCategory data={category}/>}
+                {BlogRecent({ blogData })}
+                { <BlogCategory1 data={blogData.categories}/>}
               </div>
             </div>
           </div>
@@ -100,57 +109,54 @@ const BlogInner = ({ data,category }) => {
   );
 };
 
-const BlogCategory = ({ data }) => {
-  // console.log("BlogCategory",data);
-  return (
-    <div className="widget widget-menu wow fadeInUp delay-0-4s">
-      <h4 className="widget-title">
-        <i className="flaticon-leaf-1" />
-        Category
-      </h4>
-      {data?.map((item) => (
+const BlogCategory1 = ({data}) => {
+    return (
+      <div className="widget widget-menu wow fadeInUp delay-0-4s">
+        <h4 className="widget-title">
+          <i className="flaticon-leaf-1" />
+          Category
+        </h4>
+        {data.map((item) => (
         <ul>
           <li>
-            <Link to={{ pathname: `/blog/category/${item?.slug}` }}>{item.name ? item.name : ""}</Link>
+            <Link to={{ pathname: `/blog/category/${item?.slug}` }}>{item.name?item.name:""}</Link>
           </li>
-        </ul>
-      ))}
-    </div>
-  );
-};
+        </ul> ))}
+      </div>
+    );
+  };
 
-const BlogRecent = ({ data }) => {
-  // console.log("BlogRecent",data);
-  return (
-    <div className="widget widget-news wow fadeInUp delay-0-2s">
-      <h4 className="widget-title">
-        <i className="flaticon-leaf-1" />
-        Recent Posts
-      </h4>
-      {data?.slice(0, 5).map((item, index) => (
-        <ul key={index}>
-          <li>
-            <div className="image">
-              <img
-                src={JSON.parse(item.icon) ? JSON.parse(item.icon)[0].url : ""}
-                alt=""
-              />
-            </div>
-            <div className="content pt-10">
-              <h6>
-                <Link to={{ pathname: `/blog/${item.slug}` }}>
-                  {item.name ? item.name : ""}
-                </Link>
-              </h6>
-              <span className="name">
-                {item.category ? capitalizeFirstLetter(item.category) : ""}
-              </span>
-            </div>
-          </li>
-        </ul>
-      ))}
-    </div>
-  );
-};
+const BlogRecent = ({ blogData }) => {
+    return (
+      <div className="widget widget-news wow fadeInUp delay-0-2s">
+        <h4 className="widget-title">
+          <i className="flaticon-leaf-1" />
+          Recent Posts
+        </h4>
+        {blogData?.blogs.slice(0, 5).map((item, index) => (
+          <ul key={index}>
+            <li>
+              <div className="image">
+                <img
+                  src={JSON.parse(item.icon) ? JSON.parse(item.icon)[0].url : ""}
+                  alt=""
+                />
+              </div>
+              <div className="content pt-10">
+                <h6>
+                  <Link to={{ pathname: `/blog/${item.slug}` }}>
+                    {item.name ? item.name : ""}
+                  </Link>
+                </h6>
+                <span className="name">
+                  {item.category ? capitalizeFirstLetter(item.category) : ""}
+                </span>
+              </div>
+            </li>
+          </ul>
+        ))}
+      </div>
+    );
+  };
 
-export default BlogInner;
+export default BlogCategoryInner;

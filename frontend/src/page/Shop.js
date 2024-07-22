@@ -20,6 +20,7 @@ const Shop = () => {
   const [currentData, setCurrentData] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const { products } = useSelector((state) => state.products);
+console.log(products)
 
   const pageLimit = 9;
 

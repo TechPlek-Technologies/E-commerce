@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlogDetailsInner = ({ data,category }) => {
-  console.log("data" , data);
+const capitalizeFirstLetter = (string) => {
+  if (!string) return "";
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+const BlogDetailsInner = ({ data,category,blogData }) => {
+  // console.log("Blogdata" , data);
   return (
     <section className="news-standard-page rel z-1 rpt-35 pb-130 rpb-100">
       {data && (
@@ -35,6 +40,7 @@ const BlogDetailsInner = ({ data,category }) => {
                     />
                   </form>
                 </div>
+                {BlogRecent({ blogData })}
                { <BlogCategory data={category}/>}
               </div>
             </div>
@@ -55,10 +61,44 @@ const BlogCategory = ({data}) => {
       {data.map((item) => (
       <ul>
         <li>
-          <Link href="#">{item.name?item.name:""}</Link>
+          <Link to={{ pathname: `/blog/category/${item?.slug}` }}>{item.name?item.name:""}</Link>
         </li>
       </ul> ))}
     </div>
   );
 };
+
+const BlogRecent = ({ blogData }) => {
+  return (
+    <div className="widget widget-news wow fadeInUp delay-0-2s">
+      <h4 className="widget-title">
+        <i className="flaticon-leaf-1" />
+        Recent Posts
+      </h4>
+      {blogData?.blogs.slice(0, 5).map((item, index) => (
+        <ul key={index}>
+          <li>
+            <div className="image">
+              <img
+                src={JSON.parse(item.icon) ? JSON.parse(item.icon)[0].url : ""}
+                alt=""
+              />
+            </div>
+            <div className="content pt-10">
+              <h6>
+                <Link to={{ pathname: `/blog/${item.slug}` }}>
+                  {item.name ? item.name : ""}
+                </Link>
+              </h6>
+              <span className="name">
+                {item.category ? capitalizeFirstLetter(item.category) : ""}
+              </span>
+            </div>
+          </li>
+        </ul>
+      ))}
+    </div>
+  );
+};
+
 export default BlogDetailsInner;
