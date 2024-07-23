@@ -14,13 +14,16 @@ import { settingsReducer } from './slice/settings-slice';
 import { authReducer } from './slice/auth-slice';
 import { profileReducer } from './slice/profileData-slice';
 import { pagesReducer } from './slice/page-slice';
-import { cartReducer } from './slice/cart-slice';
-import { compareReducer } from './slice/compare-slice';
-import { wishlistReducer } from './slice/wishlist-slice';
+// import { cartReducer } from './slice/cart-slice';
+// import { compareReducer } from './slice/compare-slice';
+// import { wishlistReducer } from './slice/wishlist-slice';
 import { productsReducer } from './slice/product-silce';
 import { loadingReducer } from './slice/loading-slice';
 import { blogsReducer } from './slice/blog-slice';
-
+import { cartReducer } from './sliceShop/cart-slice';
+import { compareReducer } from './sliceShop/compare-slice';
+import { wishlistReducer } from './sliceShop/wishlist-slice';
+import {currencyReducer} from "./sliceShop/currency-slice";
 // import productReducer from './slices/productSlice'; // Uncomment if you have a product slice
 
 const persistConfig = {
@@ -35,9 +38,13 @@ const rootReducer = combineReducers({
     auth: authReducer,
     profile: profileReducer,
     pages:pagesReducer,
+    // cart: cartReducer,
+    // compare: compareReducer,
+    // wishlist: wishlistReducer,
     cart: cartReducer,
     compare: compareReducer,
     wishlist: wishlistReducer,
+    currency: currencyReducer,
     products:productsReducer,
     loading: loadingReducer,
     blog: blogsReducer

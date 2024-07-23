@@ -26,15 +26,10 @@ const Category = () => {
           <Arrow arrowCls={"slider-next slick-arrow"} icon={"fas fa-chevron-right"} />
         ),
         focusOnSelect: true,
-        slidesToShow: 6,
+        slidesToShow: 5,
         slidesToScroll: 2,
         responsive: [
-          {
-            breakpoint: 1500,
-            settings: {
-              slidesToShow: 5,
-            },
-          },
+       
           {
             breakpoint: 1300,
             settings: {

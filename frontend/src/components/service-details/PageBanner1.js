@@ -1,9 +1,7 @@
 const PageBanner1 = () => {
     return (
       <div className="slider-area">
-        <div className="single-slide bg-img">
-          <img alt="Hair-banner" src="/assets/img/service-details/Hair-banner.webp" />
-        </div>
+          <img alt="Hair-banner" style={{width:"-webkit-fill-available"}} src="/assets/img/service-details/Hair-banner.webp" />
       </div>
     );
   };

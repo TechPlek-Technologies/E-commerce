@@ -3,12 +3,12 @@ import { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import { addToWishlist } from "../../redux/slice/wishlist-slice";
-import { addToCart } from "../../redux/slice/cart-slice";
-import ProductRating from "./ProductRating";
-import { addToCompare } from "../../redux/slice/compare-slice";
-import ProductModal from "./ProductModel";
-
+import { addToWishlist } from "../redux/sliceShop/wishlist-slice";
+import { addToCart } from "../redux/sliceShop/cart-slice";
+import { addToCompare } from "../redux/sliceShop/compare-slice";
+import { getDiscountPrice } from "../helpers/product";
+import Rating from "./ProductRating";
+import ProductModal from "./ProductModal";
 
 const ProductGridListSingle = ({ 
   product,
@@ -18,38 +18,38 @@ const ProductGridListSingle = ({
   compareItem,
   spaceBottomClass
 }) => {
-
   const [modalShow, setModalShow] = useState(false);
-  const discountedPrice = product.discount;
+  const discountedPrice = getDiscountPrice(product.price, product.discount);
   const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
   const finalDiscountedPrice = +(
     discountedPrice * currency.currencyRate
   ).toFixed(2);
   const dispatch = useDispatch();
+
   return (
     <Fragment>
         <div className={clsx("product-wrap", spaceBottomClass)}>
           <div className="product-img">
-            <Link to={process.env.PUBLIC_URL + "/product/" + product.slug}>
+            <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
               <img
                 className="default-img"
-                src={product.image[0].url}
-                alt={product.image[0].name}
+                src={process.env.PUBLIC_URL + product.image[0]}
+                alt=""
               />
-              {product?.gallery.length > 0 ? (
+              {product.image.length > 1 ? (
                 <img
                   className="hover-img"
-                  src={product.gallery[0].url}
-                  alt={product.gallery[0].name}
+                  src={process.env.PUBLIC_URL + product.image[1]}
+                  alt=""
                 />
               ) : (
                 ""
               )}
             </Link>
-            {product.discountPercentage || product.new ? (
+            {product.discount || product.new ? (
               <div className="product-img-badges">
-                {product.discountPercentage ? (
-                  <span className="pink">-{product.discountPercentage}%</span>
+                {product.discount ? (
+                  <span className="pink">-{product.discount}%</span>
                 ) : (
                   ""
                 )}
@@ -84,26 +84,26 @@ const ProductGridListSingle = ({
                     {" "}
                     Buy now{" "}
                   </a>
-                ) : product.variants && product.variants.length >= 1 ? (
-                  <Link to={`${process.env.PUBLIC_URL}/product/${product.slug}`}>
+                ) : product.variation && product.variation.length >= 1 ? (
+                  <Link to={`${process.env.PUBLIC_URL}/product/${product.id}`}>
                     Select Option
                   </Link>
-                ) : product.quantity && product.quantity > 0 ? (
+                ) : product.stock && product.stock > 0 ? (
                   <button
                     onClick={() => dispatch(addToCart(product))}
                     className={
-                      cartItem !== undefined && cartItem.cartQuantity > 0
+                      cartItem !== undefined && cartItem.quantity > 0
                         ? "active"
                         : ""
                     }
-                    disabled={cartItem !== undefined && cartItem.cartQuantity > 0}
+                    disabled={cartItem !== undefined && cartItem.quantity > 0}
                     title={
                       cartItem !== undefined ? "Added to cart" : "Add to cart"
                     }
                   >
                     {" "}
                     <i className="pe-7s-cart"></i>{" "}
-                    {cartItem !== undefined && cartItem.cartQuantity > 0
+                    {cartItem !== undefined && cartItem.quantity > 0
                       ? "Added"
                       : "Add to cart"}
                   </button>
@@ -122,27 +122,27 @@ const ProductGridListSingle = ({
           </div>
           <div className="product-content text-center">
             <h3>
-              <Link to={process.env.PUBLIC_URL + "/product/" + product.slug}>
+              <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
                 {product.name}
               </Link>
             </h3>
             {product.rating && product.rating > 0 ? (
               <div className="product-rating">
-                <ProductRating ratingValue={product.rating} />
+                <Rating ratingValue={product.rating} />
               </div>
             ) : (
               ""
             )}
             <div className="product-price">
-              {product.discount  ? (
+              {discountedPrice !== null ? (
                 <Fragment>
-                  <span>{currency.currencySymbol + product.discount}</span>{" "}
+                  <span>{currency.currencySymbol + finalDiscountedPrice}</span>{" "}
                   <span className="old">
-                    {currency.currencySymbol + product.price}
+                    {currency.currencySymbol + finalProductPrice}
                   </span>
                 </Fragment>
               ) : (
-                <span>{currency.currencySymbol + product.price} </span>
+                <span>{currency.currencySymbol + finalProductPrice} </span>
               )}
             </div>
           </div>
@@ -155,23 +155,23 @@ const ProductGridListSingle = ({
                   <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
                     <img
                       className="default-img img-fluid"
-                      src={product.image[0]}
+                      src={process.env.PUBLIC_URL + product.image[0]}
                       alt=""
                     />
                     {product.image.length > 1 ? (
                       <img
                         className="hover-img img-fluid"
-                        src={ product.image[1]}
+                        src={process.env.PUBLIC_URL + product.image[1]}
                         alt=""
                       />
                     ) : (
                       ""
                     )}
                   </Link>
-                  {product.discountPercentage || product.new ? (
+                  {product.discount || product.new ? (
                     <div className="product-img-badges">
                       {product.discount ? (
-                        <span className="pink">-{product.discountPercentage}%</span>
+                        <span className="pink">-{product.discount}%</span>
                       ) : (
                         ""
                       )}
@@ -191,23 +191,23 @@ const ProductGridListSingle = ({
                   </Link>
                 </h3>
                 <div className="product-list-price">
-                  { product.discount ? (
+                  {discountedPrice !== null ? (
                     <Fragment>
                       <span>
-                        {currency.currencySymbol + product.discount}
+                        {currency.currencySymbol + finalDiscountedPrice}
                       </span>{" "}
                       <span className="old">
-                        {currency.currencySymbol + product.price}
+                        {currency.currencySymbol + finalProductPrice}
                       </span>
                     </Fragment>
                   ) : (
-                    <span>{currency.currencySymbol + product.price} </span>
+                    <span>{currency.currencySymbol + finalProductPrice} </span>
                   )}
                 </div>
                 {product.rating && product.rating > 0 ? (
                   <div className="rating-review">
                     <div className="product-list-rating">
-                      <ProductRating ratingValue={product.rating} />
+                      <Rating ratingValue={product.rating} />
                     </div>
                   </div>
                 ) : (
@@ -230,9 +230,9 @@ const ProductGridListSingle = ({
                         {" "}
                         Buy now{" "}
                       </a>
-                    ) : product.variants && product.variants.length >= 1 ? (
+                    ) : product.variation && product.variation.length >= 1 ? (
                       <Link
-                        to={`${process.env.PUBLIC_URL}/product/${product.slug}`}
+                        to={`${process.env.PUBLIC_URL}/product/${product.id}`}
                       >
                         Select Option
                       </Link>
@@ -300,7 +300,7 @@ const ProductGridListSingle = ({
           </div>
         </div>
       {/* product modal */}
-      {/* <ProductModal
+      <ProductModal
         show={modalShow}
         onHide={() => setModalShow(false)}
         product={product}
@@ -310,7 +310,7 @@ const ProductGridListSingle = ({
         finalDiscountedPrice={finalDiscountedPrice}
         wishlistItem={wishlistItem}
         compareItem={compareItem}
-      /> */}
+      />
     </Fragment>
   );
 };

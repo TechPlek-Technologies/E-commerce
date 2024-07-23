@@ -35,6 +35,7 @@ import BlogDetails from "./page/BlogDetails";
 import { fetchBlogs } from "./redux/slice/blog-slice";
 import SwipeableEdgeDrawer from "./Drawer";
 import BlogCategory from "./page/BlogCategory";
+import Test from "./test/Test";
 
 function App() {
   const dispatch = useDispatch();
@@ -95,6 +96,7 @@ function App() {
               <Route path={"/product/:slug"} element={<ProductDetails />} />
               <Route path={"/checkout"} element={<Checkout />} />
               <Route path={"/"} element={<Home />} />
+              <Route path={"/test"} element={<Test />} />
               <Route path={"/home"} element={<Home />} />
               <Route path={"/login-register"} element={<LoginRegister />} />
               <Route path={"/my-account"} element={<MyAccount />} />
