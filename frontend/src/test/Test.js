@@ -2,15 +2,15 @@ import { Fragment, useState, useEffect } from "react";
 import Paginator from "react-hooks-paginator"; 
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-// import ShopTopbar from "../../wrappers/product/ShopTopbar";
+import { convertProductData } from "../helpers/convertDataFormat";
 import { getSortedProducts } from "../helpers/product";
 import SEO from "../components/Seo";
 import LayoutOne from "../layouts/LayoutOne";
-import ShopProducts from "../components/product/ShopProucts";
-import ShopTopbar from "../components/product/ShopTopbar";
-import { convertProductData } from "../helpers/convertDataFormat";
+import ShopTopbar from "./ShopTopBar";
+import ShopProducts from "./ShopProducts";
 
-const Shop = () => {
+
+const ShopGridNoSidebar = () => {
   const [layout, setLayout] = useState("grid three-column");
   const sortType = "";
   const sortValue = "";
@@ -20,10 +20,11 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentData, setCurrentData] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
-  const { products } = useSelector((state) => state.products);
+  const { products : rawProduct} = useSelector((state) => state.products);
 
-// console.log(convertProductData(products.product[1]));
-  const pageLimit = 9;
+  const products= rawProduct?.product.map(item=>convertProductData(item));
+  const pageLimit = 15;
+  let { pathname } = useLocation();
 
   const getLayout = layout => {
     setLayout(layout);
@@ -35,7 +36,7 @@ const Shop = () => {
   };
 
   useEffect(() => {
-    let sortedProducts = getSortedProducts(products?.product, sortType, sortValue);
+    let sortedProducts = getSortedProducts(products, sortType, sortValue);
     const filterSortedProducts = getSortedProducts(
       sortedProducts,
       filterSortType,
@@ -46,16 +47,6 @@ const Shop = () => {
     setCurrentData(sortedProducts.slice(offset, offset + pageLimit));
   }, [offset, products, sortType, sortValue, filterSortType, filterSortValue]);
 
-  if (products===null) {
-    return (
-      <div className="flone-preloader-wrapper">
-        <div className="flone-preloader">
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    );
-  }
   return (
     <Fragment>
       <SEO
@@ -64,8 +55,8 @@ const Shop = () => {
       />
 
       <LayoutOne headerTop="visible">
+        {/* breadcrumb */}
        
-
         <div className="shop-area pt-95 pb-100">
           <div className="container">
             <div className="row">
@@ -104,4 +95,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default ShopGridNoSidebar;

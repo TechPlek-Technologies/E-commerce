@@ -26,16 +26,16 @@ const Home = () => {
 
         <Category/>
 
-        {/* <Video/> */}
-
         <Banner/>
-
         <ClientLogo/>
+
+
 
         <Feedback/>
 
         <WhyUsSection/>
 
+        <Video/> 
         <BlogSection/>
 
         <FeatureArea/>

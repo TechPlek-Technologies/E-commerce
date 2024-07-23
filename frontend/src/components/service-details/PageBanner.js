@@ -1,9 +1,8 @@
 const PageBanner = () => {
   return (
     <div className="slider-area">
-      <div className="single-slide bg-img">
-        <img alt="Diabetic" src="/assets/img/service-details/Diabetic.webp" />
-      </div>
+   
+        <img alt="Diabetic" style={{width:"-webkit-fill-available"}} src="/assets/img/service-details/Diabetic.webp" />
     </div>
   );
 };
